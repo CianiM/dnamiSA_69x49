@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pltdnami import loadrstax
 from plot_result import build_q
+import sys
 
 
 def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
@@ -11,7 +12,8 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
               'et' :4,
               'nut':5,
               'tau':6}
-    var=field.tau
+    var=field['tau']
+    print(var)
     with open('x_coord.dat','r') as f:
         x_axis = []
         coord=f.readlines()
@@ -21,5 +23,14 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     q = build_q('./output/','outputoutput',scale,bc)
     tau_wall=q[:,:,0,var]
     fig = plt.figure(figsize=(10,5))
-    plt.plot(tau_wall,x_axis)
-    plt.show()
+    ax = fig.add_subplot(111)
+    im = ax.plot(tau_wall,x_axis)
+    plt.show();sys.exit()
+
+if __name__ == '__main__':
+    name,fbeg,fend,nstep,bc,scale,scale2 = sys.argv
+    if bc=="True":
+        bc = True
+    else:
+        bc = False    
+    main(np.int(fbeg),np.int(fend),np.int(nstep),bc,np.int(scale),np.int(scale2))
