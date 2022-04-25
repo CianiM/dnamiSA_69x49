@@ -25,7 +25,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iVDW = False
     ndim  = 2
     ivar = 1
-    varcont = 2
+    varcont = 4
 
     from pltdnami import loadrstax
 
@@ -69,7 +69,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
 
 
 
-    vardic = ['rho','u','v','et','nut']
+    vardic = ['rho','u','v','et','nut','tau_wall']
 
 
     # lvls = np.arange(-270.,270.,20)
@@ -114,7 +114,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iend = nx
 
     jbeg = 0
-    jend = ny
+    jend = 20
 
     if iAnim :
 

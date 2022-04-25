@@ -244,7 +244,7 @@ dMpi.swap(q,hlo,dtree)
 
 # -- Write the first restart
 dn.dnami_io.write_restart(0,ti,0,dtree)
-field = ['rho','u','v','et','nut',]
+field = ['rho','u','v','et','nut','tau_wall']
 path= './output/output'
 write_data(field,path,0,0,dtree)
 # ========================================================================= RUN
