@@ -25,7 +25,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iVDW = False
     ndim  = 2
     ivar = 1
-    varcont = 5
+    varcont = 1
 
     from pltdnami import loadrstax
 
@@ -110,11 +110,11 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     jbeg = hlo_rhs
     jend = ny-hlo_rhs
 
-    ibeg = 0
+    ibeg = 12
     iend = nx
 
     jbeg = 0
-    jend = 1
+    jend = 20
 
     if iAnim :
 
@@ -226,17 +226,14 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
         
         # normColor = BoundaryNorm(np.arange(-0.5 , 0.5,1.0/10.), ncolors=cmap.N, clip=True)
         lvls = np.arange(0.0   , 0.1,abs(np.amax(vcont)-np.amin(vcont))/2.)
-#        x = ksi[:,0]
-#        plt.plot(qp,x)
-#        plt.show();sys.exit()
-#        im  = ax.pcolormesh(ksi[ibeg:iend,jbeg:jend],eta[ibeg:iend,jbeg:jend],   qp[ibeg:iend,jbeg:jend], cmap=cmap,norm=normColor);fig.colorbar(im,ax=ax)     
+        im  = ax.pcolormesh(ksi[ibeg:iend,jbeg:jend],eta[ibeg:iend,jbeg:jend],   qp[ibeg:iend,jbeg:jend], cmap=cmap,norm=normColor);fig.colorbar(im,ax=ax)     
         # cnt = ax.contour(   ksi[ibeg:iend,jbeg:jend],eta[ibeg:iend,jbeg:jend],vcont[ibeg:iend,jbeg:jend],levels=lvls,colors='k')   
         # plt.axis('scaled')
         # im  = ax.pcolormesh(   qp[ibeg:iend,jbeg:jend], cmap=cmap,norm=normColor);fig.colorbar(im,ax=ax)     
         # cnt = ax.contour(   vcont[ibeg:iend,jbeg:jend],levels=lvls,colors='k')   
 
 
-        # im  = ax.pcolormesh(ksi[ibeg:iend,jbeg:jend],eta[ibeg:iend,jbeg:jend],qp[ibeg:iend,jbeg:jend], cmap='Blues_r');fig.colorbar(im,ax=ax)
+#        im  = ax.pcolormesh(ksi[ibeg:iend,jbeg:jend],eta[ibeg:iend,jbeg:jend],qp[ibeg:iend,jbeg:jend], cmap='Blues_r');fig.colorbar(im,ax=ax)
 
 #           ax.scatter(ksi[iplt,jplt],eta[iplt,jplt]) 
 
@@ -244,11 +241,8 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
            ax.plot( ksi[i,jbeg:jend], eta[i,jbeg:jend], 'k--', lw=0.1  )
         for j in range(jend):
            ax.plot( ksi[ibeg:iend,j], eta[ibeg:iend,j], 'k--', lw=0.1  )
-        print(ksi[13,0])
-        plt.plot(ksi[13:,0],qp[13:,0])
-        plt.show()
 
-        sys.exit()
+        plt.show(); sys.exit()
 
         
 
