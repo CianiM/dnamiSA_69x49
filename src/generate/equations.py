@@ -76,7 +76,7 @@ varloc       = {'p': ' (gamma_m1)*rho*(e) ',
                 'ft2': ' ( Ct3*exp(-Ct4*chi**2) ) ',
                 'fw' : ' ( gg*( 1+Cw3**6 )/( gg**6+Cw3**6) ) ',
                 'gg' : ' ( rr + Cw2*( rr**6-rr ) ) ',
-                'rr' : ' ( nut/(SS*k**2*eta**2) ) ' ,
+                'rr' : ' ( min( ( nut/(SS*k**2*eta**2) ), 10 ) ) ' ,
 #                'SS' : ' ( stemp+ReI*nut/(k**2*eta**2) ) ',
                 #'stemp' : s, 
                 'T': ' (e)/Cv ',
@@ -492,12 +492,14 @@ D = { 1 : '( 1.0_wp/c**2*( '+ Li_BC_imax[1]+' + 0.5_wp*( '+Li_BC_imax[3] + ' + '
 Src_BC_conv_imax = { 'rho' : Src_conv['rho']+' + '+ D[1],
                      'u'   : 'u*'+D[1]+' + rho*'+D[3]+' + [ rho*u*v ]_1y',
                      'v'   : 'v*'+D[1]+' + rho*'+D[4]+' + [ rho*v*v ]_1y',
-                     'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+' + rho*u*'+D[3]+' + rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y'}
-
+                     'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+' + rho*u*'+D[3]+' + rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y',
+                     'nut' : ' ( [ rho*u*nut-visc_t*sigmaI*deltayI*( { nut }_1y ) ]_1y )*deltayI'}
+ 
 Src_BC_dif_imax = {}
 for key in Src_dif.keys():
       Src_BC_dif_imax[key]= Src_dif[key]
-
+Src_BC_dif_imax['nut']= ' - ReI*Cb2*sigmaI*( (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
+                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
 #--Building rhs for boundary conditions at imax
 for key in Src_BC_conv_imax.keys():
       if key in Src_BC_dif_imax.keys():
@@ -532,12 +534,14 @@ D = { 1 : '( 1.0_wp/c**2*('+ Mi_BC_jmax[1]+' + 0.5_wp*( '+Mi_BC_jmax[3] + ' + ' 
 Src_BC_conv_jmax = { 'rho' : Src_conv['rho']+'+'+ D[1],
                      'u'   : 'u*'+D[1]+' + rho*'+D[3]+' + [ rho*u*v ]_1y',
                      'v'   : 'v*'+D[1]+' + rho*'+D[4]+' + [ rho*v*v ]_1y',
-                     'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+'+rho*u*'+D[3]+'+rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y'}
+                     'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+'+rho*u*'+D[3]+'+rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y', 
+                     'nut' : ' deltaxI*( [ rho*u*nut-visc_t*sigmaI*deltaxI*( { nut }_1x ) ]_1x ) '}
 
 Src_BC_dif_jmax = {}
 for key in Src_dif.keys():
       Src_BC_dif_jmax[key]= Src_dif[key]
-
+Src_BC_dif_jmax['nut']= ' - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) ) \
+                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
 #--Building rhs for bc at jmax
 for key in Src_BC_conv_jmax.keys():
       if key in Src_BC_dif_jmax.keys():

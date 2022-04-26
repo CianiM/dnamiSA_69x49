@@ -25,7 +25,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iVDW = False
     ndim  = 2
     ivar = 1
-    varcont = 1
+    varcont = 4
 
     from pltdnami import loadrstax
 
@@ -110,8 +110,8 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     jbeg = hlo_rhs
     jend = ny-hlo_rhs
 
-    ibeg = 12
-    iend = nx
+    ibeg = 10
+    iend = 50
 
     jbeg = 0
     jend = 20

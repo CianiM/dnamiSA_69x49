@@ -35,7 +35,7 @@ Rho0  = dn.cst(1.0)
 U0    = dn.cst(1.0)        #Reference value of Velocity 
 V0    = dn.cst(0.0)
 T0    = dn.cst(1.0)        #Reference value of Temperature
-nut0  = dn.cst(0.000025)
+nut0  = dn.cst(3.0)
 
 
 
@@ -91,7 +91,7 @@ dtree['eqns']['coeff'][16][1] = dn.cst(2)                     #Ct4
 dtree['eqns']['coeff'][17][1] = dn.cst(3.0/2.0)             #sigmaI
 dtree['eqns']['coeff'][18][1] = dn.cst(0.25)                  #esse
 dtree['eqns']['coeff'][19][1] = dn.cst(1.0)                   #L_ref
-dtree['eqns']['coeff'][20][1] = dn.cst(110.4)                 #suth constant
+dtree['eqns']['coeff'][20][1] = dn.cst(110.4/300)                 #suth constant
 dtree['eqns']['coeff'][21][1] = dn.cst(L)                     #Reference Length
 dtree['eqns']['coeff'][22][1] = dn.cst(1.4)                   #Gamma 
 dtree['eqns']['coeff'][23][1] = Rho0                          #Gamma 
