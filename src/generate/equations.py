@@ -62,27 +62,30 @@ S =   { 'uv' : ' 0.5_wp*( deltayI*( [u]_1y ) - deltaxI*( [v]_1x ) ) ',
 
 #for i in S.keys():
 #    s = s + '('+ S[i] +')**2 + '
-s= '(( ( '+S['uv'] + ' )**2 + ' + '( '+S['vu'] +' )**2 )*2)**0.5'
+#s= '(( ( '+S['uv'] + ' )**2 + ' + '( '+S['vu'] +' )**2 )*2)**0.5'
+#s= ' ( ( 4*( '+S['uv']+' )**2 )**0.5 )'
+s= ' ( 2.0_wp*( dabs( '+S['uv']+') ) ) '
 print(s)
 
 varloc       = {'p': ' (gamma_m1)*rho*(e) ',
                 'e': ' (et-0.5_wp*(u*u+v*v)) ',
                 'chi': ' (  nut/visc*rho ) ',
-                'visc': ' ( 1 + sut )/( T + sut )*T**1.5 ',                #Sutherland's law
-                'fv1': ' ( chi**3 /( chi**3 + Cv1** 3) ) ',
+#                'visc': ' ( 1 + sut )/( T + sut )*T**1.5 ',                #Sutherland's law
+                'visc' : '1.0_wp',
+                'fv1': ' ( chi**3.0_wp /( chi**3.0_wp + Cv1**3.0_wp) ) ',
                 'nu' : ' ( nut*fv1 ) ',                                         #Adimensional turbulent viscosity
-                'visc_t' : '  ( visc )*( 1 + fv1*chi )*ReI ',                    #Sum of adim dynamic viscosity and turbulent viscosity
-                'fv2': ' ( 1-chi/( 1 + chi*fv1) ) ',
-                'ft2': ' ( Ct3*exp(-Ct4*chi**2) ) ',
-                'fw' : ' ( gg*( 1+Cw3**6 )/( gg**6+Cw3**6) ) ',
-                'gg' : ' ( rr + Cw2*( rr**6-rr ) ) ',
-                'rr' : ' ( min( ( nut/(SS*k**2*eta**2) ), 10 ) ) ' ,
+                'visc_t' : '  ( visc )*( 1.0_wp + fv1*chi )*ReI ',                    #Sum of adim dynamic viscosity and turbulent viscosity
+                'fv2': ' ( 1.0_wp - chi/( 1.0_wp + chi*fv1) ) ',
+                'ft2': ' ( Ct3*exp(-Ct4*chi**2.0_wp) ) ',
+                'fw' : ' ( g*( ( 1.0_wp + Cw3**6.0_wp )/( g**6.0_wp + Cw3**6.0_wp) )**( 1.0_wp/6.0_wp ) ) ',
+                'g' : ' ( r + Cw2*( r**6.0_wp-r ) ) ',
+                'r' : ' ( min( ReI*( nut/(SS*k**2.0_wp*eta**2.0_wp ) ), 10.0_wp ) )  ' ,
 #                'SS' : ' ( stemp+ReI*nut/(k**2*eta**2) ) ',
                 #'stemp' : s, 
-                'T': ' (e)/Cv ',
+                'T': ' (e)/(Cv) ',
                 #'symm':'( ( sign( 1.0_wp, ksi) - 1.0_wp ) /(-2.0_wp) ) )' ,
-                'wall': ' dabs( 1-symm ) ',
-                'c'   : ' ( gamma*p/rho ) '}
+                'wall': ' dabs( 1.0_wp-symm ) ',
+                'c'   : ' ( gamma*p/rho )**0.5 '}
 
 varstored   = { 'd'  : {'symb' : ' d '  ,
                                  'ind': 1 ,
@@ -139,12 +142,21 @@ varstored   = { 'd'  : {'symb' : ' d '  ,
 #                  'wall'       :{'symb'  : ' dabs( 1-symm ) ',
 #                                           'ind':17,
 #                                           'static':True},
-                  'SS'         :{'symb'  : ' ( stemp+ReI*nut/(k**2*eta**2) ) ',
+                  'SS'         :{'symb'  : ' ( stemp + fv2*ReI*nut/(k**2.0_wp*eta**2.0_wp) ) ',
                                            'ind':12,
                                            'static':False},
                   'tau_wall'   :{'symb'  : ' ( visc_t*( [u]_1y )*deltayI )',
                                            'ind': 13,
-                                           'static':False }}
+                                           'static':False },
+                  'visc_SA'  :{'symb'  : 'nut*rho',
+                                           'ind':14,
+                                           'static':False},
+                  'visc_turb'  :{'symb'  : 'nut*rho*fv1',
+                                           'ind':15,
+                                           'static':False},
+                  'Pressure'   :{'symb'  :'(gamma_m1)*rho*(e)',
+                                          'ind':16,
+                                          'static':False}}
 #                  'viscosità'  : {'symb' : ' ( 1 + sut )/( T + sut )*T**1.5 ',
 #                                           'ind' : 19,
 #                                           'static' : False}}
@@ -238,8 +250,8 @@ Src_dif  = {}
 for key in Fx.keys():
     Src_dif[key]= 'deltaxI*( [ ' + Fx[key] +' ]_1x )' + ' + ' + 'deltayI *( [ '+ Fy[key]  +' ]_1y ) '
 
-Src_dif['nut'] = ' - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x )+ (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
-                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
+Src_dif['nut'] = ' - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) + (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
+                   - Cb1*(1.0_wp-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2.0_wp*ft2)*rho*nut**2.0_wp/eta**2.0_wp '
 
 #--RHS--
 Src_rhs={}

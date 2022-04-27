@@ -42,5 +42,5 @@
 
 qface_i(ny+4-1,2) =  (q(nx+4+0,ny+4-1,indvars(2))/(param_float(23 + 5)*(param_float(3 + 5))*q(nx+4+0,ny+4-1,indvars(1))*((q(nx+4+0,ny+4-1,indvars(4))-&
                     0.5_wp*(q(nx+4+0,ny+4-1,indvars(2))*q(nx+4+0,ny+4-1,indvars(2))+&
-                    q(nx+4+0,ny+4-1,indvars(3))*q(nx+4+0,ny+4-1,indvars(3)))))/q(nx+4+0,ny+4-1,indvars(1))))
+                    q(nx+4+0,ny+4-1,indvars(3))*q(nx+4+0,ny+4-1,indvars(3)))))/q(nx+4+0,ny+4-1,indvars(1)))**0.5)
 

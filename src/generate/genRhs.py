@@ -13,7 +13,7 @@ from  equations  import *
 instpath = os.environ['INSTALLPATH']
 incPATH  = instpath+'/src_for/includes/gen/'
 
-hlo_glob = 6
+hlo_glob = 4
 
 def main():
       
@@ -33,7 +33,7 @@ def main():
 #    append_Rhs(Src_rhs, 5, 4, rhsname, locname_rhs, update=False,rhs=rhs)       
 
 # Generate Filters (if required):      
-    genFilter(3,2, len(varsolved),rhs=rhs)     #No filter required
+    genFilter(5,4, len(varsolved),rhs=rhs)     #No filter required
 
 # Generate BCs:
     genBC(Src_conv ,3,2,rhsname , locname_conv, update=False,rhs=rhs,stored=False)

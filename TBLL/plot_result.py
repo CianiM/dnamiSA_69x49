@@ -110,11 +110,11 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     jbeg = hlo_rhs
     jend = ny-hlo_rhs
 
-    ibeg = 10
-    iend = 50
+    ibeg = 0
+    iend = iend
 
     jbeg = 0
-    jend = 20
+    jend = 30
 
     if iAnim :
 

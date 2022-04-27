@@ -119,4 +119,22 @@
             ,d2_rhs_et_dydy_10_0_nxp4m3nyp4p0m2k_nxp4m3nyp4p0m2m1k,d2_rhs_et_dydy_10_0_nxp4m3nyp4p0m2k_nxp4m3nyp4p0m2p0k,d2_rhs_et_dydy_10_0_nxp4m3nyp4p0m2k_nxp4m3nyp4p0m2p1k &
             ,d2_rhs_et_dydy_10_0_nxp4m3nyp4p0m2k &
             ,d1_rhs_et_dy_10_nxp4m3nyp4p0p0k,d1_rhs_et_dy_10_nxp4m3nyp4p0m1k,d1_rhs_et_dy_10_nxp4m3nyp4p0m2k &
-            ,d1_rhs_et_dy_10_nxp4m3nyp4p0k 
+            ,d1_rhs_et_dy_10_nxp4m3nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m3nyp4p0k_nxp4m3m3m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m3nyp4p0k_nxp4m3m3p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m3nyp4p0k_nxp4m3m3p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m3nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m2nyp4p0k_nxp4m3m2m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m2nyp4p0k_nxp4m3m2p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m2nyp4p0k_nxp4m3m2p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m2nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m1nyp4p0k_nxp4m3m1m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m1nyp4p0k_nxp4m3m1p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3m1nyp4p0k_nxp4m3m1p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3m1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p1nyp4p0k_nxp4m3p1m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p1nyp4p0k_nxp4m3p1p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p1nyp4p0k_nxp4m3p1p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p2nyp4p0k_nxp4m3p2m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p2nyp4p0k_nxp4m3p2p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p2nyp4p0k_nxp4m3p2p1nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p2nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p3nyp4p0k_nxp4m3p3p0nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p3nyp4p0k_nxp4m3p3m1nyp4p0k,d2_rhs_nut_dxdx_0_0_nxp4m3p3nyp4p0k_nxp4m3p3m2nyp4p0k &
+            ,d2_rhs_nut_dxdx_0_0_nxp4m3p3nyp4p0k &
+            ,d1_rhs_nut_dx_1_nxp4m3m1nyp4p0k,d1_rhs_nut_dx_1_nxp4m3p0nyp4p0k,d1_rhs_nut_dx_1_nxp4m3p1nyp4p0k &
+            ,d1_rhs_nut_dx_1_nxp4m3nyp4p0k &
+            ,d1_rhs_nut_dx_2_nxp4m3m1nyp4p0k,d1_rhs_nut_dx_2_nxp4m3p0nyp4p0k,d1_rhs_nut_dx_2_nxp4m3p1nyp4p0k &
+            ,d1_rhs_nut_dx_2_nxp4m3nyp4p0k &
+            ,d1_rhs_nut_dx_0_nxp4m3m1nyp4p0k,d1_rhs_nut_dx_0_nxp4m3p0nyp4p0k,d1_rhs_nut_dx_0_nxp4m3p1nyp4p0k &
+            ,d1_rhs_nut_dx_0_nxp4m3nyp4p0k 

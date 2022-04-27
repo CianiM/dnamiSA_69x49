@@ -49,7 +49,7 @@ P0 = dn.cst(U0**2/(gamma*Rho0*Ma**2))                   #Pressure at the inlet
 #T0 = dn.cst(P0/(Rho0*(gamma-1)*Cv))
 et0 = dn.cst(U0**2*( Cv*T0 + 0.5))
 
-filtr_amp = dn.cst(0.5)    # filter amplitude
+filtr_amp = dn.cst(0.3)    # filter amplitude
 
 # ... in time ...
 with_dt = dn.cst(1e-9)
@@ -71,23 +71,23 @@ with_proc     = [1,1] # mpi proc. topology
 dtree = dn.create_tree()
 
 # .. assign user-defined values
-dtree['eqns']['coeff'][0][1] = dn.cst(1.0/Re)
-dtree['eqns']['coeff'][1][1] = dn.cst(1.0/( (gamma-1.0)*Ma**2*Re*Pr ))
-dtree['eqns']['coeff'][2][1] = dn.cst(gamma-1.)
-dtree['eqns']['coeff'][3][1] = Cv
-dtree['eqns']['coeff'][4][1] = U0                    #Uref
-dtree['eqns']['coeff'][5][1] = dn.cst(0.1355)                 #Cb1
+dtree['eqns']['coeff'][0][1] = dn.cst(1.0/Re)                #ReI
+dtree['eqns']['coeff'][1][1] = dn.cst(1.0/( (gamma-1.0)*Ma**2*Re*Pr ))  #Pr
+dtree['eqns']['coeff'][2][1] = dn.cst(gamma-1.)               #gammam1
+dtree['eqns']['coeff'][3][1] = Cv                             #Cv 
+dtree['eqns']['coeff'][4][1] = U0                             #Uref
+dtree['eqns']['coeff'][5][1] = dn.cst(0.1335)                 #Cb1
 dtree['eqns']['coeff'][6][1] = dn.cst(0.622)                  #Cb2
-dtree['eqns']['coeff'][7][1] = dn.cst(2.0/3)                  #sigma
+dtree['eqns']['coeff'][7][1] = dn.cst(2.0/3.0)                #sigma
 dtree['eqns']['coeff'][8][1] = dn.cst(0.41)                   #k
-dtree['eqns']['coeff'][9][1] = dn.cst(0.1355/0.41**2+(1+0.622)/2.0/3) #Cw1
+dtree['eqns']['coeff'][9][1] = dn.cst(0.1335/0.41**2.0 + (1.0+0.622)*3.0/2.0 ) #Cw1
 dtree['eqns']['coeff'][10][1] = dn.cst(0.3)                   #Cw2
-dtree['eqns']['coeff'][11][1] = dn.cst(2)                     #Cw3
+dtree['eqns']['coeff'][11][1] = dn.cst(2.0)                   #Cw3
 dtree['eqns']['coeff'][12][1] = dn.cst(7.1)                   #Cv1
 dtree['eqns']['coeff'][13][1] = dn.cst(1)                     #Ct1
 dtree['eqns']['coeff'][14][1] = dn.cst(2)                     #Ct2
 dtree['eqns']['coeff'][15][1] = dn.cst(1.1)                   #Ct3
-dtree['eqns']['coeff'][16][1] = dn.cst(2)                     #Ct4
+dtree['eqns']['coeff'][16][1] = dn.cst(2.0)                   #Ct4
 dtree['eqns']['coeff'][17][1] = dn.cst(3.0/2.0)             #sigmaI
 dtree['eqns']['coeff'][18][1] = dn.cst(0.25)                  #esse
 dtree['eqns']['coeff'][19][1] = dn.cst(1.0)                   #L_ref
@@ -164,6 +164,11 @@ v = dtree['eqns']['qvec']['views']['v']
 et = dtree['eqns']['qvec']['views']['et']
 nut = dtree['eqns']['qvec']['views']['nut']
 tau_wall = dtree['eqns']['qvec']['views']['tau_wall']
+deltaxI = dtree['eqns']['qvec']['views']['deltaxI']
+deltayI = dtree['eqns']['qvec']['views']['deltayI']
+visc_SA = dtree['eqns']['qvec']['views']['visc_SA']
+visc_turb = dtree['eqns']['qvec']['views']['visc_turb']
+Pressure = dtree['eqns']['qvec']['views']['Pressure']
 
 xx=np.zeros((69,49))
 yy=np.zeros((69,49))
@@ -182,14 +187,13 @@ with open('y_coord.dat','r') as f:
     for i in np.arange(0,69):
 #        eta[i,:]=dat
         yy[i,:]=dat
-yy[:,0]=1e-8
+yy[:,0]=0.5e-6
 #ksi[:,:] = gridNASA[0,dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 #eta[:,:] = gridNASA[1,dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 ksi[:,:] = xx[dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 eta[:,:] = yy[dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 
-deltaxI = dtree['eqns']['qvec']['views']['deltaxI']
-deltayI = dtree['eqns']['qvec']['views']['deltayI']
+
 
 #-- Ccoeff 
 #fw = dtree['eqns']['qvec']['views']['fw']
@@ -244,7 +248,7 @@ dMpi.swap(q,hlo,dtree)
 
 # -- Write the first restart
 dn.dnami_io.write_restart(0,ti,0,dtree)
-field = ['rho','u','v','et','nut','tau_wall']
+field = ['rho','u','v','et','nut','tau_wall','visc_SA','visc_turb','Pressure']
 path= './output/output'
 write_data(field,path,0,0,dtree)
 # ========================================================================= RUN
@@ -260,7 +264,7 @@ if 'qstored' in dtree['eqns']['qvec']['views'].keys():
 
 mod_filter = 1
 mod_output = 500000
-mod_info   = 100000.
+mod_info   = 1.
 
 
 for n in range(1,nitmax+1):

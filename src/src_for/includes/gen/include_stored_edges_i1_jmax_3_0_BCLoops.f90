@@ -27,7 +27,7 @@
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (((0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))**2+(0.5_wp*(deltaxI*([v]_1x)-deltayI*([u]_1y)))**2)*2)**0.5
+! (2.0_wp*(dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -62,10 +62,8 @@ d1_stemp_dy_0_1m4p3nyp4p0k = d1_stemp_dy_0_1m4p3nyp4p0k*param_float(2)
 !***********************************************************
 
 
-qst(1-4+3,ny+4+0,indvarsst(4)) =  (((0.5_wp*(qst(1-4+3,ny+4+0,indvarsst(11))*(d1_stemp_dy_0_1m4p3nyp4p0k)-&
-                    qst(1-4+3,ny+4+0,indvarsst(10))*(d1_stemp_dx_0_1m4p3nyp4p0k)))**2+&
-                    (0.5_wp*(qst(1-4+3,ny+4+0,indvarsst(10))*(d1_stemp_dx_0_1m4p3nyp4p0k)-&
-                    qst(1-4+3,ny+4+0,indvarsst(11))*(d1_stemp_dy_0_1m4p3nyp4p0k)))**2)*2)**0.5
+qst(1-4+3,ny+4+0,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(1-4+3,ny+4+0,indvarsst(11))*(d1_stemp_dy_0_1m4p3nyp4p0k)-&
+                    qst(1-4+3,ny+4+0,indvarsst(10))*(d1_stemp_dx_0_1m4p3nyp4p0k)))))
 
 
 
@@ -78,7 +76,7 @@ qst(1-4+3,ny+4+0,indvarsst(4)) =  (((0.5_wp*(qst(1-4+3,ny+4+0,indvarsst(11))*(d1
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (stemp+ReI*nut/(k**2*eta**2))
+! (stemp+fv2*ReI*nut/(k**2.0_wp*eta**2.0_wp))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -92,7 +90,10 @@ qst(1-4+3,ny+4+0,indvarsst(4)) =  (((0.5_wp*(qst(1-4+3,ny+4+0,indvarsst(11))*(d1
 
 
 qst(1-4+3,ny+4+0,indvarsst(12)) =  (qst(1-4+3,ny+4+0,indvarsst(4))+&
-                    param_float(1 + 5)*q(1-4+3,ny+4+0,indvars(5))/(param_float(9 + 5)**2*qst(1-4+3,ny+4+0,indvarsst(2))**2))
+                    (1.0_wp-&
+                    (q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))/(1.0_wp+&
+                    (q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))*((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp/((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(1-4+3,ny+4+0,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(1-4+3,ny+4+0,indvarsst(2))**2.0_wp))
 
 
 
@@ -118,31 +119,88 @@ qst(1-4+3,ny+4+0,indvarsst(12)) =  (qst(1-4+3,ny+4+0,indvarsst(4))+&
 !***********************************************************
 
 
-qst(1-4+3,ny+4+0,indvarsst(13)) =  (((1+&
-                    param_float(21 + 5))/(((q(1-4+3,ny+4+0,indvars(4))-&
+qst(1-4+3,ny+4+0,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp/((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_1m4p3nyp4p0k)*qst(1-4+3,ny+4+0,indvarsst(11)))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 3 0 None visc_SA **
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut*rho
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 3 0 None visc_SA ***************
+!                                                           
+!***********************************************************
+
+
+qst(1-4+3,ny+4+0,indvarsst(14)) =  q(1-4+3,ny+4+0,indvars(5))*q(1-4+3,ny+4+0,indvars(1))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 3 0 None visc_turb 
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut*rho*fv1
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 3 0 None visc_turb *************
+!                                                           
+!***********************************************************
+
+
+qst(1-4+3,ny+4+0,indvarsst(15)) =  q(1-4+3,ny+4+0,indvars(5))*q(1-4+3,ny+4+0,indvars(1))*((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp/((q(1-4+3,ny+4+0,indvars(5))/1.0_wp*q(1-4+3,ny+4+0,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 3 0 None Pressure *
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (gamma_m1)*rho*(e)
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 3 0 None Pressure **************
+!                                                           
+!***********************************************************
+
+
+qst(1-4+3,ny+4+0,indvarsst(16)) =  (param_float(3 + 5))*q(1-4+3,ny+4+0,indvars(1))*((q(1-4+3,ny+4+0,indvars(4))-&
                     0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)**1.5)*(1+&
-                    ((q(1-4+3,ny+4+0,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)**1.5*q(1-4+3,ny+4+0,indvars(1)))**3/((q(1-4+3,ny+4+0,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)**1.5*q(1-4+3,ny+4+0,indvars(1)))**3+&
-                    param_float(13 + 5)**3))*(q(1-4+3,ny+4+0,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(1-4+3,ny+4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+3,ny+4+0,indvars(2))*q(1-4+3,ny+4+0,indvars(2))+&
-                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))/param_float(4 + 5)**1.5*q(1-4+3,ny+4+0,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_1m4p3nyp4p0k)*qst(1-4+3,ny+4+0,indvarsst(11)))
+                    q(1-4+3,ny+4+0,indvars(3))*q(1-4+3,ny+4+0,indvars(3)))))
 

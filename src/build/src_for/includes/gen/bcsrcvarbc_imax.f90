@@ -151,7 +151,7 @@ idloop(1) = bi
 
 qface_i(j,2) =  (q(nx+4+0,j,indvars(2))/(param_float(23 + 5)*(param_float(3 + 5))*q(nx+4+0,j,indvars(1))*((q(nx+4+0,j,indvars(4))-&
                     0.5_wp*(q(nx+4+0,j,indvars(2))*q(nx+4+0,j,indvars(2))+&
-                    q(nx+4+0,j,indvars(3))*q(nx+4+0,j,indvars(3)))))/q(nx+4+0,j,indvars(1))))
+                    q(nx+4+0,j,indvars(3))*q(nx+4+0,j,indvars(3)))))/q(nx+4+0,j,indvars(1)))**0.5)
 
      enddo
 

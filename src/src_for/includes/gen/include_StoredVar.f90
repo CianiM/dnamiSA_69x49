@@ -21,7 +21,7 @@
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (((0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))**2+(0.5_wp*(deltaxI*([v]_1x)-deltayI*([u]_1y)))**2)*2)**0.5
+! (2.0_wp*(dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -59,15 +59,13 @@ d1_stemp_dy_0_ijk = d1_stemp_dy_0_ijk*param_float(2)
 
 !***********************************************************
 !                                                           
-! Update stored variables (( (  0.5_wp*( deltayI*( [u]_1y ) - deltaxI*( [v]_1x ) )  )**2 + (  0.5_wp*( deltaxI*( [v]_1x ) - deltayI*( [u]_1y ) )  )**2 )*2)**0.5 
+! Update stored variables  ( 2.0_wp*( dabs(  0.5_wp*( deltayI*( [u]_1y ) - deltaxI*( [v]_1x ) ) ) ) )  
 !                                                           
 !***********************************************************
 
 
-qst(i,j,indvarsst(4)) =  (((0.5_wp*(qst(i,j,indvarsst(11))*(d1_stemp_dy_0_ijk)-&
-                    qst(i,j,indvarsst(10))*(d1_stemp_dx_0_ijk)))**2+&
-                    (0.5_wp*(qst(i,j,indvarsst(10))*(d1_stemp_dx_0_ijk)-&
-                    qst(i,j,indvarsst(11))*(d1_stemp_dy_0_ijk)))**2)*2)**0.5
+qst(i,j,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(i,j,indvarsst(11))*(d1_stemp_dy_0_ijk)-&
+                    qst(i,j,indvarsst(10))*(d1_stemp_dx_0_ijk)))))
 
 
 
@@ -80,7 +78,7 @@ qst(i,j,indvarsst(4)) =  (((0.5_wp*(qst(i,j,indvarsst(11))*(d1_stemp_dy_0_ijk)-&
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (stemp+ReI*nut/(k**2*eta**2))
+! (stemp+fv2*ReI*nut/(k**2.0_wp*eta**2.0_wp))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -88,13 +86,16 @@ qst(i,j,indvarsst(4)) =  (((0.5_wp*(qst(i,j,indvarsst(11))*(d1_stemp_dy_0_ijk)-&
 
 !***********************************************************
 !                                                           
-! Update stored variables  ( stemp+ReI*nut/(k**2*eta**2) )  
+! Update stored variables  ( stemp + fv2*ReI*nut/(k**2.0_wp*eta**2.0_wp) )  
 !                                                           
 !***********************************************************
 
 
 qst(i,j,indvarsst(12)) =  (qst(i,j,indvarsst(4))+&
-                    param_float(1 + 5)*q(i,j,indvars(5))/(param_float(9 + 5)**2*qst(i,j,indvarsst(2))**2))
+                    (1.0_wp-&
+                    (q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))/(1.0_wp+&
+                    (q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))*((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp/((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(i,j,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp))
 
 
 
@@ -120,33 +121,90 @@ qst(i,j,indvarsst(12)) =  (qst(i,j,indvarsst(4))+&
 !***********************************************************
 
 
-qst(i,j,indvarsst(13)) =  (((1+&
-                    param_float(21 + 5))/(((q(i,j,indvars(4))-&
+qst(i,j,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp/((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_ijk)*qst(i,j,indvarsst(11)))
+
+
+
+!***********************************************************
+!                                                           
+! building stored variable visc_SA *************************
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut*rho
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update stored variables nut*rho **************************
+!                                                           
+!***********************************************************
+
+
+qst(i,j,indvarsst(14)) =  q(i,j,indvars(5))*q(i,j,indvars(1))
+
+
+
+!***********************************************************
+!                                                           
+! building stored variable visc_turb ***********************
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut*rho*fv1
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update stored variables nut*rho*fv1 **********************
+!                                                           
+!***********************************************************
+
+
+qst(i,j,indvarsst(15)) =  q(i,j,indvars(5))*q(i,j,indvars(1))*((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp/((q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building stored variable Pressure ************************
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (gamma_m1)*rho*(e)
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update stored variables (gamma_m1)*rho*(e) ***************
+!                                                           
+!***********************************************************
+
+
+qst(i,j,indvarsst(16)) =  (param_float(3 + 5))*q(i,j,indvars(1))*((q(i,j,indvars(4))-&
                     0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)**1.5)*(1+&
-                    ((q(i,j,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)**1.5*q(i,j,indvars(1)))**3/((q(i,j,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)**1.5*q(i,j,indvars(1)))**3+&
-                    param_float(13 + 5)**3))*(q(i,j,indvars(5))/(1+&
-                    param_float(21 + 5))/(((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)+&
-                    param_float(21 + 5))*((q(i,j,indvars(4))-&
-                    0.5_wp*(q(i,j,indvars(2))*q(i,j,indvars(2))+&
-                    q(i,j,indvars(3))*q(i,j,indvars(3)))))/param_float(4 + 5)**1.5*q(i,j,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_ijk)*qst(i,j,indvarsst(11)))
+                    q(i,j,indvars(3))*q(i,j,indvars(3)))))
 
      enddo
    enddo
