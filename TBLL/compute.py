@@ -263,8 +263,8 @@ if 'qstored' in dtree['eqns']['qvec']['views'].keys():
     dMpi.swap(qstored,hlo,dtree)
 
 mod_filter = 1
-mod_output = 500000
-mod_info   = 1.
+mod_output = 100000
+mod_info   = 100000.
 
 
 for n in range(1,nitmax+1):
@@ -378,6 +378,7 @@ for n in range(1,nitmax+1):
         dn.dnami_io.globalMinMax(dtree,u,'u')
         dn.dnami_io.globalMinMax(dtree,v,'v')
         dn.dnami_io.globalMinMax(dtree,et,'et')
+        dn.dnami_io.globalMinMax(dtree,et,'nut')
         if dMpi.ioproc:
             print('convective CFL numbers')
             sys.stdout.flush()
