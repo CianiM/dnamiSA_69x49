@@ -13,7 +13,7 @@ from  equations  import *
 instpath = os.environ['INSTALLPATH']
 incPATH  = instpath+'/src_for/includes/gen/'
 
-hlo_glob = 4
+hlo_glob = 2
 
 def main():
       
@@ -36,8 +36,8 @@ def main():
     genFilter(5,4, len(varsolved),rhs=rhs)     #No filter required
 
 # Generate BCs:
-    genBC(Src_conv ,3,2,rhsname , locname_conv, update=False,rhs=rhs,stored=False)
-    genBC(Src_dif  ,3,2,rhsname , locname_dif , update=True ,rhs=rhs,stored=True)
+    genBC(Src_conv ,3,2,rhsname , locname_conv, update=False,rhs=rhs,stored=True)
+    genBC(Src_dif  ,3,2,rhsname , locname_dif , update=True ,rhs=rhs)
 #    genBC(Src_rhs ,3,2,rhsname , locname_rhs, update=False,rhs=rhs,stored=False)
     #--j1
     genBC(Src_BC_phy_j1  ,3,2,rhsname , locname_bc, setbc=[True,{'Low_surf':{'j1':['q']}}]  , update=False,rhs=rhs)

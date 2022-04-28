@@ -1,21 +1,11 @@
 
 
- real(wp) ::  d1_stemp_dx_0_im11m4p0k,d1_stemp_dx_0_ip01m4p0k,d1_stemp_dx_0_ip11m4p0k &
-            ,d1_stemp_dx_0_i1m4p0k &
-            ,d1_stemp_dy_0_i1m4p0p0k,d1_stemp_dy_0_i1m4p0p1k,d1_stemp_dy_0_i1m4p0p2k &
-            ,d1_stemp_dy_0_i1m4p0k 
+ real(wp) ::  d1_stemp_dx_0_im11m2p0k,d1_stemp_dx_0_ip01m2p0k,d1_stemp_dx_0_ip11m2p0k &
+            ,d1_stemp_dx_0_i1m2p0k &
+            ,d1_stemp_dy_0_i1m2p0p0k,d1_stemp_dy_0_i1m2p0p1k,d1_stemp_dy_0_i1m2p0p2k &
+            ,d1_stemp_dy_0_i1m2p0k 
 
- real(wp) ::  d1_stemp_dx_0_im11m4p1k,d1_stemp_dx_0_ip01m4p1k,d1_stemp_dx_0_ip11m4p1k &
-            ,d1_stemp_dx_0_i1m4p1k &
-            ,d1_stemp_dy_0_i1m4p1m1k,d1_stemp_dy_0_i1m4p1p0k,d1_stemp_dy_0_i1m4p1p1k &
-            ,d1_stemp_dy_0_i1m4p1k 
-
- real(wp) ::  d1_stemp_dx_0_im11m4p2k,d1_stemp_dx_0_ip01m4p2k,d1_stemp_dx_0_ip11m4p2k &
-            ,d1_stemp_dx_0_i1m4p2k &
-            ,d1_stemp_dy_0_i1m4p2m1k,d1_stemp_dy_0_i1m4p2p0k,d1_stemp_dy_0_i1m4p2p1k &
-            ,d1_stemp_dy_0_i1m4p2k 
-
- real(wp) ::  d1_stemp_dx_0_im11m4p3k,d1_stemp_dx_0_ip01m4p3k,d1_stemp_dx_0_ip11m4p3k &
-            ,d1_stemp_dx_0_i1m4p3k &
-            ,d1_stemp_dy_0_i1m4p3m1k,d1_stemp_dy_0_i1m4p3p0k,d1_stemp_dy_0_i1m4p3p1k &
-            ,d1_stemp_dy_0_i1m4p3k 
+ real(wp) ::  d1_stemp_dx_0_im11m2p1k,d1_stemp_dx_0_ip01m2p1k,d1_stemp_dx_0_ip11m2p1k &
+            ,d1_stemp_dx_0_i1m2p1k &
+            ,d1_stemp_dy_0_i1m2p1m1k,d1_stemp_dy_0_i1m2p1p0k,d1_stemp_dy_0_i1m2p1p1k &
+            ,d1_stemp_dy_0_i1m2p1k 

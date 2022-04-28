@@ -31,27 +31,27 @@
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_stemp_dx_0_nxp4p0p0nyp4m1k = q(nx+4+0+0,ny+4-1,indvars(3))
+d1_stemp_dx_0_nxp2p0p0nyp2m1k = q(nx+2+0+0,ny+2-1,indvars(3))
 
-d1_stemp_dx_0_nxp4p0m1nyp4m1k = q(nx+4+0-1,ny+4-1,indvars(3))
+d1_stemp_dx_0_nxp2p0m1nyp2m1k = q(nx+2+0-1,ny+2-1,indvars(3))
 
-d1_stemp_dx_0_nxp4p0m2nyp4m1k = q(nx+4+0-2,ny+4-1,indvars(3))
+d1_stemp_dx_0_nxp2p0m2nyp2m1k = q(nx+2+0-2,ny+2-1,indvars(3))
 
-d1_stemp_dx_0_nxp4p0nyp4m1k = 1.5_wp*d1_stemp_dx_0_nxp4p0p0nyp4m1k-&
-          2.0_wp*d1_stemp_dx_0_nxp4p0m1nyp4m1k+&
-          0.5_wp*d1_stemp_dx_0_nxp4p0m2nyp4m1k
+d1_stemp_dx_0_nxp2p0nyp2m1k = 1.5_wp*d1_stemp_dx_0_nxp2p0p0nyp2m1k-&
+          2.0_wp*d1_stemp_dx_0_nxp2p0m1nyp2m1k+&
+          0.5_wp*d1_stemp_dx_0_nxp2p0m2nyp2m1k
 
-d1_stemp_dx_0_nxp4p0nyp4m1k = d1_stemp_dx_0_nxp4p0nyp4m1k*param_float(1)
+d1_stemp_dx_0_nxp2p0nyp2m1k = d1_stemp_dx_0_nxp2p0nyp2m1k*param_float(1)
 
-d1_stemp_dy_0_nxp4p0nyp4m1m1k = q(nx+4+0,ny+4-1-1,indvars(2))
+d1_stemp_dy_0_nxp2p0nyp2m1m1k = q(nx+2+0,ny+2-1-1,indvars(2))
 
-d1_stemp_dy_0_nxp4p0nyp4m1p1k = q(nx+4+0,ny+4-1+1,indvars(2))
+d1_stemp_dy_0_nxp2p0nyp2m1p1k = q(nx+2+0,ny+2-1+1,indvars(2))
 
-d1_stemp_dy_0_nxp4p0nyp4m1k = -&
-          0.5_wp*d1_stemp_dy_0_nxp4p0nyp4m1m1k+&
-          0.5_wp*d1_stemp_dy_0_nxp4p0nyp4m1p1k
+d1_stemp_dy_0_nxp2p0nyp2m1k = -&
+          0.5_wp*d1_stemp_dy_0_nxp2p0nyp2m1m1k+&
+          0.5_wp*d1_stemp_dy_0_nxp2p0nyp2m1p1k
 
-d1_stemp_dy_0_nxp4p0nyp4m1k = d1_stemp_dy_0_nxp4p0nyp4m1k*param_float(2)
+d1_stemp_dy_0_nxp2p0nyp2m1k = d1_stemp_dy_0_nxp2p0nyp2m1k*param_float(2)
 
 
 
@@ -62,8 +62,8 @@ d1_stemp_dy_0_nxp4p0nyp4m1k = d1_stemp_dy_0_nxp4p0nyp4m1k*param_float(2)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+4+0,ny+4-1,indvarsst(11))*(d1_stemp_dy_0_nxp4p0nyp4m1k)-&
-                    qst(nx+4+0,ny+4-1,indvarsst(10))*(d1_stemp_dx_0_nxp4p0nyp4m1k)))))
+qst(nx+2+0,ny+2-1,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+2+0,ny+2-1,indvarsst(11))*(d1_stemp_dy_0_nxp2p0nyp2m1k)-&
+                    qst(nx+2+0,ny+2-1,indvarsst(10))*(d1_stemp_dx_0_nxp2p0nyp2m1k)))))
 
 
 
@@ -89,11 +89,11 @@ qst(nx+4+0,ny+4-1,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+4+0,ny+4-1,indva
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(12)) =  (qst(nx+4+0,ny+4-1,indvarsst(4))+&
+qst(nx+2+0,ny+2-1,indvarsst(12)) =  (qst(nx+2+0,ny+2-1,indvarsst(4))+&
                     (1.0_wp-&
-                    (q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))/(1.0_wp+&
-                    (q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))*((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp/((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(nx+4+0,ny+4-1,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(nx+4+0,ny+4-1,indvarsst(2))**2.0_wp))
+                    (q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))/(1.0_wp+&
+                    (q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))*((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp/((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(nx+2+0,ny+2-1,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(nx+2+0,ny+2-1,indvarsst(2))**2.0_wp))
 
 
 
@@ -119,9 +119,9 @@ qst(nx+4+0,ny+4-1,indvarsst(12)) =  (qst(nx+4+0,ny+4-1,indvarsst(4))+&
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
-                    ((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp/((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_nxp4p0nyp4m1k)*qst(nx+4+0,ny+4-1,indvarsst(11)))
+qst(nx+2+0,ny+2-1,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp/((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_nxp2p0nyp2m1k)*qst(nx+2+0,ny+2-1,indvarsst(11)))
 
 
 
@@ -147,7 +147,7 @@ qst(nx+4+0,ny+4-1,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(14)) =  q(nx+4+0,ny+4-1,indvars(5))*q(nx+4+0,ny+4-1,indvars(1))
+qst(nx+2+0,ny+2-1,indvarsst(14)) =  q(nx+2+0,ny+2-1,indvars(5))*q(nx+2+0,ny+2-1,indvars(1))
 
 
 
@@ -173,7 +173,7 @@ qst(nx+4+0,ny+4-1,indvarsst(14)) =  q(nx+4+0,ny+4-1,indvars(5))*q(nx+4+0,ny+4-1,
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(15)) =  q(nx+4+0,ny+4-1,indvars(5))*q(nx+4+0,ny+4-1,indvars(1))*((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp/((q(nx+4+0,ny+4-1,indvars(5))/1.0_wp*q(nx+4+0,ny+4-1,indvars(1)))**3.0_wp+&
+qst(nx+2+0,ny+2-1,indvarsst(15)) =  q(nx+2+0,ny+2-1,indvars(5))*q(nx+2+0,ny+2-1,indvars(1))*((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp/((q(nx+2+0,ny+2-1,indvars(5))/1.0_wp*q(nx+2+0,ny+2-1,indvars(1)))**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))
 
 
@@ -200,7 +200,7 @@ qst(nx+4+0,ny+4-1,indvarsst(15)) =  q(nx+4+0,ny+4-1,indvars(5))*q(nx+4+0,ny+4-1,
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(16)) =  (param_float(3 + 5))*q(nx+4+0,ny+4-1,indvars(1))*((q(nx+4+0,ny+4-1,indvars(4))-&
-                    0.5_wp*(q(nx+4+0,ny+4-1,indvars(2))*q(nx+4+0,ny+4-1,indvars(2))+&
-                    q(nx+4+0,ny+4-1,indvars(3))*q(nx+4+0,ny+4-1,indvars(3)))))
+qst(nx+2+0,ny+2-1,indvarsst(16)) =  (param_float(3 + 5))*q(nx+2+0,ny+2-1,indvars(1))*((q(nx+2+0,ny+2-1,indvars(4))-&
+                    0.5_wp*(q(nx+2+0,ny+2-1,indvars(2))*q(nx+2+0,ny+2-1,indvars(2))+&
+                    q(nx+2+0,ny+2-1,indvars(3))*q(nx+2+0,ny+2-1,indvars(3)))))
 

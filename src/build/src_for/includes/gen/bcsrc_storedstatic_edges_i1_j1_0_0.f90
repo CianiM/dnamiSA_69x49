@@ -70,14 +70,14 @@ real(wp),intent(inout) :: qface_i(idarray(3):idarray(4),nvar_f(1)),&
 
 
 
- real(wp) ::  d1_detady_dy_0_1m4p01m4p0p0k,d1_detady_dy_0_1m4p01m4p0p1k,d1_detady_dy_0_1m4p01m4p0p2k &
-            ,d1_detady_dy_0_1m4p01m4p0k &
-            ,d1_dksidy_dy_0_1m4p01m4p0p0k,d1_dksidy_dy_0_1m4p01m4p0p1k,d1_dksidy_dy_0_1m4p01m4p0p2k &
-            ,d1_dksidy_dy_0_1m4p01m4p0k &
-            ,d1_detadx_dx_0_1m4p0p01m4p0k,d1_detadx_dx_0_1m4p0p11m4p0k,d1_detadx_dx_0_1m4p0p21m4p0k &
-            ,d1_detadx_dx_0_1m4p01m4p0k &
-            ,d1_dksidx_dx_0_1m4p0p01m4p0k,d1_dksidx_dx_0_1m4p0p11m4p0k,d1_dksidx_dx_0_1m4p0p21m4p0k &
-            ,d1_dksidx_dx_0_1m4p01m4p0k 
+ real(wp) ::  d1_detady_dy_0_1m2p01m2p0p0k,d1_detady_dy_0_1m2p01m2p0p1k,d1_detady_dy_0_1m2p01m2p0p2k &
+            ,d1_detady_dy_0_1m2p01m2p0k &
+            ,d1_dksidy_dy_0_1m2p01m2p0p0k,d1_dksidy_dy_0_1m2p01m2p0p1k,d1_dksidy_dy_0_1m2p01m2p0p2k &
+            ,d1_dksidy_dy_0_1m2p01m2p0k &
+            ,d1_detadx_dx_0_1m2p0p01m2p0k,d1_detadx_dx_0_1m2p0p11m2p0k,d1_detadx_dx_0_1m2p0p21m2p0k &
+            ,d1_detadx_dx_0_1m2p01m2p0k &
+            ,d1_dksidx_dx_0_1m2p0p01m2p0k,d1_dksidx_dx_0_1m2p0p11m2p0k,d1_dksidx_dx_0_1m2p0p21m2p0k &
+            ,d1_dksidx_dx_0_1m2p01m2p0k 
 
   integer :: indvars(neq),indvarsst(neqst)
 
@@ -158,7 +158,7 @@ idloop(1) = bi
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(1)) =  qst(1-4+0,1-4+0,indvarsst(1))
+qst(1-2+0,1-2+0,indvarsst(1)) =  qst(1-2+0,1-2+0,indvarsst(1))
 
 
 
@@ -184,7 +184,7 @@ qst(1-4+0,1-4+0,indvarsst(1)) =  qst(1-4+0,1-4+0,indvarsst(1))
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(2)) =  qst(1-4+0,1-4+0,indvarsst(2))
+qst(1-2+0,1-2+0,indvarsst(2)) =  qst(1-2+0,1-2+0,indvarsst(2))
 
 
 
@@ -210,7 +210,7 @@ qst(1-4+0,1-4+0,indvarsst(2)) =  qst(1-4+0,1-4+0,indvarsst(2))
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(3)) =  qst(1-4+0,1-4+0,indvarsst(3))
+qst(1-2+0,1-2+0,indvarsst(3)) =  qst(1-2+0,1-2+0,indvarsst(3))
 
 
 
@@ -236,7 +236,7 @@ qst(1-4+0,1-4+0,indvarsst(3)) =  qst(1-4+0,1-4+0,indvarsst(3))
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(5)) =  ((sign(1.0_wp,qst(1-4+0,1-4+0,indvarsst(3)))-&
+qst(1-2+0,1-2+0,indvarsst(5)) =  ((sign(1.0_wp,qst(1-2+0,1-2+0,indvarsst(3)))-&
                     1.0_wp)/(-&
                     2.0_wp))
 
@@ -255,18 +255,18 @@ qst(1-4+0,1-4+0,indvarsst(5)) =  ((sign(1.0_wp,qst(1-4+0,1-4+0,indvarsst(3)))-&
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detady_dy_0_1m4p01m4p0p0k = qst(1-4+0,1-4+0+0,indvarsst(2))
+d1_detady_dy_0_1m2p01m2p0p0k = qst(1-2+0,1-2+0+0,indvarsst(2))
 
-d1_detady_dy_0_1m4p01m4p0p1k = qst(1-4+0,1-4+0+1,indvarsst(2))
+d1_detady_dy_0_1m2p01m2p0p1k = qst(1-2+0,1-2+0+1,indvarsst(2))
 
-d1_detady_dy_0_1m4p01m4p0p2k = qst(1-4+0,1-4+0+2,indvarsst(2))
+d1_detady_dy_0_1m2p01m2p0p2k = qst(1-2+0,1-2+0+2,indvarsst(2))
 
-d1_detady_dy_0_1m4p01m4p0k = -&
-          1.5_wp*d1_detady_dy_0_1m4p01m4p0p0k+&
-          2.0_wp*d1_detady_dy_0_1m4p01m4p0p1k-&
-          0.5_wp*d1_detady_dy_0_1m4p01m4p0p2k
+d1_detady_dy_0_1m2p01m2p0k = -&
+          1.5_wp*d1_detady_dy_0_1m2p01m2p0p0k+&
+          2.0_wp*d1_detady_dy_0_1m2p01m2p0p1k-&
+          0.5_wp*d1_detady_dy_0_1m2p01m2p0p2k
 
-d1_detady_dy_0_1m4p01m4p0k = d1_detady_dy_0_1m4p01m4p0k*param_float(2)
+d1_detady_dy_0_1m2p01m2p0k = d1_detady_dy_0_1m2p01m2p0k*param_float(2)
 
 
 
@@ -277,7 +277,7 @@ d1_detady_dy_0_1m4p01m4p0k = d1_detady_dy_0_1m4p01m4p0k*param_float(2)
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(6)) =  d1_detady_dy_0_1m4p01m4p0k
+qst(1-2+0,1-2+0,indvarsst(6)) =  d1_detady_dy_0_1m2p01m2p0k
 
 
 
@@ -294,18 +294,18 @@ qst(1-4+0,1-4+0,indvarsst(6)) =  d1_detady_dy_0_1m4p01m4p0k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidy_dy_0_1m4p01m4p0p0k = qst(1-4+0,1-4+0+0,indvarsst(3))
+d1_dksidy_dy_0_1m2p01m2p0p0k = qst(1-2+0,1-2+0+0,indvarsst(3))
 
-d1_dksidy_dy_0_1m4p01m4p0p1k = qst(1-4+0,1-4+0+1,indvarsst(3))
+d1_dksidy_dy_0_1m2p01m2p0p1k = qst(1-2+0,1-2+0+1,indvarsst(3))
 
-d1_dksidy_dy_0_1m4p01m4p0p2k = qst(1-4+0,1-4+0+2,indvarsst(3))
+d1_dksidy_dy_0_1m2p01m2p0p2k = qst(1-2+0,1-2+0+2,indvarsst(3))
 
-d1_dksidy_dy_0_1m4p01m4p0k = -&
-          1.5_wp*d1_dksidy_dy_0_1m4p01m4p0p0k+&
-          2.0_wp*d1_dksidy_dy_0_1m4p01m4p0p1k-&
-          0.5_wp*d1_dksidy_dy_0_1m4p01m4p0p2k
+d1_dksidy_dy_0_1m2p01m2p0k = -&
+          1.5_wp*d1_dksidy_dy_0_1m2p01m2p0p0k+&
+          2.0_wp*d1_dksidy_dy_0_1m2p01m2p0p1k-&
+          0.5_wp*d1_dksidy_dy_0_1m2p01m2p0p2k
 
-d1_dksidy_dy_0_1m4p01m4p0k = d1_dksidy_dy_0_1m4p01m4p0k*param_float(2)
+d1_dksidy_dy_0_1m2p01m2p0k = d1_dksidy_dy_0_1m2p01m2p0k*param_float(2)
 
 
 
@@ -316,7 +316,7 @@ d1_dksidy_dy_0_1m4p01m4p0k = d1_dksidy_dy_0_1m4p01m4p0k*param_float(2)
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(7)) =  d1_dksidy_dy_0_1m4p01m4p0k
+qst(1-2+0,1-2+0,indvarsst(7)) =  d1_dksidy_dy_0_1m2p01m2p0k
 
 
 
@@ -333,18 +333,18 @@ qst(1-4+0,1-4+0,indvarsst(7)) =  d1_dksidy_dy_0_1m4p01m4p0k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detadx_dx_0_1m4p0p01m4p0k = qst(1-4+0+0,1-4+0,indvarsst(2))
+d1_detadx_dx_0_1m2p0p01m2p0k = qst(1-2+0+0,1-2+0,indvarsst(2))
 
-d1_detadx_dx_0_1m4p0p11m4p0k = qst(1-4+0+1,1-4+0,indvarsst(2))
+d1_detadx_dx_0_1m2p0p11m2p0k = qst(1-2+0+1,1-2+0,indvarsst(2))
 
-d1_detadx_dx_0_1m4p0p21m4p0k = qst(1-4+0+2,1-4+0,indvarsst(2))
+d1_detadx_dx_0_1m2p0p21m2p0k = qst(1-2+0+2,1-2+0,indvarsst(2))
 
-d1_detadx_dx_0_1m4p01m4p0k = -&
-          1.5_wp*d1_detadx_dx_0_1m4p0p01m4p0k+&
-          2.0_wp*d1_detadx_dx_0_1m4p0p11m4p0k-&
-          0.5_wp*d1_detadx_dx_0_1m4p0p21m4p0k
+d1_detadx_dx_0_1m2p01m2p0k = -&
+          1.5_wp*d1_detadx_dx_0_1m2p0p01m2p0k+&
+          2.0_wp*d1_detadx_dx_0_1m2p0p11m2p0k-&
+          0.5_wp*d1_detadx_dx_0_1m2p0p21m2p0k
 
-d1_detadx_dx_0_1m4p01m4p0k = d1_detadx_dx_0_1m4p01m4p0k*param_float(1)
+d1_detadx_dx_0_1m2p01m2p0k = d1_detadx_dx_0_1m2p01m2p0k*param_float(1)
 
 
 
@@ -355,7 +355,7 @@ d1_detadx_dx_0_1m4p01m4p0k = d1_detadx_dx_0_1m4p01m4p0k*param_float(1)
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(8)) =  d1_detadx_dx_0_1m4p01m4p0k
+qst(1-2+0,1-2+0,indvarsst(8)) =  d1_detadx_dx_0_1m2p01m2p0k
 
 
 
@@ -372,18 +372,18 @@ qst(1-4+0,1-4+0,indvarsst(8)) =  d1_detadx_dx_0_1m4p01m4p0k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidx_dx_0_1m4p0p01m4p0k = qst(1-4+0+0,1-4+0,indvarsst(3))
+d1_dksidx_dx_0_1m2p0p01m2p0k = qst(1-2+0+0,1-2+0,indvarsst(3))
 
-d1_dksidx_dx_0_1m4p0p11m4p0k = qst(1-4+0+1,1-4+0,indvarsst(3))
+d1_dksidx_dx_0_1m2p0p11m2p0k = qst(1-2+0+1,1-2+0,indvarsst(3))
 
-d1_dksidx_dx_0_1m4p0p21m4p0k = qst(1-4+0+2,1-4+0,indvarsst(3))
+d1_dksidx_dx_0_1m2p0p21m2p0k = qst(1-2+0+2,1-2+0,indvarsst(3))
 
-d1_dksidx_dx_0_1m4p01m4p0k = -&
-          1.5_wp*d1_dksidx_dx_0_1m4p0p01m4p0k+&
-          2.0_wp*d1_dksidx_dx_0_1m4p0p11m4p0k-&
-          0.5_wp*d1_dksidx_dx_0_1m4p0p21m4p0k
+d1_dksidx_dx_0_1m2p01m2p0k = -&
+          1.5_wp*d1_dksidx_dx_0_1m2p0p01m2p0k+&
+          2.0_wp*d1_dksidx_dx_0_1m2p0p11m2p0k-&
+          0.5_wp*d1_dksidx_dx_0_1m2p0p21m2p0k
 
-d1_dksidx_dx_0_1m4p01m4p0k = d1_dksidx_dx_0_1m4p01m4p0k*param_float(1)
+d1_dksidx_dx_0_1m2p01m2p0k = d1_dksidx_dx_0_1m2p01m2p0k*param_float(1)
 
 
 
@@ -394,7 +394,7 @@ d1_dksidx_dx_0_1m4p01m4p0k = d1_dksidx_dx_0_1m4p01m4p0k*param_float(1)
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(9)) =  (d1_dksidx_dx_0_1m4p01m4p0k)
+qst(1-2+0,1-2+0,indvarsst(9)) =  (d1_dksidx_dx_0_1m2p01m2p0k)
 
 
 
@@ -420,7 +420,7 @@ qst(1-4+0,1-4+0,indvarsst(9)) =  (d1_dksidx_dx_0_1m4p01m4p0k)
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(10)) =  1.0_wp/(qst(1-4+0,1-4+0,indvarsst(9)))
+qst(1-2+0,1-2+0,indvarsst(10)) =  1.0_wp/(qst(1-2+0,1-2+0,indvarsst(9)))
 
 
 
@@ -446,7 +446,7 @@ qst(1-4+0,1-4+0,indvarsst(10)) =  1.0_wp/(qst(1-4+0,1-4+0,indvarsst(9)))
 !***********************************************************
 
 
-qst(1-4+0,1-4+0,indvarsst(11)) =  1.0_wp/(qst(1-4+0,1-4+0,indvarsst(6)))
+qst(1-2+0,1-2+0,indvarsst(11)) =  1.0_wp/(qst(1-2+0,1-2+0,indvarsst(6)))
 
 
     enddo ! END cache blocking i

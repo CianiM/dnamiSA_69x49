@@ -148,7 +148,7 @@ idloop(1) = bi
 !***********************************************************
 
 
-q(1-4+0,ny+4+0,indvars(1)) =  param_float(24 + 5)
+q(1-2+0,ny+2+0,indvars(1)) =  param_float(24 + 5)
 
 
 
@@ -174,7 +174,7 @@ q(1-4+0,ny+4+0,indvars(1)) =  param_float(24 + 5)
 !***********************************************************
 
 
-q(1-4+0,ny+4+0,indvars(2)) =  param_float(5 + 5)
+q(1-2+0,ny+2+0,indvars(2)) =  param_float(5 + 5)
 
 
 
@@ -200,7 +200,7 @@ q(1-4+0,ny+4+0,indvars(2)) =  param_float(5 + 5)
 !***********************************************************
 
 
-q(1-4+0,ny+4+0,indvars(3)) =  0.0_wp
+q(1-2+0,ny+2+0,indvars(3)) =  0.0_wp
 
 
 
@@ -226,7 +226,7 @@ q(1-4+0,ny+4+0,indvars(3)) =  0.0_wp
 !***********************************************************
 
 
-q(1-4+0,ny+4+0,indvars(4)) =  param_float(25 + 5)*param_float(4 + 5)+&
+q(1-2+0,ny+2+0,indvars(4)) =  param_float(25 + 5)*param_float(4 + 5)+&
                     0.5_wp*(param_float(5 + 5)**2)
 
 
@@ -253,7 +253,7 @@ q(1-4+0,ny+4+0,indvars(4)) =  param_float(25 + 5)*param_float(4 + 5)+&
 !***********************************************************
 
 
-q(1-4+0,ny+4+0,indvars(5)) =  param_float(27 + 5)
+q(1-2+0,ny+2+0,indvars(5)) =  param_float(27 + 5)
 
 
     enddo ! END cache blocking i

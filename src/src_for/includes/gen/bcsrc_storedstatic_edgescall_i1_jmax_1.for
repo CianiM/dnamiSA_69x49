@@ -47,8 +47,6 @@ subroutine boundarySchemestoredstatic_edges_i1_jmax_1(param_float,hlo,ind,idarra
 
       call  boundarySchemestoredstatic_edges_i1_jmax_1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestoredstatic_edges_i1_jmax_1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_jmax_1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_jmax_1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 
 
 

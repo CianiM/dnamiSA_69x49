@@ -40,7 +40,7 @@
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(1)) =  qst(nx+4+0,ny+4-1,indvarsst(1))
+qst(nx+2+0,ny+2-1,indvarsst(1)) =  qst(nx+2+0,ny+2-1,indvarsst(1))
 
 
 
@@ -66,7 +66,7 @@ qst(nx+4+0,ny+4-1,indvarsst(1)) =  qst(nx+4+0,ny+4-1,indvarsst(1))
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(2)) =  qst(nx+4+0,ny+4-1,indvarsst(2))
+qst(nx+2+0,ny+2-1,indvarsst(2)) =  qst(nx+2+0,ny+2-1,indvarsst(2))
 
 
 
@@ -92,7 +92,7 @@ qst(nx+4+0,ny+4-1,indvarsst(2)) =  qst(nx+4+0,ny+4-1,indvarsst(2))
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(3)) =  qst(nx+4+0,ny+4-1,indvarsst(3))
+qst(nx+2+0,ny+2-1,indvarsst(3)) =  qst(nx+2+0,ny+2-1,indvarsst(3))
 
 
 
@@ -118,7 +118,7 @@ qst(nx+4+0,ny+4-1,indvarsst(3)) =  qst(nx+4+0,ny+4-1,indvarsst(3))
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4+0,ny+4-1,indvarsst(3)))-&
+qst(nx+2+0,ny+2-1,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+2+0,ny+2-1,indvarsst(3)))-&
                     1.0_wp)/(-&
                     2.0_wp))
 
@@ -137,15 +137,15 @@ qst(nx+4+0,ny+4-1,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4+0,ny+4-1,indvarsst(3))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detady_dy_0_nxp4p0nyp4m1m1k = qst(nx+4+0,ny+4-1-1,indvarsst(2))
+d1_detady_dy_0_nxp2p0nyp2m1m1k = qst(nx+2+0,ny+2-1-1,indvarsst(2))
 
-d1_detady_dy_0_nxp4p0nyp4m1p1k = qst(nx+4+0,ny+4-1+1,indvarsst(2))
+d1_detady_dy_0_nxp2p0nyp2m1p1k = qst(nx+2+0,ny+2-1+1,indvarsst(2))
 
-d1_detady_dy_0_nxp4p0nyp4m1k = -&
-          0.5_wp*d1_detady_dy_0_nxp4p0nyp4m1m1k+&
-          0.5_wp*d1_detady_dy_0_nxp4p0nyp4m1p1k
+d1_detady_dy_0_nxp2p0nyp2m1k = -&
+          0.5_wp*d1_detady_dy_0_nxp2p0nyp2m1m1k+&
+          0.5_wp*d1_detady_dy_0_nxp2p0nyp2m1p1k
 
-d1_detady_dy_0_nxp4p0nyp4m1k = d1_detady_dy_0_nxp4p0nyp4m1k*param_float(2)
+d1_detady_dy_0_nxp2p0nyp2m1k = d1_detady_dy_0_nxp2p0nyp2m1k*param_float(2)
 
 
 
@@ -156,7 +156,7 @@ d1_detady_dy_0_nxp4p0nyp4m1k = d1_detady_dy_0_nxp4p0nyp4m1k*param_float(2)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(6)) =  d1_detady_dy_0_nxp4p0nyp4m1k
+qst(nx+2+0,ny+2-1,indvarsst(6)) =  d1_detady_dy_0_nxp2p0nyp2m1k
 
 
 
@@ -173,15 +173,15 @@ qst(nx+4+0,ny+4-1,indvarsst(6)) =  d1_detady_dy_0_nxp4p0nyp4m1k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidy_dy_0_nxp4p0nyp4m1m1k = qst(nx+4+0,ny+4-1-1,indvarsst(3))
+d1_dksidy_dy_0_nxp2p0nyp2m1m1k = qst(nx+2+0,ny+2-1-1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4p0nyp4m1p1k = qst(nx+4+0,ny+4-1+1,indvarsst(3))
+d1_dksidy_dy_0_nxp2p0nyp2m1p1k = qst(nx+2+0,ny+2-1+1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4p0nyp4m1k = -&
-          0.5_wp*d1_dksidy_dy_0_nxp4p0nyp4m1m1k+&
-          0.5_wp*d1_dksidy_dy_0_nxp4p0nyp4m1p1k
+d1_dksidy_dy_0_nxp2p0nyp2m1k = -&
+          0.5_wp*d1_dksidy_dy_0_nxp2p0nyp2m1m1k+&
+          0.5_wp*d1_dksidy_dy_0_nxp2p0nyp2m1p1k
 
-d1_dksidy_dy_0_nxp4p0nyp4m1k = d1_dksidy_dy_0_nxp4p0nyp4m1k*param_float(2)
+d1_dksidy_dy_0_nxp2p0nyp2m1k = d1_dksidy_dy_0_nxp2p0nyp2m1k*param_float(2)
 
 
 
@@ -192,7 +192,7 @@ d1_dksidy_dy_0_nxp4p0nyp4m1k = d1_dksidy_dy_0_nxp4p0nyp4m1k*param_float(2)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(7)) =  d1_dksidy_dy_0_nxp4p0nyp4m1k
+qst(nx+2+0,ny+2-1,indvarsst(7)) =  d1_dksidy_dy_0_nxp2p0nyp2m1k
 
 
 
@@ -209,17 +209,17 @@ qst(nx+4+0,ny+4-1,indvarsst(7)) =  d1_dksidy_dy_0_nxp4p0nyp4m1k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detadx_dx_0_nxp4p0p0nyp4m1k = qst(nx+4+0+0,ny+4-1,indvarsst(2))
+d1_detadx_dx_0_nxp2p0p0nyp2m1k = qst(nx+2+0+0,ny+2-1,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0m1nyp4m1k = qst(nx+4+0-1,ny+4-1,indvarsst(2))
+d1_detadx_dx_0_nxp2p0m1nyp2m1k = qst(nx+2+0-1,ny+2-1,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0m2nyp4m1k = qst(nx+4+0-2,ny+4-1,indvarsst(2))
+d1_detadx_dx_0_nxp2p0m2nyp2m1k = qst(nx+2+0-2,ny+2-1,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0nyp4m1k = 1.5_wp*d1_detadx_dx_0_nxp4p0p0nyp4m1k-&
-          2.0_wp*d1_detadx_dx_0_nxp4p0m1nyp4m1k+&
-          0.5_wp*d1_detadx_dx_0_nxp4p0m2nyp4m1k
+d1_detadx_dx_0_nxp2p0nyp2m1k = 1.5_wp*d1_detadx_dx_0_nxp2p0p0nyp2m1k-&
+          2.0_wp*d1_detadx_dx_0_nxp2p0m1nyp2m1k+&
+          0.5_wp*d1_detadx_dx_0_nxp2p0m2nyp2m1k
 
-d1_detadx_dx_0_nxp4p0nyp4m1k = d1_detadx_dx_0_nxp4p0nyp4m1k*param_float(1)
+d1_detadx_dx_0_nxp2p0nyp2m1k = d1_detadx_dx_0_nxp2p0nyp2m1k*param_float(1)
 
 
 
@@ -230,7 +230,7 @@ d1_detadx_dx_0_nxp4p0nyp4m1k = d1_detadx_dx_0_nxp4p0nyp4m1k*param_float(1)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(8)) =  d1_detadx_dx_0_nxp4p0nyp4m1k
+qst(nx+2+0,ny+2-1,indvarsst(8)) =  d1_detadx_dx_0_nxp2p0nyp2m1k
 
 
 
@@ -247,17 +247,17 @@ qst(nx+4+0,ny+4-1,indvarsst(8)) =  d1_detadx_dx_0_nxp4p0nyp4m1k
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidx_dx_0_nxp4p0p0nyp4m1k = qst(nx+4+0+0,ny+4-1,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0p0nyp2m1k = qst(nx+2+0+0,ny+2-1,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0m1nyp4m1k = qst(nx+4+0-1,ny+4-1,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0m1nyp2m1k = qst(nx+2+0-1,ny+2-1,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0m2nyp4m1k = qst(nx+4+0-2,ny+4-1,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0m2nyp2m1k = qst(nx+2+0-2,ny+2-1,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0nyp4m1k = 1.5_wp*d1_dksidx_dx_0_nxp4p0p0nyp4m1k-&
-          2.0_wp*d1_dksidx_dx_0_nxp4p0m1nyp4m1k+&
-          0.5_wp*d1_dksidx_dx_0_nxp4p0m2nyp4m1k
+d1_dksidx_dx_0_nxp2p0nyp2m1k = 1.5_wp*d1_dksidx_dx_0_nxp2p0p0nyp2m1k-&
+          2.0_wp*d1_dksidx_dx_0_nxp2p0m1nyp2m1k+&
+          0.5_wp*d1_dksidx_dx_0_nxp2p0m2nyp2m1k
 
-d1_dksidx_dx_0_nxp4p0nyp4m1k = d1_dksidx_dx_0_nxp4p0nyp4m1k*param_float(1)
+d1_dksidx_dx_0_nxp2p0nyp2m1k = d1_dksidx_dx_0_nxp2p0nyp2m1k*param_float(1)
 
 
 
@@ -268,7 +268,7 @@ d1_dksidx_dx_0_nxp4p0nyp4m1k = d1_dksidx_dx_0_nxp4p0nyp4m1k*param_float(1)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4p0nyp4m1k)
+qst(nx+2+0,ny+2-1,indvarsst(9)) =  (d1_dksidx_dx_0_nxp2p0nyp2m1k)
 
 
 
@@ -294,7 +294,7 @@ qst(nx+4+0,ny+4-1,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4p0nyp4m1k)
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(10)) =  1.0_wp/(qst(nx+4+0,ny+4-1,indvarsst(9)))
+qst(nx+2+0,ny+2-1,indvarsst(10)) =  1.0_wp/(qst(nx+2+0,ny+2-1,indvarsst(9)))
 
 
 
@@ -320,5 +320,5 @@ qst(nx+4+0,ny+4-1,indvarsst(10)) =  1.0_wp/(qst(nx+4+0,ny+4-1,indvarsst(9)))
 !***********************************************************
 
 
-qst(nx+4+0,ny+4-1,indvarsst(11)) =  1.0_wp/(qst(nx+4+0,ny+4-1,indvarsst(6)))
+qst(nx+2+0,ny+2-1,indvarsst(11)) =  1.0_wp/(qst(nx+2+0,ny+2-1,indvarsst(6)))
 

@@ -70,41 +70,23 @@ real(wp),intent(inout) :: qface_i(idarray(3):idarray(4),nvar_f(1)),&
 
 
 
- real(wp) ::  d1_detady_dy_0_nxp4p0jm1k,d1_detady_dy_0_nxp4p0jp0k,d1_detady_dy_0_nxp4p0jp1k &
-            ,d1_detady_dy_0_nxp4p0jk &
-            ,d1_dksidy_dy_0_nxp4p0jm1k,d1_dksidy_dy_0_nxp4p0jp0k,d1_dksidy_dy_0_nxp4p0jp1k &
-            ,d1_dksidy_dy_0_nxp4p0jk &
-            ,d1_detadx_dx_0_nxp4p0p0jk,d1_detadx_dx_0_nxp4p0m1jk,d1_detadx_dx_0_nxp4p0m2jk &
-            ,d1_detadx_dx_0_nxp4p0jk &
-            ,d1_dksidx_dx_0_nxp4p0p0jk,d1_dksidx_dx_0_nxp4p0m1jk,d1_dksidx_dx_0_nxp4p0m2jk &
-            ,d1_dksidx_dx_0_nxp4p0jk 
+ real(wp) ::  d1_detady_dy_0_nxp2p0jm1k,d1_detady_dy_0_nxp2p0jp0k,d1_detady_dy_0_nxp2p0jp1k &
+            ,d1_detady_dy_0_nxp2p0jk &
+            ,d1_dksidy_dy_0_nxp2p0jm1k,d1_dksidy_dy_0_nxp2p0jp0k,d1_dksidy_dy_0_nxp2p0jp1k &
+            ,d1_dksidy_dy_0_nxp2p0jk &
+            ,d1_detadx_dx_0_nxp2p0p0jk,d1_detadx_dx_0_nxp2p0m1jk,d1_detadx_dx_0_nxp2p0m2jk &
+            ,d1_detadx_dx_0_nxp2p0jk &
+            ,d1_dksidx_dx_0_nxp2p0p0jk,d1_dksidx_dx_0_nxp2p0m1jk,d1_dksidx_dx_0_nxp2p0m2jk &
+            ,d1_dksidx_dx_0_nxp2p0jk 
 
- real(wp) ::  d1_detady_dy_0_nxp4m1jm1k,d1_detady_dy_0_nxp4m1jp0k,d1_detady_dy_0_nxp4m1jp1k &
-            ,d1_detady_dy_0_nxp4m1jk &
-            ,d1_dksidy_dy_0_nxp4m1jm1k,d1_dksidy_dy_0_nxp4m1jp0k,d1_dksidy_dy_0_nxp4m1jp1k &
-            ,d1_dksidy_dy_0_nxp4m1jk &
-            ,d1_detadx_dx_0_nxp4m1m1jk,d1_detadx_dx_0_nxp4m1p0jk,d1_detadx_dx_0_nxp4m1p1jk &
-            ,d1_detadx_dx_0_nxp4m1jk &
-            ,d1_dksidx_dx_0_nxp4m1m1jk,d1_dksidx_dx_0_nxp4m1p0jk,d1_dksidx_dx_0_nxp4m1p1jk &
-            ,d1_dksidx_dx_0_nxp4m1jk 
-
- real(wp) ::  d1_detady_dy_0_nxp4m2jm1k,d1_detady_dy_0_nxp4m2jp0k,d1_detady_dy_0_nxp4m2jp1k &
-            ,d1_detady_dy_0_nxp4m2jk &
-            ,d1_dksidy_dy_0_nxp4m2jm1k,d1_dksidy_dy_0_nxp4m2jp0k,d1_dksidy_dy_0_nxp4m2jp1k &
-            ,d1_dksidy_dy_0_nxp4m2jk &
-            ,d1_detadx_dx_0_nxp4m2m1jk,d1_detadx_dx_0_nxp4m2p0jk,d1_detadx_dx_0_nxp4m2p1jk &
-            ,d1_detadx_dx_0_nxp4m2jk &
-            ,d1_dksidx_dx_0_nxp4m2m1jk,d1_dksidx_dx_0_nxp4m2p0jk,d1_dksidx_dx_0_nxp4m2p1jk &
-            ,d1_dksidx_dx_0_nxp4m2jk 
-
- real(wp) ::  d1_detady_dy_0_nxp4m3jm1k,d1_detady_dy_0_nxp4m3jp0k,d1_detady_dy_0_nxp4m3jp1k &
-            ,d1_detady_dy_0_nxp4m3jk &
-            ,d1_dksidy_dy_0_nxp4m3jm1k,d1_dksidy_dy_0_nxp4m3jp0k,d1_dksidy_dy_0_nxp4m3jp1k &
-            ,d1_dksidy_dy_0_nxp4m3jk &
-            ,d1_detadx_dx_0_nxp4m3m1jk,d1_detadx_dx_0_nxp4m3p0jk,d1_detadx_dx_0_nxp4m3p1jk &
-            ,d1_detadx_dx_0_nxp4m3jk &
-            ,d1_dksidx_dx_0_nxp4m3m1jk,d1_dksidx_dx_0_nxp4m3p0jk,d1_dksidx_dx_0_nxp4m3p1jk &
-            ,d1_dksidx_dx_0_nxp4m3jk 
+ real(wp) ::  d1_detady_dy_0_nxp2m1jm1k,d1_detady_dy_0_nxp2m1jp0k,d1_detady_dy_0_nxp2m1jp1k &
+            ,d1_detady_dy_0_nxp2m1jk &
+            ,d1_dksidy_dy_0_nxp2m1jm1k,d1_dksidy_dy_0_nxp2m1jp0k,d1_dksidy_dy_0_nxp2m1jp1k &
+            ,d1_dksidy_dy_0_nxp2m1jk &
+            ,d1_detadx_dx_0_nxp2m1m1jk,d1_detadx_dx_0_nxp2m1p0jk,d1_detadx_dx_0_nxp2m1p1jk &
+            ,d1_detadx_dx_0_nxp2m1jk &
+            ,d1_dksidx_dx_0_nxp2m1m1jk,d1_dksidx_dx_0_nxp2m1p0jk,d1_dksidx_dx_0_nxp2m1p1jk &
+            ,d1_dksidx_dx_0_nxp2m1jk 
 
   integer :: indvars(neq),indvarsst(neqst)
 
@@ -186,7 +168,7 @@ idloop(1) = bi
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(1)) =  qst(nx+4+0,j,indvarsst(1))
+qst(nx+2+0,j,indvarsst(1)) =  qst(nx+2+0,j,indvarsst(1))
 
 
 
@@ -212,7 +194,7 @@ qst(nx+4+0,j,indvarsst(1)) =  qst(nx+4+0,j,indvarsst(1))
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(2)) =  qst(nx+4+0,j,indvarsst(2))
+qst(nx+2+0,j,indvarsst(2)) =  qst(nx+2+0,j,indvarsst(2))
 
 
 
@@ -238,7 +220,7 @@ qst(nx+4+0,j,indvarsst(2)) =  qst(nx+4+0,j,indvarsst(2))
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(3)) =  qst(nx+4+0,j,indvarsst(3))
+qst(nx+2+0,j,indvarsst(3)) =  qst(nx+2+0,j,indvarsst(3))
 
 
 
@@ -264,7 +246,7 @@ qst(nx+4+0,j,indvarsst(3)) =  qst(nx+4+0,j,indvarsst(3))
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4+0,j,indvarsst(3)))-&
+qst(nx+2+0,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+2+0,j,indvarsst(3)))-&
                     1.0_wp)/(-&
                     2.0_wp))
 
@@ -283,15 +265,15 @@ qst(nx+4+0,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4+0,j,indvarsst(3)))-&
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detady_dy_0_nxp4p0jm1k = qst(nx+4+0,j-1,indvarsst(2))
+d1_detady_dy_0_nxp2p0jm1k = qst(nx+2+0,j-1,indvarsst(2))
 
-d1_detady_dy_0_nxp4p0jp1k = qst(nx+4+0,j+1,indvarsst(2))
+d1_detady_dy_0_nxp2p0jp1k = qst(nx+2+0,j+1,indvarsst(2))
 
-d1_detady_dy_0_nxp4p0jk = -&
-          0.5_wp*d1_detady_dy_0_nxp4p0jm1k+&
-          0.5_wp*d1_detady_dy_0_nxp4p0jp1k
+d1_detady_dy_0_nxp2p0jk = -&
+          0.5_wp*d1_detady_dy_0_nxp2p0jm1k+&
+          0.5_wp*d1_detady_dy_0_nxp2p0jp1k
 
-d1_detady_dy_0_nxp4p0jk = d1_detady_dy_0_nxp4p0jk*param_float(2)
+d1_detady_dy_0_nxp2p0jk = d1_detady_dy_0_nxp2p0jk*param_float(2)
 
 
 
@@ -302,7 +284,7 @@ d1_detady_dy_0_nxp4p0jk = d1_detady_dy_0_nxp4p0jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(6)) =  d1_detady_dy_0_nxp4p0jk
+qst(nx+2+0,j,indvarsst(6)) =  d1_detady_dy_0_nxp2p0jk
 
 
 
@@ -319,15 +301,15 @@ qst(nx+4+0,j,indvarsst(6)) =  d1_detady_dy_0_nxp4p0jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidy_dy_0_nxp4p0jm1k = qst(nx+4+0,j-1,indvarsst(3))
+d1_dksidy_dy_0_nxp2p0jm1k = qst(nx+2+0,j-1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4p0jp1k = qst(nx+4+0,j+1,indvarsst(3))
+d1_dksidy_dy_0_nxp2p0jp1k = qst(nx+2+0,j+1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4p0jk = -&
-          0.5_wp*d1_dksidy_dy_0_nxp4p0jm1k+&
-          0.5_wp*d1_dksidy_dy_0_nxp4p0jp1k
+d1_dksidy_dy_0_nxp2p0jk = -&
+          0.5_wp*d1_dksidy_dy_0_nxp2p0jm1k+&
+          0.5_wp*d1_dksidy_dy_0_nxp2p0jp1k
 
-d1_dksidy_dy_0_nxp4p0jk = d1_dksidy_dy_0_nxp4p0jk*param_float(2)
+d1_dksidy_dy_0_nxp2p0jk = d1_dksidy_dy_0_nxp2p0jk*param_float(2)
 
 
 
@@ -338,7 +320,7 @@ d1_dksidy_dy_0_nxp4p0jk = d1_dksidy_dy_0_nxp4p0jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4p0jk
+qst(nx+2+0,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp2p0jk
 
 
 
@@ -355,17 +337,17 @@ qst(nx+4+0,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4p0jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detadx_dx_0_nxp4p0p0jk = qst(nx+4+0+0,j,indvarsst(2))
+d1_detadx_dx_0_nxp2p0p0jk = qst(nx+2+0+0,j,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0m1jk = qst(nx+4+0-1,j,indvarsst(2))
+d1_detadx_dx_0_nxp2p0m1jk = qst(nx+2+0-1,j,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0m2jk = qst(nx+4+0-2,j,indvarsst(2))
+d1_detadx_dx_0_nxp2p0m2jk = qst(nx+2+0-2,j,indvarsst(2))
 
-d1_detadx_dx_0_nxp4p0jk = 1.5_wp*d1_detadx_dx_0_nxp4p0p0jk-&
-          2.0_wp*d1_detadx_dx_0_nxp4p0m1jk+&
-          0.5_wp*d1_detadx_dx_0_nxp4p0m2jk
+d1_detadx_dx_0_nxp2p0jk = 1.5_wp*d1_detadx_dx_0_nxp2p0p0jk-&
+          2.0_wp*d1_detadx_dx_0_nxp2p0m1jk+&
+          0.5_wp*d1_detadx_dx_0_nxp2p0m2jk
 
-d1_detadx_dx_0_nxp4p0jk = d1_detadx_dx_0_nxp4p0jk*param_float(1)
+d1_detadx_dx_0_nxp2p0jk = d1_detadx_dx_0_nxp2p0jk*param_float(1)
 
 
 
@@ -376,7 +358,7 @@ d1_detadx_dx_0_nxp4p0jk = d1_detadx_dx_0_nxp4p0jk*param_float(1)
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4p0jk
+qst(nx+2+0,j,indvarsst(8)) =  d1_detadx_dx_0_nxp2p0jk
 
 
 
@@ -393,17 +375,17 @@ qst(nx+4+0,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4p0jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidx_dx_0_nxp4p0p0jk = qst(nx+4+0+0,j,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0p0jk = qst(nx+2+0+0,j,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0m1jk = qst(nx+4+0-1,j,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0m1jk = qst(nx+2+0-1,j,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0m2jk = qst(nx+4+0-2,j,indvarsst(3))
+d1_dksidx_dx_0_nxp2p0m2jk = qst(nx+2+0-2,j,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4p0jk = 1.5_wp*d1_dksidx_dx_0_nxp4p0p0jk-&
-          2.0_wp*d1_dksidx_dx_0_nxp4p0m1jk+&
-          0.5_wp*d1_dksidx_dx_0_nxp4p0m2jk
+d1_dksidx_dx_0_nxp2p0jk = 1.5_wp*d1_dksidx_dx_0_nxp2p0p0jk-&
+          2.0_wp*d1_dksidx_dx_0_nxp2p0m1jk+&
+          0.5_wp*d1_dksidx_dx_0_nxp2p0m2jk
 
-d1_dksidx_dx_0_nxp4p0jk = d1_dksidx_dx_0_nxp4p0jk*param_float(1)
+d1_dksidx_dx_0_nxp2p0jk = d1_dksidx_dx_0_nxp2p0jk*param_float(1)
 
 
 
@@ -414,7 +396,7 @@ d1_dksidx_dx_0_nxp4p0jk = d1_dksidx_dx_0_nxp4p0jk*param_float(1)
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4p0jk)
+qst(nx+2+0,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp2p0jk)
 
 
 
@@ -440,7 +422,7 @@ qst(nx+4+0,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4p0jk)
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(10)) =  1.0_wp/(qst(nx+4+0,j,indvarsst(9)))
+qst(nx+2+0,j,indvarsst(10)) =  1.0_wp/(qst(nx+2+0,j,indvarsst(9)))
 
 
 
@@ -466,7 +448,7 @@ qst(nx+4+0,j,indvarsst(10)) =  1.0_wp/(qst(nx+4+0,j,indvarsst(9)))
 !***********************************************************
 
 
-qst(nx+4+0,j,indvarsst(11)) =  1.0_wp/(qst(nx+4+0,j,indvarsst(6)))
+qst(nx+2+0,j,indvarsst(11)) =  1.0_wp/(qst(nx+2+0,j,indvarsst(6)))
 
      enddo
 
@@ -512,7 +494,7 @@ qst(nx+4+0,j,indvarsst(11)) =  1.0_wp/(qst(nx+4+0,j,indvarsst(6)))
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(1)) =  qst(nx+4-1,j,indvarsst(1))
+qst(nx+2-1,j,indvarsst(1)) =  qst(nx+2-1,j,indvarsst(1))
 
 
 
@@ -538,7 +520,7 @@ qst(nx+4-1,j,indvarsst(1)) =  qst(nx+4-1,j,indvarsst(1))
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(2)) =  qst(nx+4-1,j,indvarsst(2))
+qst(nx+2-1,j,indvarsst(2)) =  qst(nx+2-1,j,indvarsst(2))
 
 
 
@@ -564,7 +546,7 @@ qst(nx+4-1,j,indvarsst(2)) =  qst(nx+4-1,j,indvarsst(2))
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(3)) =  qst(nx+4-1,j,indvarsst(3))
+qst(nx+2-1,j,indvarsst(3)) =  qst(nx+2-1,j,indvarsst(3))
 
 
 
@@ -590,7 +572,7 @@ qst(nx+4-1,j,indvarsst(3)) =  qst(nx+4-1,j,indvarsst(3))
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4-1,j,indvarsst(3)))-&
+qst(nx+2-1,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+2-1,j,indvarsst(3)))-&
                     1.0_wp)/(-&
                     2.0_wp))
 
@@ -609,15 +591,15 @@ qst(nx+4-1,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4-1,j,indvarsst(3)))-&
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detady_dy_0_nxp4m1jm1k = qst(nx+4-1,j-1,indvarsst(2))
+d1_detady_dy_0_nxp2m1jm1k = qst(nx+2-1,j-1,indvarsst(2))
 
-d1_detady_dy_0_nxp4m1jp1k = qst(nx+4-1,j+1,indvarsst(2))
+d1_detady_dy_0_nxp2m1jp1k = qst(nx+2-1,j+1,indvarsst(2))
 
-d1_detady_dy_0_nxp4m1jk = -&
-          0.5_wp*d1_detady_dy_0_nxp4m1jm1k+&
-          0.5_wp*d1_detady_dy_0_nxp4m1jp1k
+d1_detady_dy_0_nxp2m1jk = -&
+          0.5_wp*d1_detady_dy_0_nxp2m1jm1k+&
+          0.5_wp*d1_detady_dy_0_nxp2m1jp1k
 
-d1_detady_dy_0_nxp4m1jk = d1_detady_dy_0_nxp4m1jk*param_float(2)
+d1_detady_dy_0_nxp2m1jk = d1_detady_dy_0_nxp2m1jk*param_float(2)
 
 
 
@@ -628,7 +610,7 @@ d1_detady_dy_0_nxp4m1jk = d1_detady_dy_0_nxp4m1jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(6)) =  d1_detady_dy_0_nxp4m1jk
+qst(nx+2-1,j,indvarsst(6)) =  d1_detady_dy_0_nxp2m1jk
 
 
 
@@ -645,15 +627,15 @@ qst(nx+4-1,j,indvarsst(6)) =  d1_detady_dy_0_nxp4m1jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidy_dy_0_nxp4m1jm1k = qst(nx+4-1,j-1,indvarsst(3))
+d1_dksidy_dy_0_nxp2m1jm1k = qst(nx+2-1,j-1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4m1jp1k = qst(nx+4-1,j+1,indvarsst(3))
+d1_dksidy_dy_0_nxp2m1jp1k = qst(nx+2-1,j+1,indvarsst(3))
 
-d1_dksidy_dy_0_nxp4m1jk = -&
-          0.5_wp*d1_dksidy_dy_0_nxp4m1jm1k+&
-          0.5_wp*d1_dksidy_dy_0_nxp4m1jp1k
+d1_dksidy_dy_0_nxp2m1jk = -&
+          0.5_wp*d1_dksidy_dy_0_nxp2m1jm1k+&
+          0.5_wp*d1_dksidy_dy_0_nxp2m1jp1k
 
-d1_dksidy_dy_0_nxp4m1jk = d1_dksidy_dy_0_nxp4m1jk*param_float(2)
+d1_dksidy_dy_0_nxp2m1jk = d1_dksidy_dy_0_nxp2m1jk*param_float(2)
 
 
 
@@ -664,7 +646,7 @@ d1_dksidy_dy_0_nxp4m1jk = d1_dksidy_dy_0_nxp4m1jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4m1jk
+qst(nx+2-1,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp2m1jk
 
 
 
@@ -681,15 +663,15 @@ qst(nx+4-1,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4m1jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_detadx_dx_0_nxp4m1m1jk = qst(nx+4-1-1,j,indvarsst(2))
+d1_detadx_dx_0_nxp2m1m1jk = qst(nx+2-1-1,j,indvarsst(2))
 
-d1_detadx_dx_0_nxp4m1p1jk = qst(nx+4-1+1,j,indvarsst(2))
+d1_detadx_dx_0_nxp2m1p1jk = qst(nx+2-1+1,j,indvarsst(2))
 
-d1_detadx_dx_0_nxp4m1jk = -&
-          0.5_wp*d1_detadx_dx_0_nxp4m1m1jk+&
-          0.5_wp*d1_detadx_dx_0_nxp4m1p1jk
+d1_detadx_dx_0_nxp2m1jk = -&
+          0.5_wp*d1_detadx_dx_0_nxp2m1m1jk+&
+          0.5_wp*d1_detadx_dx_0_nxp2m1p1jk
 
-d1_detadx_dx_0_nxp4m1jk = d1_detadx_dx_0_nxp4m1jk*param_float(1)
+d1_detadx_dx_0_nxp2m1jk = d1_detadx_dx_0_nxp2m1jk*param_float(1)
 
 
 
@@ -700,7 +682,7 @@ d1_detadx_dx_0_nxp4m1jk = d1_detadx_dx_0_nxp4m1jk*param_float(1)
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4m1jk
+qst(nx+2-1,j,indvarsst(8)) =  d1_detadx_dx_0_nxp2m1jk
 
 
 
@@ -717,15 +699,15 @@ qst(nx+4-1,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4m1jk
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_dksidx_dx_0_nxp4m1m1jk = qst(nx+4-1-1,j,indvarsst(3))
+d1_dksidx_dx_0_nxp2m1m1jk = qst(nx+2-1-1,j,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4m1p1jk = qst(nx+4-1+1,j,indvarsst(3))
+d1_dksidx_dx_0_nxp2m1p1jk = qst(nx+2-1+1,j,indvarsst(3))
 
-d1_dksidx_dx_0_nxp4m1jk = -&
-          0.5_wp*d1_dksidx_dx_0_nxp4m1m1jk+&
-          0.5_wp*d1_dksidx_dx_0_nxp4m1p1jk
+d1_dksidx_dx_0_nxp2m1jk = -&
+          0.5_wp*d1_dksidx_dx_0_nxp2m1m1jk+&
+          0.5_wp*d1_dksidx_dx_0_nxp2m1p1jk
 
-d1_dksidx_dx_0_nxp4m1jk = d1_dksidx_dx_0_nxp4m1jk*param_float(1)
+d1_dksidx_dx_0_nxp2m1jk = d1_dksidx_dx_0_nxp2m1jk*param_float(1)
 
 
 
@@ -736,7 +718,7 @@ d1_dksidx_dx_0_nxp4m1jk = d1_dksidx_dx_0_nxp4m1jk*param_float(1)
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4m1jk)
+qst(nx+2-1,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp2m1jk)
 
 
 
@@ -762,7 +744,7 @@ qst(nx+4-1,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4m1jk)
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(10)) =  1.0_wp/(qst(nx+4-1,j,indvarsst(9)))
+qst(nx+2-1,j,indvarsst(10)) =  1.0_wp/(qst(nx+2-1,j,indvarsst(9)))
 
 
 
@@ -788,651 +770,7 @@ qst(nx+4-1,j,indvarsst(10)) =  1.0_wp/(qst(nx+4-1,j,indvarsst(9)))
 !***********************************************************
 
 
-qst(nx+4-1,j,indvarsst(11)) =  1.0_wp/(qst(nx+4-1,j,indvarsst(6)))
-
-     enddo
-
-
-!***********************************************************
-!                                                           
-! Start building layers for BC : imax None None ************
-!                                                           
-!***********************************************************
-
-
-
-
-!***********************************************************
-!                                                           
-! BC layer: 2 None None ************************************
-!                                                           
-!***********************************************************
-
-
-     do j=idloop(3),idloop(4) 
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None d *****
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! d
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None d ******************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(1)) =  qst(nx+4-2,j,indvarsst(1))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None eta ***
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! eta
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None eta ****************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(2)) =  qst(nx+4-2,j,indvarsst(2))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None ksi ***
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ksi
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None ksi ****************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(3)) =  qst(nx+4-2,j,indvarsst(3))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None symm **
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ((sign(1.0_wp,ksi)-1.0_wp)/(-2.0_wp))
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None symm ***************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4-2,j,indvarsst(3)))-&
-                    1.0_wp)/(-&
-                    2.0_wp))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None detady 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [eta]_1y
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_detady_dy_0_nxp4m2jm1k = qst(nx+4-2,j-1,indvarsst(2))
-
-d1_detady_dy_0_nxp4m2jp1k = qst(nx+4-2,j+1,indvarsst(2))
-
-d1_detady_dy_0_nxp4m2jk = -&
-          0.5_wp*d1_detady_dy_0_nxp4m2jm1k+&
-          0.5_wp*d1_detady_dy_0_nxp4m2jp1k
-
-d1_detady_dy_0_nxp4m2jk = d1_detady_dy_0_nxp4m2jk*param_float(2)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None detady *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(6)) =  d1_detady_dy_0_nxp4m2jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None dksidy 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [ksi]_1y
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_dksidy_dy_0_nxp4m2jm1k = qst(nx+4-2,j-1,indvarsst(3))
-
-d1_dksidy_dy_0_nxp4m2jp1k = qst(nx+4-2,j+1,indvarsst(3))
-
-d1_dksidy_dy_0_nxp4m2jk = -&
-          0.5_wp*d1_dksidy_dy_0_nxp4m2jm1k+&
-          0.5_wp*d1_dksidy_dy_0_nxp4m2jp1k
-
-d1_dksidy_dy_0_nxp4m2jk = d1_dksidy_dy_0_nxp4m2jk*param_float(2)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None dksidy *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4m2jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None detadx 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [eta]_1x
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_detadx_dx_0_nxp4m2m1jk = qst(nx+4-2-1,j,indvarsst(2))
-
-d1_detadx_dx_0_nxp4m2p1jk = qst(nx+4-2+1,j,indvarsst(2))
-
-d1_detadx_dx_0_nxp4m2jk = -&
-          0.5_wp*d1_detadx_dx_0_nxp4m2m1jk+&
-          0.5_wp*d1_detadx_dx_0_nxp4m2p1jk
-
-d1_detadx_dx_0_nxp4m2jk = d1_detadx_dx_0_nxp4m2jk*param_float(1)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None detadx *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4m2jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None dksidx 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ([ksi]_1x)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_dksidx_dx_0_nxp4m2m1jk = qst(nx+4-2-1,j,indvarsst(3))
-
-d1_dksidx_dx_0_nxp4m2p1jk = qst(nx+4-2+1,j,indvarsst(3))
-
-d1_dksidx_dx_0_nxp4m2jk = -&
-          0.5_wp*d1_dksidx_dx_0_nxp4m2m1jk+&
-          0.5_wp*d1_dksidx_dx_0_nxp4m2p1jk
-
-d1_dksidx_dx_0_nxp4m2jk = d1_dksidx_dx_0_nxp4m2jk*param_float(1)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None dksidx *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4m2jk)
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None deltaxI 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! 1.0_wp/(dksidx)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None deltaxI ************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(10)) =  1.0_wp/(qst(nx+4-2,j,indvarsst(9)))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 2 None None deltayI 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! 1.0_wp/(detady)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 2 None None deltayI ************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-2,j,indvarsst(11)) =  1.0_wp/(qst(nx+4-2,j,indvarsst(6)))
-
-     enddo
-
-
-!***********************************************************
-!                                                           
-! Start building layers for BC : imax None None ************
-!                                                           
-!***********************************************************
-
-
-
-
-!***********************************************************
-!                                                           
-! BC layer: 3 None None ************************************
-!                                                           
-!***********************************************************
-
-
-     do j=idloop(3),idloop(4) 
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None d *****
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! d
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None d ******************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(1)) =  qst(nx+4-3,j,indvarsst(1))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None eta ***
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! eta
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None eta ****************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(2)) =  qst(nx+4-3,j,indvarsst(2))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None ksi ***
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ksi
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None ksi ****************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(3)) =  qst(nx+4-3,j,indvarsst(3))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None symm **
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ((sign(1.0_wp,ksi)-1.0_wp)/(-2.0_wp))
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None symm ***************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(5)) =  ((sign(1.0_wp,qst(nx+4-3,j,indvarsst(3)))-&
-                    1.0_wp)/(-&
-                    2.0_wp))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None detady 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [eta]_1y
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_detady_dy_0_nxp4m3jm1k = qst(nx+4-3,j-1,indvarsst(2))
-
-d1_detady_dy_0_nxp4m3jp1k = qst(nx+4-3,j+1,indvarsst(2))
-
-d1_detady_dy_0_nxp4m3jk = -&
-          0.5_wp*d1_detady_dy_0_nxp4m3jm1k+&
-          0.5_wp*d1_detady_dy_0_nxp4m3jp1k
-
-d1_detady_dy_0_nxp4m3jk = d1_detady_dy_0_nxp4m3jk*param_float(2)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None detady *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(6)) =  d1_detady_dy_0_nxp4m3jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None dksidy 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [ksi]_1y
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_dksidy_dy_0_nxp4m3jm1k = qst(nx+4-3,j-1,indvarsst(3))
-
-d1_dksidy_dy_0_nxp4m3jp1k = qst(nx+4-3,j+1,indvarsst(3))
-
-d1_dksidy_dy_0_nxp4m3jk = -&
-          0.5_wp*d1_dksidy_dy_0_nxp4m3jm1k+&
-          0.5_wp*d1_dksidy_dy_0_nxp4m3jp1k
-
-d1_dksidy_dy_0_nxp4m3jk = d1_dksidy_dy_0_nxp4m3jk*param_float(2)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None dksidy *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(7)) =  d1_dksidy_dy_0_nxp4m3jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None detadx 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! [eta]_1x
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_detadx_dx_0_nxp4m3m1jk = qst(nx+4-3-1,j,indvarsst(2))
-
-d1_detadx_dx_0_nxp4m3p1jk = qst(nx+4-3+1,j,indvarsst(2))
-
-d1_detadx_dx_0_nxp4m3jk = -&
-          0.5_wp*d1_detadx_dx_0_nxp4m3m1jk+&
-          0.5_wp*d1_detadx_dx_0_nxp4m3p1jk
-
-d1_detadx_dx_0_nxp4m3jk = d1_detadx_dx_0_nxp4m3jk*param_float(1)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None detadx *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(8)) =  d1_detadx_dx_0_nxp4m3jk
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None dksidx 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! ([ksi]_1x)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-d1_dksidx_dx_0_nxp4m3m1jk = qst(nx+4-3-1,j,indvarsst(3))
-
-d1_dksidx_dx_0_nxp4m3p1jk = qst(nx+4-3+1,j,indvarsst(3))
-
-d1_dksidx_dx_0_nxp4m3jk = -&
-          0.5_wp*d1_dksidx_dx_0_nxp4m3m1jk+&
-          0.5_wp*d1_dksidx_dx_0_nxp4m3p1jk
-
-d1_dksidx_dx_0_nxp4m3jk = d1_dksidx_dx_0_nxp4m3jk*param_float(1)
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None dksidx *************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(9)) =  (d1_dksidx_dx_0_nxp4m3jk)
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None deltaxI 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! 1.0_wp/(dksidx)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None deltaxI ************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(10)) =  1.0_wp/(qst(nx+4-3,j,indvarsst(9)))
-
-
-
-!***********************************************************
-!                                                           
-! building source terms in RHS for layer 3 None None deltayI 
-!                                                           
-!***********************************************************
-
-
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!
-! 1.0_wp/(detady)
-!
-!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-!***********************************************************
-!                                                           
-! Update BC terms for layer 3 None None deltayI ************
-!                                                           
-!***********************************************************
-
-
-qst(nx+4-3,j,indvarsst(11)) =  1.0_wp/(qst(nx+4-3,j,indvarsst(6)))
+qst(nx+2-1,j,indvarsst(11)) =  1.0_wp/(qst(nx+2-1,j,indvarsst(6)))
 
      enddo
 

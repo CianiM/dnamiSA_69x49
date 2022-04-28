@@ -210,13 +210,13 @@ Fx = {'rho' : 'rho*u         ',
       'u'   : 'rho*u*u  + p  ',
       'v'   : 'rho*u*v       ',
       'et'  : '(rho*et + p)*u ',
-      'nut' : 'rho*u*nut-visc_t*sigmaI*deltaxI*( { nut }_1x ) ' }
+      'nut' : 'rho*u*nut ' }
 
 Fy = {'rho' : 'rho*v         ',
       'u'   : 'rho*v*u       ', 
       'v'   : 'rho*v*v  + p  ', 
       'et'  : '(rho*et + p)*v ',
-      'nut' : 'rho*v*nut-visc_t*sigmaI*deltayI*( { nut }_1y ) ' } 
+      'nut' : 'rho*v*nut ' } 
 
 Src_conv={}
 
@@ -235,13 +235,15 @@ Fx = {'u'   : ' - visc_t *( 2.0_wp * deltaxI*( {u}_1x ) - 2.0_wp/3.0_wp * ( '+ d
       
       'et'  : ' - kappa*deltaxI*( {T}_1x ) '
               ' - u*(visc_t *( 2.0_wp *deltaxI*( {u}_1x ) - 2.0_wp/3.0_wp * ( '+ ddivops +'  )))'
-              ' - v*(visc_t *( deltayI*( {u}_1y ) + deltaxI*( {v}_1x )))'}
+              ' - v*(visc_t *( deltayI*( {u}_1y ) + deltaxI*( {v}_1x )))',
+      'nut' : ' - ReI*( 1.0_wp + chi )*sigmaI*deltaxI*( { nut }_1x )'}
 
 Fy = {'u'   : ' - visc_t *( deltayI*( {u}_1y ) + deltaxI*( {v}_1x ))  ',
       'v'   : ' - visc_t *( 2.0_wp * deltayI*( {v}_1y ) - 2.0_wp/3.0_wp * ( '+ ddivops +'  ) )', 
       'et'  : ' - kappa*deltayI*( {T}_1y )'
               ' - u*(visc_t *( deltayI*( {u}_1y ) + deltaxI*( {v}_1x )))'
-              ' - v*(visc_t *( 2.0_wp * deltayI*( {v}_1y ) - 2.0_wp/3.0_wp * ( '+ ddivops +'  )))'}
+              ' - v*(visc_t *( 2.0_wp * deltayI*( {v}_1y ) - 2.0_wp/3.0_wp * ( '+ ddivops +'  )))',
+      'nut' : ' - ReI*( 1.0_wp + chi )*sigmaI*deltayI*( { nut }_1y )'}
        
 # -- Divergence formulation
 
@@ -250,8 +252,8 @@ Src_dif  = {}
 for key in Fx.keys():
     Src_dif[key]= 'deltaxI*( [ ' + Fx[key] +' ]_1x )' + ' + ' + 'deltayI *( [ '+ Fy[key]  +' ]_1y ) '
 
-Src_dif['nut'] = ' - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) + (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
-                   - Cb1*(1.0_wp-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2.0_wp*ft2)*rho*nut**2.0_wp/eta**2.0_wp '
+Src_dif['nut'] = Src_dif['nut'] + ' +  - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) + (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
+                   - Cb1*(1.0_wp-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2.0_wp*ft2)*rho*(nut/eta)**2.0_wp '
 
 #--RHS--
 Src_rhs={}
@@ -290,11 +292,11 @@ Fx = {'rho' : ' rho*u ',
        'u'  : ' rho*u*u + p ',
        'v'  : ' rho*u*v ',
        'et' : ' (rho*et+ p)*u ',
-       'nut': ' rho*u*nut-sigmaI*(visc+rho*nut)*( { nut }_1x )*deltaxI'}
+       'nut': ' rho*u*nut-ReI*( 1.0_wp + chi )*sigmaI*deltaxI*( { nut }_1x ) '}
 
 
 for key in Fx.keys():
-      Src_BC_Symm_conv[key] = 'deltaxI*( [ ' + Fx[key] + ' ]_1x )'
+      Src_BC_Symm_conv[key] = ' deltaxI*( [ ' + Fx[key] + ' ]_1x ) '
 
 Src_BC_Symm_dif={}
 
@@ -306,7 +308,7 @@ for key in Fx.keys():
       Src_BC_Symm_dif[key] = 'deltaxI*( [ ' + Fx[key] +' ]_1x )'
 
 Src_BC_Symm_dif['nut']= '- ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) ) \
-                         - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
+                         - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*(nut/eta)**2 '
 
 #--Building Symmetry boundary conditions
 Src_BC_Symm = {}
@@ -505,13 +507,13 @@ Src_BC_conv_imax = { 'rho' : Src_conv['rho']+' + '+ D[1],
                      'u'   : 'u*'+D[1]+' + rho*'+D[3]+' + [ rho*u*v ]_1y',
                      'v'   : 'v*'+D[1]+' + rho*'+D[4]+' + [ rho*v*v ]_1y',
                      'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+' + rho*u*'+D[3]+' + rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y',
-                     'nut' : ' ( [ rho*u*nut-visc_t*sigmaI*deltayI*( { nut }_1y ) ]_1y )*deltayI'}
+                     'nut' : ' ( [ ( rho*v*nut-ReI*( 1.0_wp + chi )*sigmaI*deltayI*( { nut }_1y ) ) ]_1y )*deltayI'}
  
 Src_BC_dif_imax = {}
 for key in Src_dif.keys():
       Src_BC_dif_imax[key]= Src_dif[key]
 Src_BC_dif_imax['nut']= ' - ReI*Cb2*sigmaI*( (deltayI)**2*( [ rho*nut ]_1y )*( [ nut ]_1y ) ) \
-                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
+                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*(nut/eta)**2.0_wp '
 #--Building rhs for boundary conditions at imax
 for key in Src_BC_conv_imax.keys():
       if key in Src_BC_dif_imax.keys():
@@ -547,13 +549,13 @@ Src_BC_conv_jmax = { 'rho' : Src_conv['rho']+'+'+ D[1],
                      'u'   : 'u*'+D[1]+' + rho*'+D[3]+' + [ rho*u*v ]_1y',
                      'v'   : 'v*'+D[1]+' + rho*'+D[4]+' + [ rho*v*v ]_1y',
                      'et'  : '0.5_wp*(u**2+v**2)*'+D[1]+' + 1.0_wp/gamma_m1*'+D[2]+'+rho*u*'+D[3]+'+rho*v*'+D[4]+' + [ (rho*et+p)*v ]_1y', 
-                     'nut' : ' deltaxI*( [ rho*u*nut-visc_t*sigmaI*deltaxI*( { nut }_1x ) ]_1x ) '}
+                     'nut' : ' deltaxI*( [ ( rho*u*nut - ReI*( 1.0_wp + chi )*sigmaI*deltaxI*( { nut }_1x ) ) ]_1x ) '}
 
 Src_BC_dif_jmax = {}
 for key in Src_dif.keys():
       Src_BC_dif_jmax[key]= Src_dif[key]
 Src_BC_dif_jmax['nut']= ' - ReI*Cb2*sigmaI*( (deltaxI)**2*( [ rho*nut ]_1x )*( [ nut ]_1x ) ) \
-                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*nut**2/eta**2 '
+                   - Cb1*(1-ft2)*SS*rho*nut + ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*(nut/eta)**2.0_wp '
 #--Building rhs for bc at jmax
 for key in Src_BC_conv_jmax.keys():
       if key in Src_BC_dif_jmax.keys():

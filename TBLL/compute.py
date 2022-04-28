@@ -36,7 +36,7 @@ U0    = dn.cst(1.0)        #Reference value of Velocity
 V0    = dn.cst(0.0)
 T0    = dn.cst(1.0)        #Reference value of Temperature
 nut0  = dn.cst(3.0)
-
+#nut0  = dn.cst(1.0/Re)
 
 
 dimPcr = False
@@ -49,7 +49,7 @@ P0 = dn.cst(U0**2/(gamma*Rho0*Ma**2))                   #Pressure at the inlet
 #T0 = dn.cst(P0/(Rho0*(gamma-1)*Cv))
 et0 = dn.cst(U0**2*( Cv*T0 + 0.5))
 
-filtr_amp = dn.cst(0.3)    # filter amplitude
+filtr_amp = dn.cst(0.2)    # filter amplitude
 
 # ... in time ...
 with_dt = dn.cst(1e-9)
@@ -264,7 +264,7 @@ if 'qstored' in dtree['eqns']['qvec']['views'].keys():
 
 mod_filter = 1
 mod_output = 100000
-mod_info   = 100000.
+mod_info   = 10
 
 
 for n in range(1,nitmax+1):
@@ -378,7 +378,7 @@ for n in range(1,nitmax+1):
         dn.dnami_io.globalMinMax(dtree,u,'u')
         dn.dnami_io.globalMinMax(dtree,v,'v')
         dn.dnami_io.globalMinMax(dtree,et,'et')
-        dn.dnami_io.globalMinMax(dtree,et,'nut')
+        dn.dnami_io.globalMinMax(dtree,nut,'nut')
         if dMpi.ioproc:
             print('convective CFL numbers')
             sys.stdout.flush()

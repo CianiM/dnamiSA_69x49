@@ -31,28 +31,28 @@
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_stemp_dx_0_1m4p1m11m4p0k = q(1-4+1-1,1-4+0,indvars(3))
+d1_stemp_dx_0_1m2p1m11m2p0k = q(1-2+1-1,1-2+0,indvars(3))
 
-d1_stemp_dx_0_1m4p1p11m4p0k = q(1-4+1+1,1-4+0,indvars(3))
+d1_stemp_dx_0_1m2p1p11m2p0k = q(1-2+1+1,1-2+0,indvars(3))
 
-d1_stemp_dx_0_1m4p11m4p0k = -&
-          0.5_wp*d1_stemp_dx_0_1m4p1m11m4p0k+&
-          0.5_wp*d1_stemp_dx_0_1m4p1p11m4p0k
+d1_stemp_dx_0_1m2p11m2p0k = -&
+          0.5_wp*d1_stemp_dx_0_1m2p1m11m2p0k+&
+          0.5_wp*d1_stemp_dx_0_1m2p1p11m2p0k
 
-d1_stemp_dx_0_1m4p11m4p0k = d1_stemp_dx_0_1m4p11m4p0k*param_float(1)
+d1_stemp_dx_0_1m2p11m2p0k = d1_stemp_dx_0_1m2p11m2p0k*param_float(1)
 
-d1_stemp_dy_0_1m4p11m4p0p0k = q(1-4+1,1-4+0+0,indvars(2))
+d1_stemp_dy_0_1m2p11m2p0p0k = q(1-2+1,1-2+0+0,indvars(2))
 
-d1_stemp_dy_0_1m4p11m4p0p1k = q(1-4+1,1-4+0+1,indvars(2))
+d1_stemp_dy_0_1m2p11m2p0p1k = q(1-2+1,1-2+0+1,indvars(2))
 
-d1_stemp_dy_0_1m4p11m4p0p2k = q(1-4+1,1-4+0+2,indvars(2))
+d1_stemp_dy_0_1m2p11m2p0p2k = q(1-2+1,1-2+0+2,indvars(2))
 
-d1_stemp_dy_0_1m4p11m4p0k = -&
-          1.5_wp*d1_stemp_dy_0_1m4p11m4p0p0k+&
-          2.0_wp*d1_stemp_dy_0_1m4p11m4p0p1k-&
-          0.5_wp*d1_stemp_dy_0_1m4p11m4p0p2k
+d1_stemp_dy_0_1m2p11m2p0k = -&
+          1.5_wp*d1_stemp_dy_0_1m2p11m2p0p0k+&
+          2.0_wp*d1_stemp_dy_0_1m2p11m2p0p1k-&
+          0.5_wp*d1_stemp_dy_0_1m2p11m2p0p2k
 
-d1_stemp_dy_0_1m4p11m4p0k = d1_stemp_dy_0_1m4p11m4p0k*param_float(2)
+d1_stemp_dy_0_1m2p11m2p0k = d1_stemp_dy_0_1m2p11m2p0k*param_float(2)
 
 
 
@@ -63,8 +63,8 @@ d1_stemp_dy_0_1m4p11m4p0k = d1_stemp_dy_0_1m4p11m4p0k*param_float(2)
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(1-4+1,1-4+0,indvarsst(11))*(d1_stemp_dy_0_1m4p11m4p0k)-&
-                    qst(1-4+1,1-4+0,indvarsst(10))*(d1_stemp_dx_0_1m4p11m4p0k)))))
+qst(1-2+1,1-2+0,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(1-2+1,1-2+0,indvarsst(11))*(d1_stemp_dy_0_1m2p11m2p0k)-&
+                    qst(1-2+1,1-2+0,indvarsst(10))*(d1_stemp_dx_0_1m2p11m2p0k)))))
 
 
 
@@ -90,11 +90,11 @@ qst(1-4+1,1-4+0,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(1-4+1,1-4+0,indvarsst
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(12)) =  (qst(1-4+1,1-4+0,indvarsst(4))+&
+qst(1-2+1,1-2+0,indvarsst(12)) =  (qst(1-2+1,1-2+0,indvarsst(4))+&
                     (1.0_wp-&
-                    (q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))/(1.0_wp+&
-                    (q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))*((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp/((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(1-4+1,1-4+0,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(1-4+1,1-4+0,indvarsst(2))**2.0_wp))
+                    (q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))/(1.0_wp+&
+                    (q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))*((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp/((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(1-2+1,1-2+0,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(1-2+1,1-2+0,indvarsst(2))**2.0_wp))
 
 
 
@@ -120,9 +120,9 @@ qst(1-4+1,1-4+0,indvarsst(12)) =  (qst(1-4+1,1-4+0,indvarsst(4))+&
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
-                    ((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp/((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_1m4p11m4p0k)*qst(1-4+1,1-4+0,indvarsst(11)))
+qst(1-2+1,1-2+0,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp/((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_1m2p11m2p0k)*qst(1-2+1,1-2+0,indvarsst(11)))
 
 
 
@@ -148,7 +148,7 @@ qst(1-4+1,1-4+0,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(14)) =  q(1-4+1,1-4+0,indvars(5))*q(1-4+1,1-4+0,indvars(1))
+qst(1-2+1,1-2+0,indvarsst(14)) =  q(1-2+1,1-2+0,indvars(5))*q(1-2+1,1-2+0,indvars(1))
 
 
 
@@ -174,7 +174,7 @@ qst(1-4+1,1-4+0,indvarsst(14)) =  q(1-4+1,1-4+0,indvars(5))*q(1-4+1,1-4+0,indvar
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(15)) =  q(1-4+1,1-4+0,indvars(5))*q(1-4+1,1-4+0,indvars(1))*((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp/((q(1-4+1,1-4+0,indvars(5))/1.0_wp*q(1-4+1,1-4+0,indvars(1)))**3.0_wp+&
+qst(1-2+1,1-2+0,indvarsst(15)) =  q(1-2+1,1-2+0,indvars(5))*q(1-2+1,1-2+0,indvars(1))*((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp/((q(1-2+1,1-2+0,indvars(5))/1.0_wp*q(1-2+1,1-2+0,indvars(1)))**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))
 
 
@@ -201,7 +201,7 @@ qst(1-4+1,1-4+0,indvarsst(15)) =  q(1-4+1,1-4+0,indvars(5))*q(1-4+1,1-4+0,indvar
 !***********************************************************
 
 
-qst(1-4+1,1-4+0,indvarsst(16)) =  (param_float(3 + 5))*q(1-4+1,1-4+0,indvars(1))*((q(1-4+1,1-4+0,indvars(4))-&
-                    0.5_wp*(q(1-4+1,1-4+0,indvars(2))*q(1-4+1,1-4+0,indvars(2))+&
-                    q(1-4+1,1-4+0,indvars(3))*q(1-4+1,1-4+0,indvars(3)))))
+qst(1-2+1,1-2+0,indvarsst(16)) =  (param_float(3 + 5))*q(1-2+1,1-2+0,indvars(1))*((q(1-2+1,1-2+0,indvars(4))-&
+                    0.5_wp*(q(1-2+1,1-2+0,indvars(2))*q(1-2+1,1-2+0,indvars(2))+&
+                    q(1-2+1,1-2+0,indvars(3))*q(1-2+1,1-2+0,indvars(3)))))
 

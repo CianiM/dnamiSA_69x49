@@ -314,18 +314,12 @@ do ibc=1,nbc
 CASE (1)
       call  boundarySchemestored_edges_i1_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestored_edges_i1_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_i1_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_i1_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (2)
       call  boundarySchemestored_edges_i1_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestored_edges_i1_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_i1_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_i1_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (3)
       call  boundarySchemestored_edges_imax_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestored_edges_imax_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_imax_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_imax_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (5)
       call  boundarySchemestored_faces_i1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (6)
@@ -337,8 +331,6 @@ CASE (8)
 CASE (4)
       call  boundarySchemestored_edges_imax_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestored_edges_imax_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_imax_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestored_edges_imax_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 
     END SELECT
 
@@ -353,8 +345,6 @@ do ibc=1,nbc
 CASE (3)
       call  boundarySchemevarbc_edges_imax_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemevarbc_edges_imax_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemevarbc_edges_imax_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemevarbc_edges_imax_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (6)
       call  boundarySchemevarbc_faces_imax(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (8)
@@ -362,8 +352,6 @@ CASE (8)
 CASE (4)
       call  boundarySchemevarbc_edges_imax_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemevarbc_edges_imax_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemevarbc_edges_imax_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemevarbc_edges_imax_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 
     END SELECT
 
@@ -402,18 +390,12 @@ do ibc=1,nbc
 CASE (1)
       call  boundarySchemestoredstatic_edges_i1_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestoredstatic_edges_i1_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (2)
       call  boundarySchemestoredstatic_edges_i1_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestoredstatic_edges_i1_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_i1_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (3)
       call  boundarySchemestoredstatic_edges_imax_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestoredstatic_edges_imax_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_imax_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_imax_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (5)
       call  boundarySchemestoredstatic_faces_i1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (6)
@@ -425,8 +407,6 @@ CASE (8)
 CASE (4)
       call  boundarySchemestoredstatic_edges_imax_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundarySchemestoredstatic_edges_imax_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_imax_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundarySchemestoredstatic_edges_imax_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 
     END SELECT
 
@@ -596,8 +576,6 @@ do ibc=1,nbc
 CASE (1)
       call  boundaryScheme_edges_i1_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_edges_i1_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_i1_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_i1_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(1)=idarray(1)
       idrhs(3)=idarray(3)
       call  boundaryScheme_edges_PhyBC_Inlet_surf_rhs_i1_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
@@ -605,8 +583,6 @@ CASE (1)
 CASE (2)
       call  boundaryScheme_edges_i1_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_edges_i1_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_i1_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_i1_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(1)=idarray(1)
       idrhs(4)=idarray(4)
       call  boundaryScheme_edges_PhyBC_Inlet_surf_rhs_i1_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
@@ -614,8 +590,6 @@ CASE (2)
 CASE (3)
       call  boundaryScheme_edges_imax_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_edges_imax_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_imax_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_imax_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(2)=idarray(2)
       idrhs(3)=idarray(3)
       call  boundaryScheme_edges_PhyBC_Out_surf_rhs_imax_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
@@ -623,8 +597,6 @@ CASE (3)
 CASE (4)
       call  boundaryScheme_edges_imax_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_edges_imax_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_imax_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_edges_imax_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(2)=idarray(2)
       idrhs(4)=idarray(4)
       call  boundaryScheme_edges_PhyBC_Out_surf_rhs_imax_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
@@ -632,29 +604,21 @@ CASE (4)
 CASE (5)
       call  boundaryScheme_faces_i1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_faces_i1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_i1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_i1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(1)=idarray(1)
       call  phyInlet_surfbc_faces_i1_8(param_float,hlo,neq,neqst,ind,idloop,idarray,nx,ny,nz,sizeblck,q,qst,q1,q2,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (6)
       call  boundaryScheme_faces_imax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_faces_imax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_imax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_imax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(2)=idarray(2)
       call  phyOut_surfbc_faces_imax_9(param_float,hlo,neq,neqst,ind,idloop,idarray,nx,ny,nz,sizeblck,q,qst,q1,q2,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (7)
       call  boundaryScheme_faces_j1_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_faces_j1_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_j1_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_j1_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(3)=idarray(3)
       call  phyLow_surfbc_faces_j1_6(param_float,hlo,neq,neqst,ind,idloop,idarray,nx,ny,nz,sizeblck,q,qst,q1,q2,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 CASE (8)
       call  boundaryScheme_faces_jmax_0(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       call  boundaryScheme_faces_jmax_1(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_jmax_2(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
-      call  boundaryScheme_faces_jmax_3(param_float,hlo,ind,idarray,neq,neqst,nx,ny,nz,sizeblck,q,qst,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
       idrhs(4)=idarray(4)
       call  phyTop_surfbc_faces_jmax_10(param_float,hlo,neq,neqst,ind,idloop,idarray,nx,ny,nz,sizeblck,q,qst,q1,q2,rhs,nvar_f,nvar_e,qface_i,qface_j,qface_k,qedge_ij,qedge_jk,qedge_ik)
 
@@ -1145,190 +1109,70 @@ do ibc=1,nbc
 
         do j=idloop(3),idloop(4) 
    
-   q2(1-4+0,j,1) =0.1604411764705_wp*q(1-4+0,j,1) &
-               -0.2325_wp*q(1-4+1,j,1) &
-               +0.0895588235295_wp*q(1-4+2,j,1) &
-               -0.0175_wp*q(1-4+3,j,1) 
+   q2(1-2+0,j,1) =0.1604411764705_wp*q(1-2+0,j,1) &
+               -0.2325_wp*q(1-2+1,j,1) &
+               +0.0895588235295_wp*q(1-2+2,j,1) &
+               -0.0175_wp*q(1-2+3,j,1) 
    
-   q2(1-4+0,j,2) =0.1604411764705_wp*q(1-4+0,j,2) &
-               -0.2325_wp*q(1-4+1,j,2) &
-               +0.0895588235295_wp*q(1-4+2,j,2) &
-               -0.0175_wp*q(1-4+3,j,2) 
+   q2(1-2+0,j,2) =0.1604411764705_wp*q(1-2+0,j,2) &
+               -0.2325_wp*q(1-2+1,j,2) &
+               +0.0895588235295_wp*q(1-2+2,j,2) &
+               -0.0175_wp*q(1-2+3,j,2) 
    
-   q2(1-4+0,j,3) =0.1604411764705_wp*q(1-4+0,j,3) &
-               -0.2325_wp*q(1-4+1,j,3) &
-               +0.0895588235295_wp*q(1-4+2,j,3) &
-               -0.0175_wp*q(1-4+3,j,3) 
+   q2(1-2+0,j,3) =0.1604411764705_wp*q(1-2+0,j,3) &
+               -0.2325_wp*q(1-2+1,j,3) &
+               +0.0895588235295_wp*q(1-2+2,j,3) &
+               -0.0175_wp*q(1-2+3,j,3) 
    
-   q2(1-4+0,j,4) =0.1604411764705_wp*q(1-4+0,j,4) &
-               -0.2325_wp*q(1-4+1,j,4) &
-               +0.0895588235295_wp*q(1-4+2,j,4) &
-               -0.0175_wp*q(1-4+3,j,4) 
+   q2(1-2+0,j,4) =0.1604411764705_wp*q(1-2+0,j,4) &
+               -0.2325_wp*q(1-2+1,j,4) &
+               +0.0895588235295_wp*q(1-2+2,j,4) &
+               -0.0175_wp*q(1-2+3,j,4) 
    
-   q2(1-4+0,j,5) =0.1604411764705_wp*q(1-4+0,j,5) &
-               -0.2325_wp*q(1-4+1,j,5) &
-               +0.0895588235295_wp*q(1-4+2,j,5) &
-               -0.0175_wp*q(1-4+3,j,5) 
+   q2(1-2+0,j,5) =0.1604411764705_wp*q(1-2+0,j,5) &
+               -0.2325_wp*q(1-2+1,j,5) &
+               +0.0895588235295_wp*q(1-2+2,j,5) &
+               -0.0175_wp*q(1-2+3,j,5) 
    
-   q2(1-4+1,j,1) =-0.042888704485_wp*q(1-4+0,j,1) &
-               +0.138814085762_wp*q(1-4+1,j,1) &
-               -0.1784240360865_wp*q(1-4+2,j,1) &
-               +0.111559546536_wp*q(1-4+3,j,1) &
-               -0.0286735324325_wp*q(1-4+4,j,1) &
-               -0.000373632298_wp*q(1-4+5,j,1) &
-               -1.37269965e-05_wp*q(1-4+6,j,1) 
+   q2(1-2+1,j,1) =-0.042888704485_wp*q(1-2+0,j,1) &
+               +0.138814085762_wp*q(1-2+1,j,1) &
+               -0.1784240360865_wp*q(1-2+2,j,1) &
+               +0.111559546536_wp*q(1-2+3,j,1) &
+               -0.0286735324325_wp*q(1-2+4,j,1) &
+               -0.000373632298_wp*q(1-2+5,j,1) &
+               -1.37269965e-05_wp*q(1-2+6,j,1) 
    
-   q2(1-4+1,j,2) =-0.042888704485_wp*q(1-4+0,j,2) &
-               +0.138814085762_wp*q(1-4+1,j,2) &
-               -0.1784240360865_wp*q(1-4+2,j,2) &
-               +0.111559546536_wp*q(1-4+3,j,2) &
-               -0.0286735324325_wp*q(1-4+4,j,2) &
-               -0.000373632298_wp*q(1-4+5,j,2) &
-               -1.37269965e-05_wp*q(1-4+6,j,2) 
+   q2(1-2+1,j,2) =-0.042888704485_wp*q(1-2+0,j,2) &
+               +0.138814085762_wp*q(1-2+1,j,2) &
+               -0.1784240360865_wp*q(1-2+2,j,2) &
+               +0.111559546536_wp*q(1-2+3,j,2) &
+               -0.0286735324325_wp*q(1-2+4,j,2) &
+               -0.000373632298_wp*q(1-2+5,j,2) &
+               -1.37269965e-05_wp*q(1-2+6,j,2) 
    
-   q2(1-4+1,j,3) =-0.042888704485_wp*q(1-4+0,j,3) &
-               +0.138814085762_wp*q(1-4+1,j,3) &
-               -0.1784240360865_wp*q(1-4+2,j,3) &
-               +0.111559546536_wp*q(1-4+3,j,3) &
-               -0.0286735324325_wp*q(1-4+4,j,3) &
-               -0.000373632298_wp*q(1-4+5,j,3) &
-               -1.37269965e-05_wp*q(1-4+6,j,3) 
+   q2(1-2+1,j,3) =-0.042888704485_wp*q(1-2+0,j,3) &
+               +0.138814085762_wp*q(1-2+1,j,3) &
+               -0.1784240360865_wp*q(1-2+2,j,3) &
+               +0.111559546536_wp*q(1-2+3,j,3) &
+               -0.0286735324325_wp*q(1-2+4,j,3) &
+               -0.000373632298_wp*q(1-2+5,j,3) &
+               -1.37269965e-05_wp*q(1-2+6,j,3) 
    
-   q2(1-4+1,j,4) =-0.042888704485_wp*q(1-4+0,j,4) &
-               +0.138814085762_wp*q(1-4+1,j,4) &
-               -0.1784240360865_wp*q(1-4+2,j,4) &
-               +0.111559546536_wp*q(1-4+3,j,4) &
-               -0.0286735324325_wp*q(1-4+4,j,4) &
-               -0.000373632298_wp*q(1-4+5,j,4) &
-               -1.37269965e-05_wp*q(1-4+6,j,4) 
+   q2(1-2+1,j,4) =-0.042888704485_wp*q(1-2+0,j,4) &
+               +0.138814085762_wp*q(1-2+1,j,4) &
+               -0.1784240360865_wp*q(1-2+2,j,4) &
+               +0.111559546536_wp*q(1-2+3,j,4) &
+               -0.0286735324325_wp*q(1-2+4,j,4) &
+               -0.000373632298_wp*q(1-2+5,j,4) &
+               -1.37269965e-05_wp*q(1-2+6,j,4) 
    
-   q2(1-4+1,j,5) =-0.042888704485_wp*q(1-4+0,j,5) &
-               +0.138814085762_wp*q(1-4+1,j,5) &
-               -0.1784240360865_wp*q(1-4+2,j,5) &
-               +0.111559546536_wp*q(1-4+3,j,5) &
-               -0.0286735324325_wp*q(1-4+4,j,5) &
-               -0.000373632298_wp*q(1-4+5,j,5) &
-               -1.37269965e-05_wp*q(1-4+6,j,5) 
-   
-   q2(1-4+2,j,1) =0.052523901012_wp*q(1-4+0,j,1) &
-               -0.206299133811_wp*q(1-4+1,j,1) &
-               +0.35352799825_wp*q(1-4+2,j,1) &
-               -0.348142394842_wp*q(1-4+3,j,1) &
-               +0.181481803619_wp*q(1-4+4,j,1) &
-               +0.00944080437_wp*q(1-4+5,j,1) &
-               -0.077675100452_wp*q(1-4+6,j,1) &
-               +0.044887364863_wp*q(1-4+7,j,1) &
-               -0.009971961849_wp*q(1-4+8,j,1) &
-               +0.00011335942_wp*q(1-4+9,j,1) &
-               +0.00011335942_wp*q(1-4+10,j,1) 
-   
-   q2(1-4+2,j,2) =0.052523901012_wp*q(1-4+0,j,2) &
-               -0.206299133811_wp*q(1-4+1,j,2) &
-               +0.35352799825_wp*q(1-4+2,j,2) &
-               -0.348142394842_wp*q(1-4+3,j,2) &
-               +0.181481803619_wp*q(1-4+4,j,2) &
-               +0.00944080437_wp*q(1-4+5,j,2) &
-               -0.077675100452_wp*q(1-4+6,j,2) &
-               +0.044887364863_wp*q(1-4+7,j,2) &
-               -0.009971961849_wp*q(1-4+8,j,2) &
-               +0.00011335942_wp*q(1-4+9,j,2) &
-               +0.00011335942_wp*q(1-4+10,j,2) 
-   
-   q2(1-4+2,j,3) =0.052523901012_wp*q(1-4+0,j,3) &
-               -0.206299133811_wp*q(1-4+1,j,3) &
-               +0.35352799825_wp*q(1-4+2,j,3) &
-               -0.348142394842_wp*q(1-4+3,j,3) &
-               +0.181481803619_wp*q(1-4+4,j,3) &
-               +0.00944080437_wp*q(1-4+5,j,3) &
-               -0.077675100452_wp*q(1-4+6,j,3) &
-               +0.044887364863_wp*q(1-4+7,j,3) &
-               -0.009971961849_wp*q(1-4+8,j,3) &
-               +0.00011335942_wp*q(1-4+9,j,3) &
-               +0.00011335942_wp*q(1-4+10,j,3) 
-   
-   q2(1-4+2,j,4) =0.052523901012_wp*q(1-4+0,j,4) &
-               -0.206299133811_wp*q(1-4+1,j,4) &
-               +0.35352799825_wp*q(1-4+2,j,4) &
-               -0.348142394842_wp*q(1-4+3,j,4) &
-               +0.181481803619_wp*q(1-4+4,j,4) &
-               +0.00944080437_wp*q(1-4+5,j,4) &
-               -0.077675100452_wp*q(1-4+6,j,4) &
-               +0.044887364863_wp*q(1-4+7,j,4) &
-               -0.009971961849_wp*q(1-4+8,j,4) &
-               +0.00011335942_wp*q(1-4+9,j,4) &
-               +0.00011335942_wp*q(1-4+10,j,4) 
-   
-   q2(1-4+2,j,5) =0.052523901012_wp*q(1-4+0,j,5) &
-               -0.206299133811_wp*q(1-4+1,j,5) &
-               +0.35352799825_wp*q(1-4+2,j,5) &
-               -0.348142394842_wp*q(1-4+3,j,5) &
-               +0.181481803619_wp*q(1-4+4,j,5) &
-               +0.00944080437_wp*q(1-4+5,j,5) &
-               -0.077675100452_wp*q(1-4+6,j,5) &
-               +0.044887364863_wp*q(1-4+7,j,5) &
-               -0.009971961849_wp*q(1-4+8,j,5) &
-               +0.00011335942_wp*q(1-4+9,j,5) &
-               +0.00011335942_wp*q(1-4+10,j,5) 
-   
-   q2(1-4+3,j,1) =-5.459601e-05_wp*q(1-4+0,j,1) &
-               +0.042124772446_wp*q(1-4+1,j,1) &
-               -0.173103107841_wp*q(1-4+2,j,1) &
-               +0.299615871352_wp*q(1-4+3,j,1) &
-               -0.276543612935_wp*q(1-4+4,j,1) &
-               +0.131223506571_wp*q(1-4+5,j,1) &
-               -0.023424966418_wp*q(1-4+6,j,1) &
-               +0.013937561779_wp*q(1-4+7,j,1) &
-               -0.024565095706_wp*q(1-4+8,j,1) &
-               +0.013098287852_wp*q(1-4+9,j,1) &
-               -0.00230862109_wp*q(1-4+10,j,1) 
-   
-   q2(1-4+3,j,2) =-5.459601e-05_wp*q(1-4+0,j,2) &
-               +0.042124772446_wp*q(1-4+1,j,2) &
-               -0.173103107841_wp*q(1-4+2,j,2) &
-               +0.299615871352_wp*q(1-4+3,j,2) &
-               -0.276543612935_wp*q(1-4+4,j,2) &
-               +0.131223506571_wp*q(1-4+5,j,2) &
-               -0.023424966418_wp*q(1-4+6,j,2) &
-               +0.013937561779_wp*q(1-4+7,j,2) &
-               -0.024565095706_wp*q(1-4+8,j,2) &
-               +0.013098287852_wp*q(1-4+9,j,2) &
-               -0.00230862109_wp*q(1-4+10,j,2) 
-   
-   q2(1-4+3,j,3) =-5.459601e-05_wp*q(1-4+0,j,3) &
-               +0.042124772446_wp*q(1-4+1,j,3) &
-               -0.173103107841_wp*q(1-4+2,j,3) &
-               +0.299615871352_wp*q(1-4+3,j,3) &
-               -0.276543612935_wp*q(1-4+4,j,3) &
-               +0.131223506571_wp*q(1-4+5,j,3) &
-               -0.023424966418_wp*q(1-4+6,j,3) &
-               +0.013937561779_wp*q(1-4+7,j,3) &
-               -0.024565095706_wp*q(1-4+8,j,3) &
-               +0.013098287852_wp*q(1-4+9,j,3) &
-               -0.00230862109_wp*q(1-4+10,j,3) 
-   
-   q2(1-4+3,j,4) =-5.459601e-05_wp*q(1-4+0,j,4) &
-               +0.042124772446_wp*q(1-4+1,j,4) &
-               -0.173103107841_wp*q(1-4+2,j,4) &
-               +0.299615871352_wp*q(1-4+3,j,4) &
-               -0.276543612935_wp*q(1-4+4,j,4) &
-               +0.131223506571_wp*q(1-4+5,j,4) &
-               -0.023424966418_wp*q(1-4+6,j,4) &
-               +0.013937561779_wp*q(1-4+7,j,4) &
-               -0.024565095706_wp*q(1-4+8,j,4) &
-               +0.013098287852_wp*q(1-4+9,j,4) &
-               -0.00230862109_wp*q(1-4+10,j,4) 
-   
-   q2(1-4+3,j,5) =-5.459601e-05_wp*q(1-4+0,j,5) &
-               +0.042124772446_wp*q(1-4+1,j,5) &
-               -0.173103107841_wp*q(1-4+2,j,5) &
-               +0.299615871352_wp*q(1-4+3,j,5) &
-               -0.276543612935_wp*q(1-4+4,j,5) &
-               +0.131223506571_wp*q(1-4+5,j,5) &
-               -0.023424966418_wp*q(1-4+6,j,5) &
-               +0.013937561779_wp*q(1-4+7,j,5) &
-               -0.024565095706_wp*q(1-4+8,j,5) &
-               +0.013098287852_wp*q(1-4+9,j,5) &
-               -0.00230862109_wp*q(1-4+10,j,5) 
+   q2(1-2+1,j,5) =-0.042888704485_wp*q(1-2+0,j,5) &
+               +0.138814085762_wp*q(1-2+1,j,5) &
+               -0.1784240360865_wp*q(1-2+2,j,5) &
+               +0.111559546536_wp*q(1-2+3,j,5) &
+               -0.0286735324325_wp*q(1-2+4,j,5) &
+               -0.000373632298_wp*q(1-2+5,j,5) &
+               -1.37269965e-05_wp*q(1-2+6,j,5) 
    
         enddo
 
@@ -1336,190 +1180,70 @@ do ibc=1,nbc
 
         do j=idloop(3),idloop(4) 
    
-   q2(nx+4+0,j,1) =0.1604411764705_wp*q(nx+4+0,j,1) &
-               -0.2325_wp*q(nx+4-1,j,1) &
-               +0.0895588235295_wp*q(nx+4-2,j,1) &
-               -0.0175_wp*q(nx+4-3,j,1) 
+   q2(nx+2+0,j,1) =0.1604411764705_wp*q(nx+2+0,j,1) &
+               -0.2325_wp*q(nx+2-1,j,1) &
+               +0.0895588235295_wp*q(nx+2-2,j,1) &
+               -0.0175_wp*q(nx+2-3,j,1) 
    
-   q2(nx+4+0,j,2) =0.1604411764705_wp*q(nx+4+0,j,2) &
-               -0.2325_wp*q(nx+4-1,j,2) &
-               +0.0895588235295_wp*q(nx+4-2,j,2) &
-               -0.0175_wp*q(nx+4-3,j,2) 
+   q2(nx+2+0,j,2) =0.1604411764705_wp*q(nx+2+0,j,2) &
+               -0.2325_wp*q(nx+2-1,j,2) &
+               +0.0895588235295_wp*q(nx+2-2,j,2) &
+               -0.0175_wp*q(nx+2-3,j,2) 
    
-   q2(nx+4+0,j,3) =0.1604411764705_wp*q(nx+4+0,j,3) &
-               -0.2325_wp*q(nx+4-1,j,3) &
-               +0.0895588235295_wp*q(nx+4-2,j,3) &
-               -0.0175_wp*q(nx+4-3,j,3) 
+   q2(nx+2+0,j,3) =0.1604411764705_wp*q(nx+2+0,j,3) &
+               -0.2325_wp*q(nx+2-1,j,3) &
+               +0.0895588235295_wp*q(nx+2-2,j,3) &
+               -0.0175_wp*q(nx+2-3,j,3) 
    
-   q2(nx+4+0,j,4) =0.1604411764705_wp*q(nx+4+0,j,4) &
-               -0.2325_wp*q(nx+4-1,j,4) &
-               +0.0895588235295_wp*q(nx+4-2,j,4) &
-               -0.0175_wp*q(nx+4-3,j,4) 
+   q2(nx+2+0,j,4) =0.1604411764705_wp*q(nx+2+0,j,4) &
+               -0.2325_wp*q(nx+2-1,j,4) &
+               +0.0895588235295_wp*q(nx+2-2,j,4) &
+               -0.0175_wp*q(nx+2-3,j,4) 
    
-   q2(nx+4+0,j,5) =0.1604411764705_wp*q(nx+4+0,j,5) &
-               -0.2325_wp*q(nx+4-1,j,5) &
-               +0.0895588235295_wp*q(nx+4-2,j,5) &
-               -0.0175_wp*q(nx+4-3,j,5) 
+   q2(nx+2+0,j,5) =0.1604411764705_wp*q(nx+2+0,j,5) &
+               -0.2325_wp*q(nx+2-1,j,5) &
+               +0.0895588235295_wp*q(nx+2-2,j,5) &
+               -0.0175_wp*q(nx+2-3,j,5) 
    
-   q2(nx+4-1,j,1) =-0.042888704485_wp*q(nx+4+0,j,1) &
-               +0.138814085762_wp*q(nx+4-1,j,1) &
-               -0.1784240360865_wp*q(nx+4-2,j,1) &
-               +0.111559546536_wp*q(nx+4-3,j,1) &
-               -0.0286735324325_wp*q(nx+4-4,j,1) &
-               -0.000373632298_wp*q(nx+4-5,j,1) &
-               -1.37269965e-05_wp*q(nx+4-6,j,1) 
+   q2(nx+2-1,j,1) =-0.042888704485_wp*q(nx+2+0,j,1) &
+               +0.138814085762_wp*q(nx+2-1,j,1) &
+               -0.1784240360865_wp*q(nx+2-2,j,1) &
+               +0.111559546536_wp*q(nx+2-3,j,1) &
+               -0.0286735324325_wp*q(nx+2-4,j,1) &
+               -0.000373632298_wp*q(nx+2-5,j,1) &
+               -1.37269965e-05_wp*q(nx+2-6,j,1) 
    
-   q2(nx+4-1,j,2) =-0.042888704485_wp*q(nx+4+0,j,2) &
-               +0.138814085762_wp*q(nx+4-1,j,2) &
-               -0.1784240360865_wp*q(nx+4-2,j,2) &
-               +0.111559546536_wp*q(nx+4-3,j,2) &
-               -0.0286735324325_wp*q(nx+4-4,j,2) &
-               -0.000373632298_wp*q(nx+4-5,j,2) &
-               -1.37269965e-05_wp*q(nx+4-6,j,2) 
+   q2(nx+2-1,j,2) =-0.042888704485_wp*q(nx+2+0,j,2) &
+               +0.138814085762_wp*q(nx+2-1,j,2) &
+               -0.1784240360865_wp*q(nx+2-2,j,2) &
+               +0.111559546536_wp*q(nx+2-3,j,2) &
+               -0.0286735324325_wp*q(nx+2-4,j,2) &
+               -0.000373632298_wp*q(nx+2-5,j,2) &
+               -1.37269965e-05_wp*q(nx+2-6,j,2) 
    
-   q2(nx+4-1,j,3) =-0.042888704485_wp*q(nx+4+0,j,3) &
-               +0.138814085762_wp*q(nx+4-1,j,3) &
-               -0.1784240360865_wp*q(nx+4-2,j,3) &
-               +0.111559546536_wp*q(nx+4-3,j,3) &
-               -0.0286735324325_wp*q(nx+4-4,j,3) &
-               -0.000373632298_wp*q(nx+4-5,j,3) &
-               -1.37269965e-05_wp*q(nx+4-6,j,3) 
+   q2(nx+2-1,j,3) =-0.042888704485_wp*q(nx+2+0,j,3) &
+               +0.138814085762_wp*q(nx+2-1,j,3) &
+               -0.1784240360865_wp*q(nx+2-2,j,3) &
+               +0.111559546536_wp*q(nx+2-3,j,3) &
+               -0.0286735324325_wp*q(nx+2-4,j,3) &
+               -0.000373632298_wp*q(nx+2-5,j,3) &
+               -1.37269965e-05_wp*q(nx+2-6,j,3) 
    
-   q2(nx+4-1,j,4) =-0.042888704485_wp*q(nx+4+0,j,4) &
-               +0.138814085762_wp*q(nx+4-1,j,4) &
-               -0.1784240360865_wp*q(nx+4-2,j,4) &
-               +0.111559546536_wp*q(nx+4-3,j,4) &
-               -0.0286735324325_wp*q(nx+4-4,j,4) &
-               -0.000373632298_wp*q(nx+4-5,j,4) &
-               -1.37269965e-05_wp*q(nx+4-6,j,4) 
+   q2(nx+2-1,j,4) =-0.042888704485_wp*q(nx+2+0,j,4) &
+               +0.138814085762_wp*q(nx+2-1,j,4) &
+               -0.1784240360865_wp*q(nx+2-2,j,4) &
+               +0.111559546536_wp*q(nx+2-3,j,4) &
+               -0.0286735324325_wp*q(nx+2-4,j,4) &
+               -0.000373632298_wp*q(nx+2-5,j,4) &
+               -1.37269965e-05_wp*q(nx+2-6,j,4) 
    
-   q2(nx+4-1,j,5) =-0.042888704485_wp*q(nx+4+0,j,5) &
-               +0.138814085762_wp*q(nx+4-1,j,5) &
-               -0.1784240360865_wp*q(nx+4-2,j,5) &
-               +0.111559546536_wp*q(nx+4-3,j,5) &
-               -0.0286735324325_wp*q(nx+4-4,j,5) &
-               -0.000373632298_wp*q(nx+4-5,j,5) &
-               -1.37269965e-05_wp*q(nx+4-6,j,5) 
-   
-   q2(nx+4-2,j,1) =0.052523901012_wp*q(nx+4+0,j,1) &
-               -0.206299133811_wp*q(nx+4-1,j,1) &
-               +0.35352799825_wp*q(nx+4-2,j,1) &
-               -0.348142394842_wp*q(nx+4-3,j,1) &
-               +0.181481803619_wp*q(nx+4-4,j,1) &
-               +0.00944080437_wp*q(nx+4-5,j,1) &
-               -0.077675100452_wp*q(nx+4-6,j,1) &
-               +0.044887364863_wp*q(nx+4-7,j,1) &
-               -0.009971961849_wp*q(nx+4-8,j,1) &
-               +0.00011335942_wp*q(nx+4-9,j,1) &
-               +0.00011335942_wp*q(nx+4-10,j,1) 
-   
-   q2(nx+4-2,j,2) =0.052523901012_wp*q(nx+4+0,j,2) &
-               -0.206299133811_wp*q(nx+4-1,j,2) &
-               +0.35352799825_wp*q(nx+4-2,j,2) &
-               -0.348142394842_wp*q(nx+4-3,j,2) &
-               +0.181481803619_wp*q(nx+4-4,j,2) &
-               +0.00944080437_wp*q(nx+4-5,j,2) &
-               -0.077675100452_wp*q(nx+4-6,j,2) &
-               +0.044887364863_wp*q(nx+4-7,j,2) &
-               -0.009971961849_wp*q(nx+4-8,j,2) &
-               +0.00011335942_wp*q(nx+4-9,j,2) &
-               +0.00011335942_wp*q(nx+4-10,j,2) 
-   
-   q2(nx+4-2,j,3) =0.052523901012_wp*q(nx+4+0,j,3) &
-               -0.206299133811_wp*q(nx+4-1,j,3) &
-               +0.35352799825_wp*q(nx+4-2,j,3) &
-               -0.348142394842_wp*q(nx+4-3,j,3) &
-               +0.181481803619_wp*q(nx+4-4,j,3) &
-               +0.00944080437_wp*q(nx+4-5,j,3) &
-               -0.077675100452_wp*q(nx+4-6,j,3) &
-               +0.044887364863_wp*q(nx+4-7,j,3) &
-               -0.009971961849_wp*q(nx+4-8,j,3) &
-               +0.00011335942_wp*q(nx+4-9,j,3) &
-               +0.00011335942_wp*q(nx+4-10,j,3) 
-   
-   q2(nx+4-2,j,4) =0.052523901012_wp*q(nx+4+0,j,4) &
-               -0.206299133811_wp*q(nx+4-1,j,4) &
-               +0.35352799825_wp*q(nx+4-2,j,4) &
-               -0.348142394842_wp*q(nx+4-3,j,4) &
-               +0.181481803619_wp*q(nx+4-4,j,4) &
-               +0.00944080437_wp*q(nx+4-5,j,4) &
-               -0.077675100452_wp*q(nx+4-6,j,4) &
-               +0.044887364863_wp*q(nx+4-7,j,4) &
-               -0.009971961849_wp*q(nx+4-8,j,4) &
-               +0.00011335942_wp*q(nx+4-9,j,4) &
-               +0.00011335942_wp*q(nx+4-10,j,4) 
-   
-   q2(nx+4-2,j,5) =0.052523901012_wp*q(nx+4+0,j,5) &
-               -0.206299133811_wp*q(nx+4-1,j,5) &
-               +0.35352799825_wp*q(nx+4-2,j,5) &
-               -0.348142394842_wp*q(nx+4-3,j,5) &
-               +0.181481803619_wp*q(nx+4-4,j,5) &
-               +0.00944080437_wp*q(nx+4-5,j,5) &
-               -0.077675100452_wp*q(nx+4-6,j,5) &
-               +0.044887364863_wp*q(nx+4-7,j,5) &
-               -0.009971961849_wp*q(nx+4-8,j,5) &
-               +0.00011335942_wp*q(nx+4-9,j,5) &
-               +0.00011335942_wp*q(nx+4-10,j,5) 
-   
-   q2(nx+4-3,j,1) =-5.459601e-05_wp*q(nx+4+0,j,1) &
-               +0.042124772446_wp*q(nx+4-1,j,1) &
-               -0.173103107841_wp*q(nx+4-2,j,1) &
-               +0.299615871352_wp*q(nx+4-3,j,1) &
-               -0.276543612935_wp*q(nx+4-4,j,1) &
-               +0.131223506571_wp*q(nx+4-5,j,1) &
-               -0.023424966418_wp*q(nx+4-6,j,1) &
-               +0.013937561779_wp*q(nx+4-7,j,1) &
-               -0.024565095706_wp*q(nx+4-8,j,1) &
-               +0.013098287852_wp*q(nx+4-9,j,1) &
-               -0.00230862109_wp*q(nx+4-10,j,1) 
-   
-   q2(nx+4-3,j,2) =-5.459601e-05_wp*q(nx+4+0,j,2) &
-               +0.042124772446_wp*q(nx+4-1,j,2) &
-               -0.173103107841_wp*q(nx+4-2,j,2) &
-               +0.299615871352_wp*q(nx+4-3,j,2) &
-               -0.276543612935_wp*q(nx+4-4,j,2) &
-               +0.131223506571_wp*q(nx+4-5,j,2) &
-               -0.023424966418_wp*q(nx+4-6,j,2) &
-               +0.013937561779_wp*q(nx+4-7,j,2) &
-               -0.024565095706_wp*q(nx+4-8,j,2) &
-               +0.013098287852_wp*q(nx+4-9,j,2) &
-               -0.00230862109_wp*q(nx+4-10,j,2) 
-   
-   q2(nx+4-3,j,3) =-5.459601e-05_wp*q(nx+4+0,j,3) &
-               +0.042124772446_wp*q(nx+4-1,j,3) &
-               -0.173103107841_wp*q(nx+4-2,j,3) &
-               +0.299615871352_wp*q(nx+4-3,j,3) &
-               -0.276543612935_wp*q(nx+4-4,j,3) &
-               +0.131223506571_wp*q(nx+4-5,j,3) &
-               -0.023424966418_wp*q(nx+4-6,j,3) &
-               +0.013937561779_wp*q(nx+4-7,j,3) &
-               -0.024565095706_wp*q(nx+4-8,j,3) &
-               +0.013098287852_wp*q(nx+4-9,j,3) &
-               -0.00230862109_wp*q(nx+4-10,j,3) 
-   
-   q2(nx+4-3,j,4) =-5.459601e-05_wp*q(nx+4+0,j,4) &
-               +0.042124772446_wp*q(nx+4-1,j,4) &
-               -0.173103107841_wp*q(nx+4-2,j,4) &
-               +0.299615871352_wp*q(nx+4-3,j,4) &
-               -0.276543612935_wp*q(nx+4-4,j,4) &
-               +0.131223506571_wp*q(nx+4-5,j,4) &
-               -0.023424966418_wp*q(nx+4-6,j,4) &
-               +0.013937561779_wp*q(nx+4-7,j,4) &
-               -0.024565095706_wp*q(nx+4-8,j,4) &
-               +0.013098287852_wp*q(nx+4-9,j,4) &
-               -0.00230862109_wp*q(nx+4-10,j,4) 
-   
-   q2(nx+4-3,j,5) =-5.459601e-05_wp*q(nx+4+0,j,5) &
-               +0.042124772446_wp*q(nx+4-1,j,5) &
-               -0.173103107841_wp*q(nx+4-2,j,5) &
-               +0.299615871352_wp*q(nx+4-3,j,5) &
-               -0.276543612935_wp*q(nx+4-4,j,5) &
-               +0.131223506571_wp*q(nx+4-5,j,5) &
-               -0.023424966418_wp*q(nx+4-6,j,5) &
-               +0.013937561779_wp*q(nx+4-7,j,5) &
-               -0.024565095706_wp*q(nx+4-8,j,5) &
-               +0.013098287852_wp*q(nx+4-9,j,5) &
-               -0.00230862109_wp*q(nx+4-10,j,5) 
+   q2(nx+2-1,j,5) =-0.042888704485_wp*q(nx+2+0,j,5) &
+               +0.138814085762_wp*q(nx+2-1,j,5) &
+               -0.1784240360865_wp*q(nx+2-2,j,5) &
+               +0.111559546536_wp*q(nx+2-3,j,5) &
+               -0.0286735324325_wp*q(nx+2-4,j,5) &
+               -0.000373632298_wp*q(nx+2-5,j,5) &
+               -1.37269965e-05_wp*q(nx+2-6,j,5) 
    
         enddo
 
@@ -1659,29 +1383,17 @@ do ibc=1,nbc
 
         do j=idloop(3),idloop(4) 
    
-   q(1-4+0,j,1) = q(1-4+0,j,1) - param_float(5)*q2(1-4+0,j,1)
-   q(1-4+0,j,2) = q(1-4+0,j,2) - param_float(5)*q2(1-4+0,j,2)
-   q(1-4+0,j,3) = q(1-4+0,j,3) - param_float(5)*q2(1-4+0,j,3)
-   q(1-4+0,j,4) = q(1-4+0,j,4) - param_float(5)*q2(1-4+0,j,4)
-   q(1-4+0,j,5) = q(1-4+0,j,5) - param_float(5)*q2(1-4+0,j,5)
+   q(1-2+0,j,1) = q(1-2+0,j,1) - param_float(5)*q2(1-2+0,j,1)
+   q(1-2+0,j,2) = q(1-2+0,j,2) - param_float(5)*q2(1-2+0,j,2)
+   q(1-2+0,j,3) = q(1-2+0,j,3) - param_float(5)*q2(1-2+0,j,3)
+   q(1-2+0,j,4) = q(1-2+0,j,4) - param_float(5)*q2(1-2+0,j,4)
+   q(1-2+0,j,5) = q(1-2+0,j,5) - param_float(5)*q2(1-2+0,j,5)
    
-   q(1-4+1,j,1) = q(1-4+1,j,1) - param_float(5)*q2(1-4+1,j,1)
-   q(1-4+1,j,2) = q(1-4+1,j,2) - param_float(5)*q2(1-4+1,j,2)
-   q(1-4+1,j,3) = q(1-4+1,j,3) - param_float(5)*q2(1-4+1,j,3)
-   q(1-4+1,j,4) = q(1-4+1,j,4) - param_float(5)*q2(1-4+1,j,4)
-   q(1-4+1,j,5) = q(1-4+1,j,5) - param_float(5)*q2(1-4+1,j,5)
-   
-   q(1-4+2,j,1) = q(1-4+2,j,1) - param_float(5)*q2(1-4+2,j,1)
-   q(1-4+2,j,2) = q(1-4+2,j,2) - param_float(5)*q2(1-4+2,j,2)
-   q(1-4+2,j,3) = q(1-4+2,j,3) - param_float(5)*q2(1-4+2,j,3)
-   q(1-4+2,j,4) = q(1-4+2,j,4) - param_float(5)*q2(1-4+2,j,4)
-   q(1-4+2,j,5) = q(1-4+2,j,5) - param_float(5)*q2(1-4+2,j,5)
-   
-   q(1-4+3,j,1) = q(1-4+3,j,1) - param_float(5)*q2(1-4+3,j,1)
-   q(1-4+3,j,2) = q(1-4+3,j,2) - param_float(5)*q2(1-4+3,j,2)
-   q(1-4+3,j,3) = q(1-4+3,j,3) - param_float(5)*q2(1-4+3,j,3)
-   q(1-4+3,j,4) = q(1-4+3,j,4) - param_float(5)*q2(1-4+3,j,4)
-   q(1-4+3,j,5) = q(1-4+3,j,5) - param_float(5)*q2(1-4+3,j,5)
+   q(1-2+1,j,1) = q(1-2+1,j,1) - param_float(5)*q2(1-2+1,j,1)
+   q(1-2+1,j,2) = q(1-2+1,j,2) - param_float(5)*q2(1-2+1,j,2)
+   q(1-2+1,j,3) = q(1-2+1,j,3) - param_float(5)*q2(1-2+1,j,3)
+   q(1-2+1,j,4) = q(1-2+1,j,4) - param_float(5)*q2(1-2+1,j,4)
+   q(1-2+1,j,5) = q(1-2+1,j,5) - param_float(5)*q2(1-2+1,j,5)
    
         enddo
 
@@ -1689,29 +1401,17 @@ do ibc=1,nbc
 
         do j=idloop(3),idloop(4) 
    
-   q(nx+4+0,j,1) = q(nx+4+0,j,1) - param_float(5)*q2(nx+4+0,j,1)
-   q(nx+4+0,j,2) = q(nx+4+0,j,2) - param_float(5)*q2(nx+4+0,j,2)
-   q(nx+4+0,j,3) = q(nx+4+0,j,3) - param_float(5)*q2(nx+4+0,j,3)
-   q(nx+4+0,j,4) = q(nx+4+0,j,4) - param_float(5)*q2(nx+4+0,j,4)
-   q(nx+4+0,j,5) = q(nx+4+0,j,5) - param_float(5)*q2(nx+4+0,j,5)
+   q(nx+2+0,j,1) = q(nx+2+0,j,1) - param_float(5)*q2(nx+2+0,j,1)
+   q(nx+2+0,j,2) = q(nx+2+0,j,2) - param_float(5)*q2(nx+2+0,j,2)
+   q(nx+2+0,j,3) = q(nx+2+0,j,3) - param_float(5)*q2(nx+2+0,j,3)
+   q(nx+2+0,j,4) = q(nx+2+0,j,4) - param_float(5)*q2(nx+2+0,j,4)
+   q(nx+2+0,j,5) = q(nx+2+0,j,5) - param_float(5)*q2(nx+2+0,j,5)
    
-   q(nx+4-1,j,1) = q(nx+4-1,j,1) - param_float(5)*q2(nx+4-1,j,1)
-   q(nx+4-1,j,2) = q(nx+4-1,j,2) - param_float(5)*q2(nx+4-1,j,2)
-   q(nx+4-1,j,3) = q(nx+4-1,j,3) - param_float(5)*q2(nx+4-1,j,3)
-   q(nx+4-1,j,4) = q(nx+4-1,j,4) - param_float(5)*q2(nx+4-1,j,4)
-   q(nx+4-1,j,5) = q(nx+4-1,j,5) - param_float(5)*q2(nx+4-1,j,5)
-   
-   q(nx+4-2,j,1) = q(nx+4-2,j,1) - param_float(5)*q2(nx+4-2,j,1)
-   q(nx+4-2,j,2) = q(nx+4-2,j,2) - param_float(5)*q2(nx+4-2,j,2)
-   q(nx+4-2,j,3) = q(nx+4-2,j,3) - param_float(5)*q2(nx+4-2,j,3)
-   q(nx+4-2,j,4) = q(nx+4-2,j,4) - param_float(5)*q2(nx+4-2,j,4)
-   q(nx+4-2,j,5) = q(nx+4-2,j,5) - param_float(5)*q2(nx+4-2,j,5)
-   
-   q(nx+4-3,j,1) = q(nx+4-3,j,1) - param_float(5)*q2(nx+4-3,j,1)
-   q(nx+4-3,j,2) = q(nx+4-3,j,2) - param_float(5)*q2(nx+4-3,j,2)
-   q(nx+4-3,j,3) = q(nx+4-3,j,3) - param_float(5)*q2(nx+4-3,j,3)
-   q(nx+4-3,j,4) = q(nx+4-3,j,4) - param_float(5)*q2(nx+4-3,j,4)
-   q(nx+4-3,j,5) = q(nx+4-3,j,5) - param_float(5)*q2(nx+4-3,j,5)
+   q(nx+2-1,j,1) = q(nx+2-1,j,1) - param_float(5)*q2(nx+2-1,j,1)
+   q(nx+2-1,j,2) = q(nx+2-1,j,2) - param_float(5)*q2(nx+2-1,j,2)
+   q(nx+2-1,j,3) = q(nx+2-1,j,3) - param_float(5)*q2(nx+2-1,j,3)
+   q(nx+2-1,j,4) = q(nx+2-1,j,4) - param_float(5)*q2(nx+2-1,j,4)
+   q(nx+2-1,j,5) = q(nx+2-1,j,5) - param_float(5)*q2(nx+2-1,j,5)
    
         enddo
 
@@ -1831,190 +1531,70 @@ do ibc=1,nbc
     
          do i=idloop(1),idloop(2) 
    
-   q2(i,1-4+0,1) =0.1604411764705_wp*q(i,1-4+0,1) &
-               -0.2325_wp*q(i,1-4+1,1) &
-               +0.0895588235295_wp*q(i,1-4+2,1) &
-               -0.0175_wp*q(i,1-4+3,1) 
+   q2(i,1-2+0,1) =0.1604411764705_wp*q(i,1-2+0,1) &
+               -0.2325_wp*q(i,1-2+1,1) &
+               +0.0895588235295_wp*q(i,1-2+2,1) &
+               -0.0175_wp*q(i,1-2+3,1) 
    
-   q2(i,1-4+0,2) =0.1604411764705_wp*q(i,1-4+0,2) &
-               -0.2325_wp*q(i,1-4+1,2) &
-               +0.0895588235295_wp*q(i,1-4+2,2) &
-               -0.0175_wp*q(i,1-4+3,2) 
+   q2(i,1-2+0,2) =0.1604411764705_wp*q(i,1-2+0,2) &
+               -0.2325_wp*q(i,1-2+1,2) &
+               +0.0895588235295_wp*q(i,1-2+2,2) &
+               -0.0175_wp*q(i,1-2+3,2) 
    
-   q2(i,1-4+0,3) =0.1604411764705_wp*q(i,1-4+0,3) &
-               -0.2325_wp*q(i,1-4+1,3) &
-               +0.0895588235295_wp*q(i,1-4+2,3) &
-               -0.0175_wp*q(i,1-4+3,3) 
+   q2(i,1-2+0,3) =0.1604411764705_wp*q(i,1-2+0,3) &
+               -0.2325_wp*q(i,1-2+1,3) &
+               +0.0895588235295_wp*q(i,1-2+2,3) &
+               -0.0175_wp*q(i,1-2+3,3) 
    
-   q2(i,1-4+0,4) =0.1604411764705_wp*q(i,1-4+0,4) &
-               -0.2325_wp*q(i,1-4+1,4) &
-               +0.0895588235295_wp*q(i,1-4+2,4) &
-               -0.0175_wp*q(i,1-4+3,4) 
+   q2(i,1-2+0,4) =0.1604411764705_wp*q(i,1-2+0,4) &
+               -0.2325_wp*q(i,1-2+1,4) &
+               +0.0895588235295_wp*q(i,1-2+2,4) &
+               -0.0175_wp*q(i,1-2+3,4) 
    
-   q2(i,1-4+0,5) =0.1604411764705_wp*q(i,1-4+0,5) &
-               -0.2325_wp*q(i,1-4+1,5) &
-               +0.0895588235295_wp*q(i,1-4+2,5) &
-               -0.0175_wp*q(i,1-4+3,5) 
+   q2(i,1-2+0,5) =0.1604411764705_wp*q(i,1-2+0,5) &
+               -0.2325_wp*q(i,1-2+1,5) &
+               +0.0895588235295_wp*q(i,1-2+2,5) &
+               -0.0175_wp*q(i,1-2+3,5) 
    
-   q2(i,1-4+1,1) =-0.042888704485_wp*q(i,1-4+0,1) &
-               +0.138814085762_wp*q(i,1-4+1,1) &
-               -0.1784240360865_wp*q(i,1-4+2,1) &
-               +0.111559546536_wp*q(i,1-4+3,1) &
-               -0.0286735324325_wp*q(i,1-4+4,1) &
-               -0.000373632298_wp*q(i,1-4+5,1) &
-               -1.37269965e-05_wp*q(i,1-4+6,1) 
+   q2(i,1-2+1,1) =-0.042888704485_wp*q(i,1-2+0,1) &
+               +0.138814085762_wp*q(i,1-2+1,1) &
+               -0.1784240360865_wp*q(i,1-2+2,1) &
+               +0.111559546536_wp*q(i,1-2+3,1) &
+               -0.0286735324325_wp*q(i,1-2+4,1) &
+               -0.000373632298_wp*q(i,1-2+5,1) &
+               -1.37269965e-05_wp*q(i,1-2+6,1) 
    
-   q2(i,1-4+1,2) =-0.042888704485_wp*q(i,1-4+0,2) &
-               +0.138814085762_wp*q(i,1-4+1,2) &
-               -0.1784240360865_wp*q(i,1-4+2,2) &
-               +0.111559546536_wp*q(i,1-4+3,2) &
-               -0.0286735324325_wp*q(i,1-4+4,2) &
-               -0.000373632298_wp*q(i,1-4+5,2) &
-               -1.37269965e-05_wp*q(i,1-4+6,2) 
+   q2(i,1-2+1,2) =-0.042888704485_wp*q(i,1-2+0,2) &
+               +0.138814085762_wp*q(i,1-2+1,2) &
+               -0.1784240360865_wp*q(i,1-2+2,2) &
+               +0.111559546536_wp*q(i,1-2+3,2) &
+               -0.0286735324325_wp*q(i,1-2+4,2) &
+               -0.000373632298_wp*q(i,1-2+5,2) &
+               -1.37269965e-05_wp*q(i,1-2+6,2) 
    
-   q2(i,1-4+1,3) =-0.042888704485_wp*q(i,1-4+0,3) &
-               +0.138814085762_wp*q(i,1-4+1,3) &
-               -0.1784240360865_wp*q(i,1-4+2,3) &
-               +0.111559546536_wp*q(i,1-4+3,3) &
-               -0.0286735324325_wp*q(i,1-4+4,3) &
-               -0.000373632298_wp*q(i,1-4+5,3) &
-               -1.37269965e-05_wp*q(i,1-4+6,3) 
+   q2(i,1-2+1,3) =-0.042888704485_wp*q(i,1-2+0,3) &
+               +0.138814085762_wp*q(i,1-2+1,3) &
+               -0.1784240360865_wp*q(i,1-2+2,3) &
+               +0.111559546536_wp*q(i,1-2+3,3) &
+               -0.0286735324325_wp*q(i,1-2+4,3) &
+               -0.000373632298_wp*q(i,1-2+5,3) &
+               -1.37269965e-05_wp*q(i,1-2+6,3) 
    
-   q2(i,1-4+1,4) =-0.042888704485_wp*q(i,1-4+0,4) &
-               +0.138814085762_wp*q(i,1-4+1,4) &
-               -0.1784240360865_wp*q(i,1-4+2,4) &
-               +0.111559546536_wp*q(i,1-4+3,4) &
-               -0.0286735324325_wp*q(i,1-4+4,4) &
-               -0.000373632298_wp*q(i,1-4+5,4) &
-               -1.37269965e-05_wp*q(i,1-4+6,4) 
+   q2(i,1-2+1,4) =-0.042888704485_wp*q(i,1-2+0,4) &
+               +0.138814085762_wp*q(i,1-2+1,4) &
+               -0.1784240360865_wp*q(i,1-2+2,4) &
+               +0.111559546536_wp*q(i,1-2+3,4) &
+               -0.0286735324325_wp*q(i,1-2+4,4) &
+               -0.000373632298_wp*q(i,1-2+5,4) &
+               -1.37269965e-05_wp*q(i,1-2+6,4) 
    
-   q2(i,1-4+1,5) =-0.042888704485_wp*q(i,1-4+0,5) &
-               +0.138814085762_wp*q(i,1-4+1,5) &
-               -0.1784240360865_wp*q(i,1-4+2,5) &
-               +0.111559546536_wp*q(i,1-4+3,5) &
-               -0.0286735324325_wp*q(i,1-4+4,5) &
-               -0.000373632298_wp*q(i,1-4+5,5) &
-               -1.37269965e-05_wp*q(i,1-4+6,5) 
-   
-   q2(i,1-4+2,1) =0.052523901012_wp*q(i,1-4+0,1) &
-               -0.206299133811_wp*q(i,1-4+1,1) &
-               +0.35352799825_wp*q(i,1-4+2,1) &
-               -0.348142394842_wp*q(i,1-4+3,1) &
-               +0.181481803619_wp*q(i,1-4+4,1) &
-               +0.00944080437_wp*q(i,1-4+5,1) &
-               -0.077675100452_wp*q(i,1-4+6,1) &
-               +0.044887364863_wp*q(i,1-4+7,1) &
-               -0.009971961849_wp*q(i,1-4+8,1) &
-               +0.00011335942_wp*q(i,1-4+9,1) &
-               +0.00011335942_wp*q(i,1-4+10,1) 
-   
-   q2(i,1-4+2,2) =0.052523901012_wp*q(i,1-4+0,2) &
-               -0.206299133811_wp*q(i,1-4+1,2) &
-               +0.35352799825_wp*q(i,1-4+2,2) &
-               -0.348142394842_wp*q(i,1-4+3,2) &
-               +0.181481803619_wp*q(i,1-4+4,2) &
-               +0.00944080437_wp*q(i,1-4+5,2) &
-               -0.077675100452_wp*q(i,1-4+6,2) &
-               +0.044887364863_wp*q(i,1-4+7,2) &
-               -0.009971961849_wp*q(i,1-4+8,2) &
-               +0.00011335942_wp*q(i,1-4+9,2) &
-               +0.00011335942_wp*q(i,1-4+10,2) 
-   
-   q2(i,1-4+2,3) =0.052523901012_wp*q(i,1-4+0,3) &
-               -0.206299133811_wp*q(i,1-4+1,3) &
-               +0.35352799825_wp*q(i,1-4+2,3) &
-               -0.348142394842_wp*q(i,1-4+3,3) &
-               +0.181481803619_wp*q(i,1-4+4,3) &
-               +0.00944080437_wp*q(i,1-4+5,3) &
-               -0.077675100452_wp*q(i,1-4+6,3) &
-               +0.044887364863_wp*q(i,1-4+7,3) &
-               -0.009971961849_wp*q(i,1-4+8,3) &
-               +0.00011335942_wp*q(i,1-4+9,3) &
-               +0.00011335942_wp*q(i,1-4+10,3) 
-   
-   q2(i,1-4+2,4) =0.052523901012_wp*q(i,1-4+0,4) &
-               -0.206299133811_wp*q(i,1-4+1,4) &
-               +0.35352799825_wp*q(i,1-4+2,4) &
-               -0.348142394842_wp*q(i,1-4+3,4) &
-               +0.181481803619_wp*q(i,1-4+4,4) &
-               +0.00944080437_wp*q(i,1-4+5,4) &
-               -0.077675100452_wp*q(i,1-4+6,4) &
-               +0.044887364863_wp*q(i,1-4+7,4) &
-               -0.009971961849_wp*q(i,1-4+8,4) &
-               +0.00011335942_wp*q(i,1-4+9,4) &
-               +0.00011335942_wp*q(i,1-4+10,4) 
-   
-   q2(i,1-4+2,5) =0.052523901012_wp*q(i,1-4+0,5) &
-               -0.206299133811_wp*q(i,1-4+1,5) &
-               +0.35352799825_wp*q(i,1-4+2,5) &
-               -0.348142394842_wp*q(i,1-4+3,5) &
-               +0.181481803619_wp*q(i,1-4+4,5) &
-               +0.00944080437_wp*q(i,1-4+5,5) &
-               -0.077675100452_wp*q(i,1-4+6,5) &
-               +0.044887364863_wp*q(i,1-4+7,5) &
-               -0.009971961849_wp*q(i,1-4+8,5) &
-               +0.00011335942_wp*q(i,1-4+9,5) &
-               +0.00011335942_wp*q(i,1-4+10,5) 
-   
-   q2(i,1-4+3,1) =-5.459601e-05_wp*q(i,1-4+0,1) &
-               +0.042124772446_wp*q(i,1-4+1,1) &
-               -0.173103107841_wp*q(i,1-4+2,1) &
-               +0.299615871352_wp*q(i,1-4+3,1) &
-               -0.276543612935_wp*q(i,1-4+4,1) &
-               +0.131223506571_wp*q(i,1-4+5,1) &
-               -0.023424966418_wp*q(i,1-4+6,1) &
-               +0.013937561779_wp*q(i,1-4+7,1) &
-               -0.024565095706_wp*q(i,1-4+8,1) &
-               +0.013098287852_wp*q(i,1-4+9,1) &
-               -0.00230862109_wp*q(i,1-4+10,1) 
-   
-   q2(i,1-4+3,2) =-5.459601e-05_wp*q(i,1-4+0,2) &
-               +0.042124772446_wp*q(i,1-4+1,2) &
-               -0.173103107841_wp*q(i,1-4+2,2) &
-               +0.299615871352_wp*q(i,1-4+3,2) &
-               -0.276543612935_wp*q(i,1-4+4,2) &
-               +0.131223506571_wp*q(i,1-4+5,2) &
-               -0.023424966418_wp*q(i,1-4+6,2) &
-               +0.013937561779_wp*q(i,1-4+7,2) &
-               -0.024565095706_wp*q(i,1-4+8,2) &
-               +0.013098287852_wp*q(i,1-4+9,2) &
-               -0.00230862109_wp*q(i,1-4+10,2) 
-   
-   q2(i,1-4+3,3) =-5.459601e-05_wp*q(i,1-4+0,3) &
-               +0.042124772446_wp*q(i,1-4+1,3) &
-               -0.173103107841_wp*q(i,1-4+2,3) &
-               +0.299615871352_wp*q(i,1-4+3,3) &
-               -0.276543612935_wp*q(i,1-4+4,3) &
-               +0.131223506571_wp*q(i,1-4+5,3) &
-               -0.023424966418_wp*q(i,1-4+6,3) &
-               +0.013937561779_wp*q(i,1-4+7,3) &
-               -0.024565095706_wp*q(i,1-4+8,3) &
-               +0.013098287852_wp*q(i,1-4+9,3) &
-               -0.00230862109_wp*q(i,1-4+10,3) 
-   
-   q2(i,1-4+3,4) =-5.459601e-05_wp*q(i,1-4+0,4) &
-               +0.042124772446_wp*q(i,1-4+1,4) &
-               -0.173103107841_wp*q(i,1-4+2,4) &
-               +0.299615871352_wp*q(i,1-4+3,4) &
-               -0.276543612935_wp*q(i,1-4+4,4) &
-               +0.131223506571_wp*q(i,1-4+5,4) &
-               -0.023424966418_wp*q(i,1-4+6,4) &
-               +0.013937561779_wp*q(i,1-4+7,4) &
-               -0.024565095706_wp*q(i,1-4+8,4) &
-               +0.013098287852_wp*q(i,1-4+9,4) &
-               -0.00230862109_wp*q(i,1-4+10,4) 
-   
-   q2(i,1-4+3,5) =-5.459601e-05_wp*q(i,1-4+0,5) &
-               +0.042124772446_wp*q(i,1-4+1,5) &
-               -0.173103107841_wp*q(i,1-4+2,5) &
-               +0.299615871352_wp*q(i,1-4+3,5) &
-               -0.276543612935_wp*q(i,1-4+4,5) &
-               +0.131223506571_wp*q(i,1-4+5,5) &
-               -0.023424966418_wp*q(i,1-4+6,5) &
-               +0.013937561779_wp*q(i,1-4+7,5) &
-               -0.024565095706_wp*q(i,1-4+8,5) &
-               +0.013098287852_wp*q(i,1-4+9,5) &
-               -0.00230862109_wp*q(i,1-4+10,5) 
+   q2(i,1-2+1,5) =-0.042888704485_wp*q(i,1-2+0,5) &
+               +0.138814085762_wp*q(i,1-2+1,5) &
+               -0.1784240360865_wp*q(i,1-2+2,5) &
+               +0.111559546536_wp*q(i,1-2+3,5) &
+               -0.0286735324325_wp*q(i,1-2+4,5) &
+               -0.000373632298_wp*q(i,1-2+5,5) &
+               -1.37269965e-05_wp*q(i,1-2+6,5) 
    
       enddo
 
@@ -2027,190 +1607,70 @@ do ibc=1,nbc
     
          do i=idloop(1),idloop(2) 
    
-   q2(i,ny+4+0,1) =0.1604411764705_wp*q(i,ny+4+0,1) &
-               -0.2325_wp*q(i,ny+4-1,1) &
-               +0.0895588235295_wp*q(i,ny+4-2,1) &
-               -0.0175_wp*q(i,ny+4-3,1) 
+   q2(i,ny+2+0,1) =0.1604411764705_wp*q(i,ny+2+0,1) &
+               -0.2325_wp*q(i,ny+2-1,1) &
+               +0.0895588235295_wp*q(i,ny+2-2,1) &
+               -0.0175_wp*q(i,ny+2-3,1) 
    
-   q2(i,ny+4+0,2) =0.1604411764705_wp*q(i,ny+4+0,2) &
-               -0.2325_wp*q(i,ny+4-1,2) &
-               +0.0895588235295_wp*q(i,ny+4-2,2) &
-               -0.0175_wp*q(i,ny+4-3,2) 
+   q2(i,ny+2+0,2) =0.1604411764705_wp*q(i,ny+2+0,2) &
+               -0.2325_wp*q(i,ny+2-1,2) &
+               +0.0895588235295_wp*q(i,ny+2-2,2) &
+               -0.0175_wp*q(i,ny+2-3,2) 
    
-   q2(i,ny+4+0,3) =0.1604411764705_wp*q(i,ny+4+0,3) &
-               -0.2325_wp*q(i,ny+4-1,3) &
-               +0.0895588235295_wp*q(i,ny+4-2,3) &
-               -0.0175_wp*q(i,ny+4-3,3) 
+   q2(i,ny+2+0,3) =0.1604411764705_wp*q(i,ny+2+0,3) &
+               -0.2325_wp*q(i,ny+2-1,3) &
+               +0.0895588235295_wp*q(i,ny+2-2,3) &
+               -0.0175_wp*q(i,ny+2-3,3) 
    
-   q2(i,ny+4+0,4) =0.1604411764705_wp*q(i,ny+4+0,4) &
-               -0.2325_wp*q(i,ny+4-1,4) &
-               +0.0895588235295_wp*q(i,ny+4-2,4) &
-               -0.0175_wp*q(i,ny+4-3,4) 
+   q2(i,ny+2+0,4) =0.1604411764705_wp*q(i,ny+2+0,4) &
+               -0.2325_wp*q(i,ny+2-1,4) &
+               +0.0895588235295_wp*q(i,ny+2-2,4) &
+               -0.0175_wp*q(i,ny+2-3,4) 
    
-   q2(i,ny+4+0,5) =0.1604411764705_wp*q(i,ny+4+0,5) &
-               -0.2325_wp*q(i,ny+4-1,5) &
-               +0.0895588235295_wp*q(i,ny+4-2,5) &
-               -0.0175_wp*q(i,ny+4-3,5) 
+   q2(i,ny+2+0,5) =0.1604411764705_wp*q(i,ny+2+0,5) &
+               -0.2325_wp*q(i,ny+2-1,5) &
+               +0.0895588235295_wp*q(i,ny+2-2,5) &
+               -0.0175_wp*q(i,ny+2-3,5) 
    
-   q2(i,ny+4-1,1) =-0.042888704485_wp*q(i,ny+4+0,1) &
-               +0.138814085762_wp*q(i,ny+4-1,1) &
-               -0.1784240360865_wp*q(i,ny+4-2,1) &
-               +0.111559546536_wp*q(i,ny+4-3,1) &
-               -0.0286735324325_wp*q(i,ny+4-4,1) &
-               -0.000373632298_wp*q(i,ny+4-5,1) &
-               -1.37269965e-05_wp*q(i,ny+4-6,1) 
+   q2(i,ny+2-1,1) =-0.042888704485_wp*q(i,ny+2+0,1) &
+               +0.138814085762_wp*q(i,ny+2-1,1) &
+               -0.1784240360865_wp*q(i,ny+2-2,1) &
+               +0.111559546536_wp*q(i,ny+2-3,1) &
+               -0.0286735324325_wp*q(i,ny+2-4,1) &
+               -0.000373632298_wp*q(i,ny+2-5,1) &
+               -1.37269965e-05_wp*q(i,ny+2-6,1) 
    
-   q2(i,ny+4-1,2) =-0.042888704485_wp*q(i,ny+4+0,2) &
-               +0.138814085762_wp*q(i,ny+4-1,2) &
-               -0.1784240360865_wp*q(i,ny+4-2,2) &
-               +0.111559546536_wp*q(i,ny+4-3,2) &
-               -0.0286735324325_wp*q(i,ny+4-4,2) &
-               -0.000373632298_wp*q(i,ny+4-5,2) &
-               -1.37269965e-05_wp*q(i,ny+4-6,2) 
+   q2(i,ny+2-1,2) =-0.042888704485_wp*q(i,ny+2+0,2) &
+               +0.138814085762_wp*q(i,ny+2-1,2) &
+               -0.1784240360865_wp*q(i,ny+2-2,2) &
+               +0.111559546536_wp*q(i,ny+2-3,2) &
+               -0.0286735324325_wp*q(i,ny+2-4,2) &
+               -0.000373632298_wp*q(i,ny+2-5,2) &
+               -1.37269965e-05_wp*q(i,ny+2-6,2) 
    
-   q2(i,ny+4-1,3) =-0.042888704485_wp*q(i,ny+4+0,3) &
-               +0.138814085762_wp*q(i,ny+4-1,3) &
-               -0.1784240360865_wp*q(i,ny+4-2,3) &
-               +0.111559546536_wp*q(i,ny+4-3,3) &
-               -0.0286735324325_wp*q(i,ny+4-4,3) &
-               -0.000373632298_wp*q(i,ny+4-5,3) &
-               -1.37269965e-05_wp*q(i,ny+4-6,3) 
+   q2(i,ny+2-1,3) =-0.042888704485_wp*q(i,ny+2+0,3) &
+               +0.138814085762_wp*q(i,ny+2-1,3) &
+               -0.1784240360865_wp*q(i,ny+2-2,3) &
+               +0.111559546536_wp*q(i,ny+2-3,3) &
+               -0.0286735324325_wp*q(i,ny+2-4,3) &
+               -0.000373632298_wp*q(i,ny+2-5,3) &
+               -1.37269965e-05_wp*q(i,ny+2-6,3) 
    
-   q2(i,ny+4-1,4) =-0.042888704485_wp*q(i,ny+4+0,4) &
-               +0.138814085762_wp*q(i,ny+4-1,4) &
-               -0.1784240360865_wp*q(i,ny+4-2,4) &
-               +0.111559546536_wp*q(i,ny+4-3,4) &
-               -0.0286735324325_wp*q(i,ny+4-4,4) &
-               -0.000373632298_wp*q(i,ny+4-5,4) &
-               -1.37269965e-05_wp*q(i,ny+4-6,4) 
+   q2(i,ny+2-1,4) =-0.042888704485_wp*q(i,ny+2+0,4) &
+               +0.138814085762_wp*q(i,ny+2-1,4) &
+               -0.1784240360865_wp*q(i,ny+2-2,4) &
+               +0.111559546536_wp*q(i,ny+2-3,4) &
+               -0.0286735324325_wp*q(i,ny+2-4,4) &
+               -0.000373632298_wp*q(i,ny+2-5,4) &
+               -1.37269965e-05_wp*q(i,ny+2-6,4) 
    
-   q2(i,ny+4-1,5) =-0.042888704485_wp*q(i,ny+4+0,5) &
-               +0.138814085762_wp*q(i,ny+4-1,5) &
-               -0.1784240360865_wp*q(i,ny+4-2,5) &
-               +0.111559546536_wp*q(i,ny+4-3,5) &
-               -0.0286735324325_wp*q(i,ny+4-4,5) &
-               -0.000373632298_wp*q(i,ny+4-5,5) &
-               -1.37269965e-05_wp*q(i,ny+4-6,5) 
-   
-   q2(i,ny+4-2,1) =0.052523901012_wp*q(i,ny+4+0,1) &
-               -0.206299133811_wp*q(i,ny+4-1,1) &
-               +0.35352799825_wp*q(i,ny+4-2,1) &
-               -0.348142394842_wp*q(i,ny+4-3,1) &
-               +0.181481803619_wp*q(i,ny+4-4,1) &
-               +0.00944080437_wp*q(i,ny+4-5,1) &
-               -0.077675100452_wp*q(i,ny+4-6,1) &
-               +0.044887364863_wp*q(i,ny+4-7,1) &
-               -0.009971961849_wp*q(i,ny+4-8,1) &
-               +0.00011335942_wp*q(i,ny+4-9,1) &
-               +0.00011335942_wp*q(i,ny+4-10,1) 
-   
-   q2(i,ny+4-2,2) =0.052523901012_wp*q(i,ny+4+0,2) &
-               -0.206299133811_wp*q(i,ny+4-1,2) &
-               +0.35352799825_wp*q(i,ny+4-2,2) &
-               -0.348142394842_wp*q(i,ny+4-3,2) &
-               +0.181481803619_wp*q(i,ny+4-4,2) &
-               +0.00944080437_wp*q(i,ny+4-5,2) &
-               -0.077675100452_wp*q(i,ny+4-6,2) &
-               +0.044887364863_wp*q(i,ny+4-7,2) &
-               -0.009971961849_wp*q(i,ny+4-8,2) &
-               +0.00011335942_wp*q(i,ny+4-9,2) &
-               +0.00011335942_wp*q(i,ny+4-10,2) 
-   
-   q2(i,ny+4-2,3) =0.052523901012_wp*q(i,ny+4+0,3) &
-               -0.206299133811_wp*q(i,ny+4-1,3) &
-               +0.35352799825_wp*q(i,ny+4-2,3) &
-               -0.348142394842_wp*q(i,ny+4-3,3) &
-               +0.181481803619_wp*q(i,ny+4-4,3) &
-               +0.00944080437_wp*q(i,ny+4-5,3) &
-               -0.077675100452_wp*q(i,ny+4-6,3) &
-               +0.044887364863_wp*q(i,ny+4-7,3) &
-               -0.009971961849_wp*q(i,ny+4-8,3) &
-               +0.00011335942_wp*q(i,ny+4-9,3) &
-               +0.00011335942_wp*q(i,ny+4-10,3) 
-   
-   q2(i,ny+4-2,4) =0.052523901012_wp*q(i,ny+4+0,4) &
-               -0.206299133811_wp*q(i,ny+4-1,4) &
-               +0.35352799825_wp*q(i,ny+4-2,4) &
-               -0.348142394842_wp*q(i,ny+4-3,4) &
-               +0.181481803619_wp*q(i,ny+4-4,4) &
-               +0.00944080437_wp*q(i,ny+4-5,4) &
-               -0.077675100452_wp*q(i,ny+4-6,4) &
-               +0.044887364863_wp*q(i,ny+4-7,4) &
-               -0.009971961849_wp*q(i,ny+4-8,4) &
-               +0.00011335942_wp*q(i,ny+4-9,4) &
-               +0.00011335942_wp*q(i,ny+4-10,4) 
-   
-   q2(i,ny+4-2,5) =0.052523901012_wp*q(i,ny+4+0,5) &
-               -0.206299133811_wp*q(i,ny+4-1,5) &
-               +0.35352799825_wp*q(i,ny+4-2,5) &
-               -0.348142394842_wp*q(i,ny+4-3,5) &
-               +0.181481803619_wp*q(i,ny+4-4,5) &
-               +0.00944080437_wp*q(i,ny+4-5,5) &
-               -0.077675100452_wp*q(i,ny+4-6,5) &
-               +0.044887364863_wp*q(i,ny+4-7,5) &
-               -0.009971961849_wp*q(i,ny+4-8,5) &
-               +0.00011335942_wp*q(i,ny+4-9,5) &
-               +0.00011335942_wp*q(i,ny+4-10,5) 
-   
-   q2(i,ny+4-3,1) =-5.459601e-05_wp*q(i,ny+4+0,1) &
-               +0.042124772446_wp*q(i,ny+4-1,1) &
-               -0.173103107841_wp*q(i,ny+4-2,1) &
-               +0.299615871352_wp*q(i,ny+4-3,1) &
-               -0.276543612935_wp*q(i,ny+4-4,1) &
-               +0.131223506571_wp*q(i,ny+4-5,1) &
-               -0.023424966418_wp*q(i,ny+4-6,1) &
-               +0.013937561779_wp*q(i,ny+4-7,1) &
-               -0.024565095706_wp*q(i,ny+4-8,1) &
-               +0.013098287852_wp*q(i,ny+4-9,1) &
-               -0.00230862109_wp*q(i,ny+4-10,1) 
-   
-   q2(i,ny+4-3,2) =-5.459601e-05_wp*q(i,ny+4+0,2) &
-               +0.042124772446_wp*q(i,ny+4-1,2) &
-               -0.173103107841_wp*q(i,ny+4-2,2) &
-               +0.299615871352_wp*q(i,ny+4-3,2) &
-               -0.276543612935_wp*q(i,ny+4-4,2) &
-               +0.131223506571_wp*q(i,ny+4-5,2) &
-               -0.023424966418_wp*q(i,ny+4-6,2) &
-               +0.013937561779_wp*q(i,ny+4-7,2) &
-               -0.024565095706_wp*q(i,ny+4-8,2) &
-               +0.013098287852_wp*q(i,ny+4-9,2) &
-               -0.00230862109_wp*q(i,ny+4-10,2) 
-   
-   q2(i,ny+4-3,3) =-5.459601e-05_wp*q(i,ny+4+0,3) &
-               +0.042124772446_wp*q(i,ny+4-1,3) &
-               -0.173103107841_wp*q(i,ny+4-2,3) &
-               +0.299615871352_wp*q(i,ny+4-3,3) &
-               -0.276543612935_wp*q(i,ny+4-4,3) &
-               +0.131223506571_wp*q(i,ny+4-5,3) &
-               -0.023424966418_wp*q(i,ny+4-6,3) &
-               +0.013937561779_wp*q(i,ny+4-7,3) &
-               -0.024565095706_wp*q(i,ny+4-8,3) &
-               +0.013098287852_wp*q(i,ny+4-9,3) &
-               -0.00230862109_wp*q(i,ny+4-10,3) 
-   
-   q2(i,ny+4-3,4) =-5.459601e-05_wp*q(i,ny+4+0,4) &
-               +0.042124772446_wp*q(i,ny+4-1,4) &
-               -0.173103107841_wp*q(i,ny+4-2,4) &
-               +0.299615871352_wp*q(i,ny+4-3,4) &
-               -0.276543612935_wp*q(i,ny+4-4,4) &
-               +0.131223506571_wp*q(i,ny+4-5,4) &
-               -0.023424966418_wp*q(i,ny+4-6,4) &
-               +0.013937561779_wp*q(i,ny+4-7,4) &
-               -0.024565095706_wp*q(i,ny+4-8,4) &
-               +0.013098287852_wp*q(i,ny+4-9,4) &
-               -0.00230862109_wp*q(i,ny+4-10,4) 
-   
-   q2(i,ny+4-3,5) =-5.459601e-05_wp*q(i,ny+4+0,5) &
-               +0.042124772446_wp*q(i,ny+4-1,5) &
-               -0.173103107841_wp*q(i,ny+4-2,5) &
-               +0.299615871352_wp*q(i,ny+4-3,5) &
-               -0.276543612935_wp*q(i,ny+4-4,5) &
-               +0.131223506571_wp*q(i,ny+4-5,5) &
-               -0.023424966418_wp*q(i,ny+4-6,5) &
-               +0.013937561779_wp*q(i,ny+4-7,5) &
-               -0.024565095706_wp*q(i,ny+4-8,5) &
-               +0.013098287852_wp*q(i,ny+4-9,5) &
-               -0.00230862109_wp*q(i,ny+4-10,5) 
+   q2(i,ny+2-1,5) =-0.042888704485_wp*q(i,ny+2+0,5) &
+               +0.138814085762_wp*q(i,ny+2-1,5) &
+               -0.1784240360865_wp*q(i,ny+2-2,5) &
+               +0.111559546536_wp*q(i,ny+2-3,5) &
+               -0.0286735324325_wp*q(i,ny+2-4,5) &
+               -0.000373632298_wp*q(i,ny+2-5,5) &
+               -1.37269965e-05_wp*q(i,ny+2-6,5) 
    
       enddo
 
@@ -2343,29 +1803,17 @@ do ibc=1,nbc
     
          do i=idloop(1),idloop(2) 
    
-   q(i,1-4+0,1) = q(i,1-4+0,1) - param_float(5)*q2(i,1-4+0,1)
-   q(i,1-4+0,2) = q(i,1-4+0,2) - param_float(5)*q2(i,1-4+0,2)
-   q(i,1-4+0,3) = q(i,1-4+0,3) - param_float(5)*q2(i,1-4+0,3)
-   q(i,1-4+0,4) = q(i,1-4+0,4) - param_float(5)*q2(i,1-4+0,4)
-   q(i,1-4+0,5) = q(i,1-4+0,5) - param_float(5)*q2(i,1-4+0,5)
+   q(i,1-2+0,1) = q(i,1-2+0,1) - param_float(5)*q2(i,1-2+0,1)
+   q(i,1-2+0,2) = q(i,1-2+0,2) - param_float(5)*q2(i,1-2+0,2)
+   q(i,1-2+0,3) = q(i,1-2+0,3) - param_float(5)*q2(i,1-2+0,3)
+   q(i,1-2+0,4) = q(i,1-2+0,4) - param_float(5)*q2(i,1-2+0,4)
+   q(i,1-2+0,5) = q(i,1-2+0,5) - param_float(5)*q2(i,1-2+0,5)
    
-   q(i,1-4+1,1) = q(i,1-4+1,1) - param_float(5)*q2(i,1-4+1,1)
-   q(i,1-4+1,2) = q(i,1-4+1,2) - param_float(5)*q2(i,1-4+1,2)
-   q(i,1-4+1,3) = q(i,1-4+1,3) - param_float(5)*q2(i,1-4+1,3)
-   q(i,1-4+1,4) = q(i,1-4+1,4) - param_float(5)*q2(i,1-4+1,4)
-   q(i,1-4+1,5) = q(i,1-4+1,5) - param_float(5)*q2(i,1-4+1,5)
-   
-   q(i,1-4+2,1) = q(i,1-4+2,1) - param_float(5)*q2(i,1-4+2,1)
-   q(i,1-4+2,2) = q(i,1-4+2,2) - param_float(5)*q2(i,1-4+2,2)
-   q(i,1-4+2,3) = q(i,1-4+2,3) - param_float(5)*q2(i,1-4+2,3)
-   q(i,1-4+2,4) = q(i,1-4+2,4) - param_float(5)*q2(i,1-4+2,4)
-   q(i,1-4+2,5) = q(i,1-4+2,5) - param_float(5)*q2(i,1-4+2,5)
-   
-   q(i,1-4+3,1) = q(i,1-4+3,1) - param_float(5)*q2(i,1-4+3,1)
-   q(i,1-4+3,2) = q(i,1-4+3,2) - param_float(5)*q2(i,1-4+3,2)
-   q(i,1-4+3,3) = q(i,1-4+3,3) - param_float(5)*q2(i,1-4+3,3)
-   q(i,1-4+3,4) = q(i,1-4+3,4) - param_float(5)*q2(i,1-4+3,4)
-   q(i,1-4+3,5) = q(i,1-4+3,5) - param_float(5)*q2(i,1-4+3,5)
+   q(i,1-2+1,1) = q(i,1-2+1,1) - param_float(5)*q2(i,1-2+1,1)
+   q(i,1-2+1,2) = q(i,1-2+1,2) - param_float(5)*q2(i,1-2+1,2)
+   q(i,1-2+1,3) = q(i,1-2+1,3) - param_float(5)*q2(i,1-2+1,3)
+   q(i,1-2+1,4) = q(i,1-2+1,4) - param_float(5)*q2(i,1-2+1,4)
+   q(i,1-2+1,5) = q(i,1-2+1,5) - param_float(5)*q2(i,1-2+1,5)
    
       enddo
 
@@ -2374,29 +1822,17 @@ do ibc=1,nbc
     
          do i=idloop(1),idloop(2) 
    
-   q(i,ny+4+0,1) = q(i,ny+4+0,1) - param_float(5)*q2(i,ny+4+0,1)
-   q(i,ny+4+0,2) = q(i,ny+4+0,2) - param_float(5)*q2(i,ny+4+0,2)
-   q(i,ny+4+0,3) = q(i,ny+4+0,3) - param_float(5)*q2(i,ny+4+0,3)
-   q(i,ny+4+0,4) = q(i,ny+4+0,4) - param_float(5)*q2(i,ny+4+0,4)
-   q(i,ny+4+0,5) = q(i,ny+4+0,5) - param_float(5)*q2(i,ny+4+0,5)
+   q(i,ny+2+0,1) = q(i,ny+2+0,1) - param_float(5)*q2(i,ny+2+0,1)
+   q(i,ny+2+0,2) = q(i,ny+2+0,2) - param_float(5)*q2(i,ny+2+0,2)
+   q(i,ny+2+0,3) = q(i,ny+2+0,3) - param_float(5)*q2(i,ny+2+0,3)
+   q(i,ny+2+0,4) = q(i,ny+2+0,4) - param_float(5)*q2(i,ny+2+0,4)
+   q(i,ny+2+0,5) = q(i,ny+2+0,5) - param_float(5)*q2(i,ny+2+0,5)
    
-   q(i,ny+4-1,1) = q(i,ny+4-1,1) - param_float(5)*q2(i,ny+4-1,1)
-   q(i,ny+4-1,2) = q(i,ny+4-1,2) - param_float(5)*q2(i,ny+4-1,2)
-   q(i,ny+4-1,3) = q(i,ny+4-1,3) - param_float(5)*q2(i,ny+4-1,3)
-   q(i,ny+4-1,4) = q(i,ny+4-1,4) - param_float(5)*q2(i,ny+4-1,4)
-   q(i,ny+4-1,5) = q(i,ny+4-1,5) - param_float(5)*q2(i,ny+4-1,5)
-   
-   q(i,ny+4-2,1) = q(i,ny+4-2,1) - param_float(5)*q2(i,ny+4-2,1)
-   q(i,ny+4-2,2) = q(i,ny+4-2,2) - param_float(5)*q2(i,ny+4-2,2)
-   q(i,ny+4-2,3) = q(i,ny+4-2,3) - param_float(5)*q2(i,ny+4-2,3)
-   q(i,ny+4-2,4) = q(i,ny+4-2,4) - param_float(5)*q2(i,ny+4-2,4)
-   q(i,ny+4-2,5) = q(i,ny+4-2,5) - param_float(5)*q2(i,ny+4-2,5)
-   
-   q(i,ny+4-3,1) = q(i,ny+4-3,1) - param_float(5)*q2(i,ny+4-3,1)
-   q(i,ny+4-3,2) = q(i,ny+4-3,2) - param_float(5)*q2(i,ny+4-3,2)
-   q(i,ny+4-3,3) = q(i,ny+4-3,3) - param_float(5)*q2(i,ny+4-3,3)
-   q(i,ny+4-3,4) = q(i,ny+4-3,4) - param_float(5)*q2(i,ny+4-3,4)
-   q(i,ny+4-3,5) = q(i,ny+4-3,5) - param_float(5)*q2(i,ny+4-3,5)
+   q(i,ny+2-1,1) = q(i,ny+2-1,1) - param_float(5)*q2(i,ny+2-1,1)
+   q(i,ny+2-1,2) = q(i,ny+2-1,2) - param_float(5)*q2(i,ny+2-1,2)
+   q(i,ny+2-1,3) = q(i,ny+2-1,3) - param_float(5)*q2(i,ny+2-1,3)
+   q(i,ny+2-1,4) = q(i,ny+2-1,4) - param_float(5)*q2(i,ny+2-1,4)
+   q(i,ny+2-1,5) = q(i,ny+2-1,5) - param_float(5)*q2(i,ny+2-1,5)
    
       enddo
 

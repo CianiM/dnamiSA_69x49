@@ -114,7 +114,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iend = iend
 
     jbeg = 0
-    jend = 30
+    jend = 20
 
     if iAnim :
 

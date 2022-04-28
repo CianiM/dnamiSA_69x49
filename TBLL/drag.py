@@ -17,26 +17,31 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
               'v'  :3,
               'et' :4,
               'nut':5,
-              'tau':6}
+              'tau':6,
+              'visc_SA':7,
+              'visc_turb':8,
+              'Pressure':9}
     var_rho=field['rho']-1
     var_u=field['u']-1
     var_nut=field['nut']-1
     var_tau=field['tau']-1
+    var_eddy=field['visc_turb']-1
     x=ksi[x0:,0]
     dx=np.zeros(len(x)-1)
     integ=dx
     rho = q[56,:,0,var_rho]
-    tau_wall=q[x0:,0,0,var_tau]
+    tau_wall=2*q[x0:,0,0,var_tau]
     u=q[56,:,0,var_u]
-    tw = q[56,:,0,var_tau]
-    uw=np.sqrt(tw/rho)
-    up = u/uw
+    tw = q[x0,:,0,var_tau]
+    eddy_visc=q[56,0:50,0,var_eddy]
+    #uw=np.sqrt(tw/rho)
+    #up = u/uw
 
     for i in np.arange(0,len(x)-1):
         dx[i]=x[i+1]-x[i]
         integ[i]=dx[i]*(tau_wall[i+1]+tau_wall[i])/2
     
-    cf = 2*q[56,0,0,var_u]
+    cf = 2*q[x0:,0,0,var_tau]
     cf_tot=2*2*np.sum(integ)
 #    with open('x_coord.dat','r') as f:
 #        x_axis = []
@@ -55,8 +60,13 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     print(cf_tot)
     fig1 = plt.figure(figsize=(5,5))
     ax = fig1.add_subplot(111)
-    im = ax.plot(u_nasa,y_nasa,'r')
-    ax.plot(u,y,'k--')
+    velocity = False
+    friction = True
+    if velocity:
+        im = ax.plot(u_nasa,y_nasa,'r')
+        ax.plot(u,y,'k--')
+    if friction:
+        im = ax.plot(x,cf,'r')
     #fig2 = plt.figure(figsize=(5,5))
     plt.show();sys.exit()
 
