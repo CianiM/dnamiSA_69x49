@@ -291,7 +291,7 @@ qst(i,j,indvarsst(9)) =  (d1_dksidx_dx_0_ijk)
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! 1.0_wp/(dksidx)
+! (1.0_wp/(dksidx))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -299,12 +299,12 @@ qst(i,j,indvarsst(9)) =  (d1_dksidx_dx_0_ijk)
 
 !***********************************************************
 !                                                           
-! Update stored variables  1.0_wp / ( dksidx )  ************
+! Update stored variables  ( 1.0_wp / ( dksidx ) )  ********
 !                                                           
 !***********************************************************
 
 
-qst(i,j,indvarsst(10)) =  1.0_wp/(qst(i,j,indvarsst(9)))
+qst(i,j,indvarsst(10)) =  (1.0_wp/(qst(i,j,indvarsst(9))))
 
 
 
@@ -317,7 +317,7 @@ qst(i,j,indvarsst(10)) =  1.0_wp/(qst(i,j,indvarsst(9)))
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! 1.0_wp/(detady)
+! (1.0_wp/(detady))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -325,12 +325,12 @@ qst(i,j,indvarsst(10)) =  1.0_wp/(qst(i,j,indvarsst(9)))
 
 !***********************************************************
 !                                                           
-! Update stored variables  1.0_wp / ( detady )  ************
+! Update stored variables  ( 1.0_wp / ( detady ) )  ********
 !                                                           
 !***********************************************************
 
 
-qst(i,j,indvarsst(11)) =  1.0_wp/(qst(i,j,indvarsst(6)))
+qst(i,j,indvarsst(11)) =  (1.0_wp/(qst(i,j,indvarsst(6))))
 
      enddo
    enddo

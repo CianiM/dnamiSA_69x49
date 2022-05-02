@@ -47,24 +47,24 @@ else:
 
 P0 = dn.cst(U0**2/(gamma*Rho0*Ma**2))                   #Pressure at the inlet
 #T0 = dn.cst(P0/(Rho0*(gamma-1)*Cv))
-et0 = dn.cst(U0**2*( Cv*T0 + 0.5))
+et0 = dn.cst(U0**2*0.5 + Cv*T0)
 
-filtr_amp = dn.cst(0.2)    # filter amplitude
+filtr_amp = dn.cst(0.1)    # filter amplitude
 
 # ... in time ...
 with_dt = dn.cst(1e-9)
 #nitmax  = 50000 # for actual run
-nitmax  = 1000000  # for test case 
+nitmax  = 10000000  # for test case 
 
 # ... in space ...
 #L = dn.cst(2.*np.pi) 
-L = dn.cst( 2.0 + 1.0/3 )
+L = dn.cst( 2.0 + 1.0/3.0 )
 H = dn.cst(1.0)
 with_length = [L,H]      # domain length in each direction
 #with_grid   = [nx-2*hlo,64]   # number of points in each direction
 
 # ... as fast as possible!
-with_proc     = [1,1] # mpi proc. topology
+with_proc     = [1,5] # mpi proc. topology
 
 # ===================================================================== PREPARE
 
@@ -84,10 +84,10 @@ dtree['eqns']['coeff'][9][1] = dn.cst(0.1335/0.41**2.0 + (1.0+0.622)*3.0/2.0 ) #
 dtree['eqns']['coeff'][10][1] = dn.cst(0.3)                   #Cw2
 dtree['eqns']['coeff'][11][1] = dn.cst(2.0)                   #Cw3
 dtree['eqns']['coeff'][12][1] = dn.cst(7.1)                   #Cv1
-dtree['eqns']['coeff'][13][1] = dn.cst(1)                     #Ct1
-dtree['eqns']['coeff'][14][1] = dn.cst(2)                     #Ct2
+dtree['eqns']['coeff'][13][1] = dn.cst(1.0)                     #Ct1
+dtree['eqns']['coeff'][14][1] = dn.cst(2.0)                     #Ct2
 dtree['eqns']['coeff'][15][1] = dn.cst(1.1)                   #Ct3
-dtree['eqns']['coeff'][16][1] = dn.cst(2.0)                   #Ct4
+dtree['eqns']['coeff'][16][1] = dn.cst(0.5)                   #Ct4
 dtree['eqns']['coeff'][17][1] = dn.cst(3.0/2.0)             #sigmaI
 dtree['eqns']['coeff'][18][1] = dn.cst(0.25)                  #esse
 dtree['eqns']['coeff'][19][1] = dn.cst(1.0)                   #L_ref
@@ -169,6 +169,9 @@ deltayI = dtree['eqns']['qvec']['views']['deltayI']
 visc_SA = dtree['eqns']['qvec']['views']['visc_SA']
 visc_turb = dtree['eqns']['qvec']['views']['visc_turb']
 Pressure = dtree['eqns']['qvec']['views']['Pressure']
+chi_coeff = dtree['eqns']['qvec']['views']['chi_coeff']
+production = dtree['eqns']['qvec']['views']['Production']
+
 
 xx=np.zeros((69,49))
 yy=np.zeros((69,49))
@@ -187,12 +190,11 @@ with open('y_coord.dat','r') as f:
     for i in np.arange(0,69):
 #        eta[i,:]=dat
         yy[i,:]=dat
-yy[:,0]=0.5e-6
+yy[:,0]=1e-6
 #ksi[:,:] = gridNASA[0,dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 #eta[:,:] = gridNASA[1,dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 ksi[:,:] = xx[dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
 eta[:,:] = yy[dMpi.ibeg-1:dMpi.iend+2*hlo,dMpi.jbeg-1:dMpi.jend+2*hlo]
-
 
 
 #-- Ccoeff 
@@ -237,9 +239,11 @@ trstart = dn.cst(0.)
 
 rho[:,:] = Rho0
 u[:,:] = U0
+#u[:,:] = dn.cst(1.0)
 v[:,:] = V0
 et[:,:] = et0
 nut[:,:] = nut0
+#nut[:,:] = dn.cst(0.0)
 # -- Swap 
 #print('---swap---')
 dMpi.swap(q,hlo,dtree)
@@ -248,7 +252,7 @@ dMpi.swap(q,hlo,dtree)
 
 # -- Write the first restart
 dn.dnami_io.write_restart(0,ti,0,dtree)
-field = ['rho','u','v','et','nut','tau_wall','visc_SA','visc_turb','Pressure']
+field = ['rho','u','v','et','nut','tau_wall','visc_SA','visc_turb','Pressure','chi_coeff','Production','deltaxI','deltayI']
 path= './output/output'
 write_data(field,path,0,0,dtree)
 # ========================================================================= RUN
@@ -263,9 +267,10 @@ if 'qstored' in dtree['eqns']['qvec']['views'].keys():
     dMpi.swap(qstored,hlo,dtree)
 
 mod_filter = 1
-mod_output = 100000
-mod_info   = 10
+mod_output = 10000
+mod_info   = 1000
 
+dn.dnamiF.applybc(intparam,fltparam,data)
 
 for n in range(1,nitmax+1):
     ti = ti + dt

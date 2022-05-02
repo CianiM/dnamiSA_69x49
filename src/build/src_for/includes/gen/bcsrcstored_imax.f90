@@ -147,7 +147,7 @@ idloop(1) = bi
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (2.0_wp*(dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
+! ((dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -182,14 +182,14 @@ d1_stemp_dy_0_nxp2p0jk = d1_stemp_dy_0_nxp2p0jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+2+0,j,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+2+0,j,indvarsst(11))*(d1_stemp_dy_0_nxp2p0jk)-&
+qst(nx+2+0,j,indvarsst(4)) =  ((dabs(0.5_wp*(qst(nx+2+0,j,indvarsst(11))*(d1_stemp_dy_0_nxp2p0jk)-&
                     qst(nx+2+0,j,indvarsst(10))*(d1_stemp_dx_0_nxp2p0jk)))))
 
 
 
 !***********************************************************
 !                                                           
-! building source terms in RHS for layer 0 None None SS ****
+! building source terms in RHS for layer 0 None None SA ****
 !                                                           
 !***********************************************************
 
@@ -204,16 +204,124 @@ qst(nx+2+0,j,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+2+0,j,indvarsst(11))*
 
 !***********************************************************
 !                                                           
-! Update BC terms for layer 0 None None SS *****************
+! Update BC terms for layer 0 None None SA *****************
 !                                                           
 !***********************************************************
 
 
 qst(nx+2+0,j,indvarsst(12)) =  (qst(nx+2+0,j,indvarsst(4))+&
                     (1.0_wp-&
-                    (q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))/(1.0_wp+&
-                    (q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))*((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp+&
+                    (q(nx+2+0,j,indvars(5))/1.0_wp)/(1.0_wp+&
+                    (q(nx+2+0,j,indvars(5))/1.0_wp)*((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(nx+2+0,j,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(nx+2+0,j,indvarsst(2))**2.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None SS ****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (max(SA,0.3*stemp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None SS *****************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(13)) =  (max(qst(nx+2+0,j,indvarsst(12)),0.3*qst(nx+2+0,j,indvarsst(4))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None r *****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (min(ReI*(nut/(SS*k**2.0_wp*eta**2.0_wp)),10.0_wp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None r ******************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(14)) =  (min(param_float(1 + 5)*(q(nx+2+0,j,indvars(5))/(qst(nx+2+0,j,indvarsst(13))*param_float(9 + 5)**2.0_wp*qst(nx+2+0,j,indvarsst(2))**2.0_wp)),10.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None g *****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (r+Cw2*(r**6.0_wp-r))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None g ******************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(15)) =  (qst(nx+2+0,j,indvarsst(14))+&
+                    param_float(11 + 5)*(qst(nx+2+0,j,indvarsst(14))**6.0_wp-&
+                    qst(nx+2+0,j,indvarsst(14))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None fw ****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (g*((1.0_wp+Cw3**6.0_wp)/(g**6.0_wp+Cw3**6.0_wp))**(1.0_wp/6.0_wp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None fw *****************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(16)) =  (qst(nx+2+0,j,indvarsst(15))*((1.0_wp+&
+                    param_float(12 + 5)**6.0_wp)/(qst(nx+2+0,j,indvarsst(15))**6.0_wp+&
+                    param_float(12 + 5)**6.0_wp))**(1.0_wp/6.0_wp))
 
 
 
@@ -239,9 +347,9 @@ qst(nx+2+0,j,indvarsst(12)) =  (qst(nx+2+0,j,indvarsst(4))+&
 !***********************************************************
 
 
-qst(nx+2+0,j,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
-                    ((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_nxp2p0jk)*qst(nx+2+0,j,indvarsst(11)))
+qst(nx+2+0,j,indvarsst(17)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(nx+2+0,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(d1_stemp_dy_0_nxp2p0jk)*qst(nx+2+0,j,indvarsst(11)))
 
 
 
@@ -267,7 +375,7 @@ qst(nx+2+0,j,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
 !***********************************************************
 
 
-qst(nx+2+0,j,indvarsst(14)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))
+qst(nx+2+0,j,indvarsst(18)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))
 
 
 
@@ -293,7 +401,7 @@ qst(nx+2+0,j,indvarsst(14)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))
 !***********************************************************
 
 
-qst(nx+2+0,j,indvarsst(15)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))*((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1)))**3.0_wp+&
+qst(nx+2+0,j,indvarsst(19)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))*((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,j,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))
 
 
@@ -320,9 +428,63 @@ qst(nx+2+0,j,indvarsst(15)) =  q(nx+2+0,j,indvars(5))*q(nx+2+0,j,indvars(1))*((q
 !***********************************************************
 
 
-qst(nx+2+0,j,indvarsst(16)) =  (param_float(3 + 5))*q(nx+2+0,j,indvars(1))*((q(nx+2+0,j,indvars(4))-&
+qst(nx+2+0,j,indvarsst(20)) =  (param_float(3 + 5))*q(nx+2+0,j,indvars(1))*((q(nx+2+0,j,indvars(4))-&
                     0.5_wp*(q(nx+2+0,j,indvars(2))*q(nx+2+0,j,indvars(2))+&
                     q(nx+2+0,j,indvars(3))*q(nx+2+0,j,indvars(3)))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None chi_coeff 
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut/visc*rho
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None chi_coeff **********
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(21)) =  q(nx+2+0,j,indvars(5))/1.0_wp*q(nx+2+0,j,indvars(1))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 0 None None Production 
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! Cb1*(1.0_wp-ft2)*SS*rho*nut
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 0 None None Production *********
+!                                                           
+!***********************************************************
+
+
+qst(nx+2+0,j,indvarsst(22)) =  param_float(6 + 5)*(1.0_wp-&
+                    (param_float(16 + 5)*exp(-&
+                    param_float(17 + 5)*(q(nx+2+0,j,indvars(5))/1.0_wp)**2.0_wp)))*qst(nx+2+0,j,indvarsst(13))*q(nx+2+0,j,indvars(1))*q(nx+2+0,j,indvars(5))
 
      enddo
 
@@ -355,7 +517,7 @@ qst(nx+2+0,j,indvarsst(16)) =  (param_float(3 + 5))*q(nx+2+0,j,indvars(1))*((q(n
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (2.0_wp*(dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
+! ((dabs(0.5_wp*(deltayI*([u]_1y)-deltaxI*([v]_1x)))))
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -388,14 +550,14 @@ d1_stemp_dy_0_nxp2m1jk = d1_stemp_dy_0_nxp2m1jk*param_float(2)
 !***********************************************************
 
 
-qst(nx+2-1,j,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+2-1,j,indvarsst(11))*(d1_stemp_dy_0_nxp2m1jk)-&
+qst(nx+2-1,j,indvarsst(4)) =  ((dabs(0.5_wp*(qst(nx+2-1,j,indvarsst(11))*(d1_stemp_dy_0_nxp2m1jk)-&
                     qst(nx+2-1,j,indvarsst(10))*(d1_stemp_dx_0_nxp2m1jk)))))
 
 
 
 !***********************************************************
 !                                                           
-! building source terms in RHS for layer 1 None None SS ****
+! building source terms in RHS for layer 1 None None SA ****
 !                                                           
 !***********************************************************
 
@@ -410,16 +572,124 @@ qst(nx+2-1,j,indvarsst(4)) =  (2.0_wp*(dabs(0.5_wp*(qst(nx+2-1,j,indvarsst(11))*
 
 !***********************************************************
 !                                                           
-! Update BC terms for layer 1 None None SS *****************
+! Update BC terms for layer 1 None None SA *****************
 !                                                           
 !***********************************************************
 
 
 qst(nx+2-1,j,indvarsst(12)) =  (qst(nx+2-1,j,indvarsst(4))+&
                     (1.0_wp-&
-                    (q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))/(1.0_wp+&
-                    (q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))*((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp+&
+                    (q(nx+2-1,j,indvars(5))/1.0_wp)/(1.0_wp+&
+                    (q(nx+2-1,j,indvars(5))/1.0_wp)*((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))))*param_float(1 + 5)*q(nx+2-1,j,indvars(5))/(param_float(9 + 5)**2.0_wp*qst(nx+2-1,j,indvarsst(2))**2.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None SS ****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (max(SA,0.3*stemp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None SS *****************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(13)) =  (max(qst(nx+2-1,j,indvarsst(12)),0.3*qst(nx+2-1,j,indvarsst(4))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None r *****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (min(ReI*(nut/(SS*k**2.0_wp*eta**2.0_wp)),10.0_wp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None r ******************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(14)) =  (min(param_float(1 + 5)*(q(nx+2-1,j,indvars(5))/(qst(nx+2-1,j,indvarsst(13))*param_float(9 + 5)**2.0_wp*qst(nx+2-1,j,indvarsst(2))**2.0_wp)),10.0_wp))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None g *****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (r+Cw2*(r**6.0_wp-r))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None g ******************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(15)) =  (qst(nx+2-1,j,indvarsst(14))+&
+                    param_float(11 + 5)*(qst(nx+2-1,j,indvarsst(14))**6.0_wp-&
+                    qst(nx+2-1,j,indvarsst(14))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None fw ****
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! (g*((1.0_wp+Cw3**6.0_wp)/(g**6.0_wp+Cw3**6.0_wp))**(1.0_wp/6.0_wp))
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None fw *****************
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(16)) =  (qst(nx+2-1,j,indvarsst(15))*((1.0_wp+&
+                    param_float(12 + 5)**6.0_wp)/(qst(nx+2-1,j,indvarsst(15))**6.0_wp+&
+                    param_float(12 + 5)**6.0_wp))**(1.0_wp/6.0_wp))
 
 
 
@@ -445,9 +715,9 @@ qst(nx+2-1,j,indvarsst(12)) =  (qst(nx+2-1,j,indvarsst(4))+&
 !***********************************************************
 
 
-qst(nx+2-1,j,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
-                    ((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1))))*param_float(1 + 5)*(d1_stemp_dy_0_nxp2m1jk)*qst(nx+2-1,j,indvarsst(11)))
+qst(nx+2-1,j,indvarsst(17)) =  ((1.0_wp)*(1.0_wp+&
+                    ((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(nx+2-1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(d1_stemp_dy_0_nxp2m1jk)*qst(nx+2-1,j,indvarsst(11)))
 
 
 
@@ -473,7 +743,7 @@ qst(nx+2-1,j,indvarsst(13)) =  ((1.0_wp)*(1.0_wp+&
 !***********************************************************
 
 
-qst(nx+2-1,j,indvarsst(14)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))
+qst(nx+2-1,j,indvarsst(18)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))
 
 
 
@@ -499,7 +769,7 @@ qst(nx+2-1,j,indvarsst(14)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))
 !***********************************************************
 
 
-qst(nx+2-1,j,indvarsst(15)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))*((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1)))**3.0_wp+&
+qst(nx+2-1,j,indvarsst(19)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))*((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2-1,j,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))
 
 
@@ -526,9 +796,63 @@ qst(nx+2-1,j,indvarsst(15)) =  q(nx+2-1,j,indvars(5))*q(nx+2-1,j,indvars(1))*((q
 !***********************************************************
 
 
-qst(nx+2-1,j,indvarsst(16)) =  (param_float(3 + 5))*q(nx+2-1,j,indvars(1))*((q(nx+2-1,j,indvars(4))-&
+qst(nx+2-1,j,indvarsst(20)) =  (param_float(3 + 5))*q(nx+2-1,j,indvars(1))*((q(nx+2-1,j,indvars(4))-&
                     0.5_wp*(q(nx+2-1,j,indvars(2))*q(nx+2-1,j,indvars(2))+&
                     q(nx+2-1,j,indvars(3))*q(nx+2-1,j,indvars(3)))))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None chi_coeff 
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! nut/visc*rho
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None chi_coeff **********
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(21)) =  q(nx+2-1,j,indvars(5))/1.0_wp*q(nx+2-1,j,indvars(1))
+
+
+
+!***********************************************************
+!                                                           
+! building source terms in RHS for layer 1 None None Production 
+!                                                           
+!***********************************************************
+
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!
+! Cb1*(1.0_wp-ft2)*SS*rho*nut
+!
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+!***********************************************************
+!                                                           
+! Update BC terms for layer 1 None None Production *********
+!                                                           
+!***********************************************************
+
+
+qst(nx+2-1,j,indvarsst(22)) =  param_float(6 + 5)*(1.0_wp-&
+                    (param_float(16 + 5)*exp(-&
+                    param_float(17 + 5)*(q(nx+2-1,j,indvars(5))/1.0_wp)**2.0_wp)))*qst(nx+2-1,j,indvarsst(13))*q(nx+2-1,j,indvars(1))*q(nx+2-1,j,indvars(5))
 
      enddo
 

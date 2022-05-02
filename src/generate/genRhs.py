@@ -52,7 +52,7 @@ def main():
 #    genBC(Src_BC_conv['imax'] , 3,2,rhsname, locname_bc_conv, setbc=[True, {'Costant_pressure':{'imax':['rhs']}}],  update=False, rhs=rhs )
 #    genBC(Src_BC_dif['imax'], 3,2, rhsname, locname_bc_dif, setbc=[True, {'Costant_pressure':{'imax':['rhs']}}], update=True, rhs=rhs )
     #--jmax
-    genBC(Src_BC_rhs_jmax  ,3,2,rhsname , locname_rhs, setbc=[True,{'Top_surf':{'jmax':['rhs']}}] , update=False, rhs=rhs )
+    genBC(Src_BC_rhs_jmax  ,3,2,rhsname , locname_rhs, setbc=[True,{'Top_surf':{'jmax':['rhs']}}] , update=False, rhs=rhs)
 #    genBC(Src_BC_conv['jmax'], 3,2,rhsname, locname_bc_conv, setbc=[True,{'Non_reflective':{'jmax':['rhs']}}], update=False, rhs=rhs )
 #    genBC(Src_BC_dif['jmax'], 3,2,rhsname, locname_bc_dif, setbc=[True,{'Non_reflective':{'jmax':['rhs']}}], update=False, rhs=rhs )
 #    genBC(Src_BC_phy_j1  ,3,2,rhsname , locname_bc, setbc=[True,{'Low_surf':{'j1':['q']}}]  , update=False,rhs=rhs)

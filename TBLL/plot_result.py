@@ -25,8 +25,8 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iVDW = False
     ndim  = 2
     ivar = 1
-    varcont = 4
-
+    varcont = 6
+#vardic = ['rho','u','v','et','nut','tau_wall','visc_SA','visc_turb','Pressure']
     from pltdnami import loadrstax
 
     # [axis]  = loadrstax(0,rdir='./grid/',fname='output',noaxis=True)
@@ -69,7 +69,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
 
 
 
-    vardic = ['rho','u','v','et','nut','tau_wall']
+    vardic = ['rho','u','v','et','nut','tau_wall','visc_SA','visc_turb','Pressure']
 
 
     # lvls = np.arange(-270.,270.,20)
@@ -114,7 +114,7 @@ def main(fbeg,fend,nstep,bc,scale=0,scale2=0):
     iend = iend
 
     jbeg = 0
-    jend = 20
+    jend = ny
 
     if iAnim :
 

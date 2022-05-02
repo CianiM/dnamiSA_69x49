@@ -353,14 +353,14 @@ d2_dif_rhou_dxdy_0_0_ip1j1m2 = -&
 d2_dif_rhou_dxdy_0_0_ip1j1m2 = d2_dif_rhou_dxdy_0_0_ip1j1m2*param_float(2)
 
 d1_dif_rhou_dx_0_im1j1m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)-&
+                    ((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)-&
                     2.0_wp/3.0_wp*(qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)+&
                     qst(i-1,j,indvarsst(11))*(d2_dif_rhou_dxdy_0_0_im1j1m2)))
 
 d1_dif_rhou_dx_0_ip1j1m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)-&
+                    ((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)-&
                     2.0_wp/3.0_wp*(qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)+&
                     qst(i+1,j,indvarsst(11))*(d2_dif_rhou_dxdy_0_0_ip1j1m2)))
 
@@ -411,13 +411,13 @@ d2_dif_rhou_dydy_0_0_ijp11m2 = -&
 d2_dif_rhou_dydy_0_0_ijp11m2 = d2_dif_rhou_dydy_0_0_ijp11m2*param_float(2)
 
 d1_dif_rhou_dy_0_ijm11m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1))))*param_float(1 + 5)*(qst(i,j-1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijm11m2)+&
+                    ((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i,j-1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijm11m2)+&
                     qst(i,j-1,indvarsst(10))*(d2_dif_rhou_dydx_0_0_ijm11m2))
 
 d1_dif_rhou_dy_0_ijp11m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1))))*param_float(1 + 5)*(qst(i,j+1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijp11m2)+&
+                    ((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i,j+1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijp11m2)+&
                     qst(i,j+1,indvarsst(10))*(d2_dif_rhou_dydx_0_0_ijp11m2))
 
 d1_dif_rhou_dy_0_ij1m2 = -&
@@ -494,13 +494,13 @@ d2_dif_rhov_dxdy_0_0_ip1j1m2 = -&
 d2_dif_rhov_dxdy_0_0_ip1j1m2 = d2_dif_rhov_dxdy_0_0_ip1j1m2*param_float(2)
 
 d1_dif_rhov_dx_0_im1j1m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1))))*param_float(1 + 5)*(qst(i-1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_im1j1m2)+&
+                    ((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i-1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_im1j1m2)+&
                     qst(i-1,j,indvarsst(10))*(d2_dif_rhov_dxdx_0_0_im1j1m2))
 
 d1_dif_rhov_dx_0_ip1j1m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1))))*param_float(1 + 5)*(qst(i+1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_ip1j1m2)+&
+                    ((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i+1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_ip1j1m2)+&
                     qst(i+1,j,indvarsst(10))*(d2_dif_rhov_dxdx_0_0_ip1j1m2))
 
 d1_dif_rhov_dx_0_ij1m2 = -&
@@ -550,14 +550,14 @@ d2_dif_rhov_dydy_0_0_ijp11m2 = -&
 d2_dif_rhov_dydy_0_0_ijp11m2 = d2_dif_rhov_dydy_0_0_ijp11m2*param_float(2)
 
 d1_dif_rhov_dy_0_ijm11m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2)-&
+                    ((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2)-&
                     2.0_wp/3.0_wp*(qst(i,j-1,indvarsst(10))*(d2_dif_rhov_dydx_0_0_ijm11m2)+&
                     qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2)))
 
 d1_dif_rhov_dy_0_ijp11m2 = -(1.0_wp)*(1.0_wp+&
-                    ((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2)-&
+                    ((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2)-&
                     2.0_wp/3.0_wp*(qst(i,j+1,indvarsst(10))*(d2_dif_rhov_dydx_0_0_ijp11m2)+&
                     qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2)))
 
@@ -624,24 +624,24 @@ d2_dif_et_dxdx_0_0_ip1j1m2 = d2_dif_et_dxdx_0_0_ip1j1m2*param_float(1)
 
 d1_dif_et_dx_0_im1j1m2 = -param_float(2 + 5)*qst(i-1,j,indvarsst(10))*(d2_dif_et_dxdx_0_0_im1j1m2)-&
                     q(i-1,j,indvars(2))*((1.0_wp)*(1.0_wp+&
-                    ((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)-&
+                    ((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)-&
                     2.0_wp/3.0_wp*(qst(i-1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_im1j1m2)+&
                     qst(i-1,j,indvarsst(11))*(d2_dif_rhou_dxdy_0_0_im1j1m2))))-&
                     q(i-1,j,indvars(3))*((1.0_wp)*(1.0_wp+&
-                    ((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1))))*param_float(1 + 5)*(qst(i-1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_im1j1m2)+&
+                    ((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i-1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i-1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i-1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_im1j1m2)+&
                     qst(i-1,j,indvarsst(10))*(d2_dif_rhov_dxdx_0_0_im1j1m2)))
 
 d1_dif_et_dx_0_ip1j1m2 = -param_float(2 + 5)*qst(i+1,j,indvarsst(10))*(d2_dif_et_dxdx_0_0_ip1j1m2)-&
                     q(i+1,j,indvars(2))*((1.0_wp)*(1.0_wp+&
-                    ((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)-&
+                    ((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)-&
                     2.0_wp/3.0_wp*(qst(i+1,j,indvarsst(10))*(d2_dif_rhou_dxdx_0_0_ip1j1m2)+&
                     qst(i+1,j,indvarsst(11))*(d2_dif_rhou_dxdy_0_0_ip1j1m2))))-&
                     q(i+1,j,indvars(3))*((1.0_wp)*(1.0_wp+&
-                    ((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1))))*param_float(1 + 5)*(qst(i+1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_ip1j1m2)+&
+                    ((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp/((q(i+1,j,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i+1,j,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i+1,j,indvarsst(11))*(d2_dif_rhov_dxdy_0_0_ip1j1m2)+&
                     qst(i+1,j,indvarsst(10))*(d2_dif_rhov_dxdx_0_0_ip1j1m2)))
 
 d1_dif_et_dx_0_ij1m2 = -&
@@ -680,23 +680,23 @@ d2_dif_et_dydy_0_0_ijp11m2 = d2_dif_et_dydy_0_0_ijp11m2*param_float(2)
 
 d1_dif_et_dy_0_ijm11m2 = -param_float(2 + 5)*qst(i,j-1,indvarsst(11))*(d2_dif_et_dydy_0_0_ijm11m2)-&
                     q(i,j-1,indvars(2))*((1.0_wp)*(1.0_wp+&
-                    ((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1))))*param_float(1 + 5)*(qst(i,j-1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijm11m2)+&
+                    ((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i,j-1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijm11m2)+&
                     qst(i,j-1,indvarsst(10))*(d2_dif_rhou_dydx_0_0_ijm11m2)))-&
                     q(i,j-1,indvars(3))*((1.0_wp)*(1.0_wp+&
-                    ((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2)-&
+                    ((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j-1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j-1,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2)-&
                     2.0_wp/3.0_wp*(qst(i,j-1,indvarsst(10))*(d2_dif_rhov_dydx_0_0_ijm11m2)+&
                     qst(i,j-1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijm11m2))))
 
 d1_dif_et_dy_0_ijp11m2 = -param_float(2 + 5)*qst(i,j+1,indvarsst(11))*(d2_dif_et_dydy_0_0_ijp11m2)-&
                     q(i,j+1,indvars(2))*((1.0_wp)*(1.0_wp+&
-                    ((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1))))*param_float(1 + 5)*(qst(i,j+1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijp11m2)+&
+                    ((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(i,j+1,indvarsst(11))*(d2_dif_rhou_dydy_0_0_ijp11m2)+&
                     qst(i,j+1,indvarsst(10))*(d2_dif_rhou_dydx_0_0_ijp11m2)))-&
                     q(i,j+1,indvars(3))*((1.0_wp)*(1.0_wp+&
-                    ((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1)))**3.0_wp+&
-                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1))))*param_float(1 + 5)*(2.0_wp*qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2)-&
+                    ((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp/((q(i,j+1,indvars(5))/1.0_wp)**3.0_wp+&
+                    param_float(13 + 5)**3.0_wp))*(q(i,j+1,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2)-&
                     2.0_wp/3.0_wp*(qst(i,j+1,indvarsst(10))*(d2_dif_rhov_dydx_0_0_ijp11m2)+&
                     qst(i,j+1,indvarsst(11))*(d2_dif_rhov_dydy_0_0_ijp11m2))))
 
@@ -729,7 +729,7 @@ rhs(i,j,indvars(4)) = rhs(i,j,indvars(4))  -  ( qst(i,j,indvarsst(10))*(d1_dif_e
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! deltaxI*([-ReI*(1.0_wp+chi)*sigmaI*deltaxI*({nut}_1x)]_1x)+deltayI*([-ReI*(1.0_wp+chi)*sigmaI*deltayI*({nut}_1y)]_1y)+-ReI*Cb2*sigmaI*((deltaxI)**2*([rho*nut]_1x)*([nut]_1x)+(deltayI)**2*([rho*nut]_1y)*([nut]_1y))-Cb1*(1.0_wp-ft2)*SS*rho*nut+ReI*(Cw1*fw-Cb1/k**2.0_wp*ft2)*rho*(nut/eta)**2.0_wp
+! deltaxI*([-(ReI*(1.0_wp+chi)*sigmaI*deltaxI*({nut}_1x))]_1x)+deltayI*([-(ReI*(1.0_wp+chi)*sigmaI*deltayI*({nut}_1y))]_1y)-ReI*Cb2*sigmaI*((deltaxI)**2*([rho*nut]_1x)*([nut]_1x)+(deltayI)**2*([rho*nut]_1y)*([nut]_1y))-Cb1*(1.0_wp-ft2)*SS*rho*nut+ReI*(Cw1*fw-Cb1/k**2.0_wp*ft2)*rho*(nut/eta)**2.0_wp
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -773,11 +773,11 @@ d1_dif_nut_dx_2_ij1m2 = -&
 
 d1_dif_nut_dx_2_ij1m2 = d1_dif_nut_dx_2_ij1m2*param_float(1)
 
-d1_dif_nut_dx_0_im1j1m2 = -param_float(1 + 5)*(1.0_wp+&
-                    (q(i-1,j,indvars(5))/1.0_wp*q(i-1,j,indvars(1))))*param_float(18 + 5)*qst(i-1,j,indvarsst(10))*(d2_dif_nut_dxdx_0_0_im1j1m2)
+d1_dif_nut_dx_0_im1j1m2 = -(param_float(1 + 5)*(1.0_wp+&
+                    (q(i-1,j,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(i-1,j,indvarsst(10))*(d2_dif_nut_dxdx_0_0_im1j1m2))
 
-d1_dif_nut_dx_0_ip1j1m2 = -param_float(1 + 5)*(1.0_wp+&
-                    (q(i+1,j,indvars(5))/1.0_wp*q(i+1,j,indvars(1))))*param_float(18 + 5)*qst(i+1,j,indvarsst(10))*(d2_dif_nut_dxdx_0_0_ip1j1m2)
+d1_dif_nut_dx_0_ip1j1m2 = -(param_float(1 + 5)*(1.0_wp+&
+                    (q(i+1,j,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(i+1,j,indvarsst(10))*(d2_dif_nut_dxdx_0_0_ip1j1m2))
 
 d1_dif_nut_dx_0_ij1m2 = -&
           0.5_wp*d1_dif_nut_dx_0_im1j1m2+&
@@ -825,11 +825,11 @@ d1_dif_nut_dy_2_ij1m2 = -&
 
 d1_dif_nut_dy_2_ij1m2 = d1_dif_nut_dy_2_ij1m2*param_float(2)
 
-d1_dif_nut_dy_0_ijm11m2 = -param_float(1 + 5)*(1.0_wp+&
-                    (q(i,j-1,indvars(5))/1.0_wp*q(i,j-1,indvars(1))))*param_float(18 + 5)*qst(i,j-1,indvarsst(11))*(d2_dif_nut_dydy_0_0_ijm11m2)
+d1_dif_nut_dy_0_ijm11m2 = -(param_float(1 + 5)*(1.0_wp+&
+                    (q(i,j-1,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(i,j-1,indvarsst(11))*(d2_dif_nut_dydy_0_0_ijm11m2))
 
-d1_dif_nut_dy_0_ijp11m2 = -param_float(1 + 5)*(1.0_wp+&
-                    (q(i,j+1,indvars(5))/1.0_wp*q(i,j+1,indvars(1))))*param_float(18 + 5)*qst(i,j+1,indvarsst(11))*(d2_dif_nut_dydy_0_0_ijp11m2)
+d1_dif_nut_dy_0_ijp11m2 = -(param_float(1 + 5)*(1.0_wp+&
+                    (q(i,j+1,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(i,j+1,indvarsst(11))*(d2_dif_nut_dydy_0_0_ijp11m2))
 
 d1_dif_nut_dy_0_ij1m2 = -&
           0.5_wp*d1_dif_nut_dy_0_ijm11m2+&
@@ -847,22 +847,15 @@ d1_dif_nut_dy_0_ij1m2 = d1_dif_nut_dy_0_ij1m2*param_float(2)
 
 
 rhs(i,j,indvars(5)) = rhs(i,j,indvars(5))  -  ( qst(i,j,indvarsst(10))*(d1_dif_nut_dx_0_ij1m2)+&
-                    qst(i,j,indvarsst(11))*(d1_dif_nut_dy_0_ij1m2)+&
-                    -&
+                    qst(i,j,indvarsst(11))*(d1_dif_nut_dy_0_ij1m2)-&
                     param_float(1 + 5)*param_float(7 + 5)*param_float(18 + 5)*((qst(i,j,indvarsst(10)))**2*(d1_dif_nut_dx_1_ij1m2)*(d1_dif_nut_dx_2_ij1m2)+&
                     (qst(i,j,indvarsst(11)))**2*(d1_dif_nut_dy_1_ij1m2)*(d1_dif_nut_dy_2_ij1m2))-&
                     param_float(6 + 5)*(1.0_wp-&
                     (param_float(16 + 5)*exp(-&
-                    param_float(17 + 5)*(q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**2.0_wp)))*qst(i,j,indvarsst(12))*q(i,j,indvars(1))*q(i,j,indvars(5))+&
-                    param_float(1 + 5)*(param_float(10 + 5)*(((min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))+&
-                    param_float(11 + 5)*((min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))**6.0_wp-&
-                    (min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))))*((1.0_wp+&
-                    param_float(12 + 5)**6.0_wp)/(((min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))+&
-                    param_float(11 + 5)*((min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))**6.0_wp-&
-                    (min(param_float(1 + 5)*(q(i,j,indvars(5))/(qst(i,j,indvarsst(12))*param_float(9 + 5)**2.0_wp*qst(i,j,indvarsst(2))**2.0_wp)),10.0_wp))))**6.0_wp+&
-                    param_float(12 + 5)**6.0_wp))**(1.0_wp/6.0_wp))-&
+                    param_float(17 + 5)*(q(i,j,indvars(5))/1.0_wp)**2.0_wp)))*qst(i,j,indvarsst(13))*q(i,j,indvars(1))*q(i,j,indvars(5))+&
+                    param_float(1 + 5)*(param_float(10 + 5)*qst(i,j,indvarsst(16))-&
                     param_float(6 + 5)/param_float(9 + 5)**2.0_wp*(param_float(16 + 5)*exp(-&
-                    param_float(17 + 5)*(q(i,j,indvars(5))/1.0_wp*q(i,j,indvars(1)))**2.0_wp)))*q(i,j,indvars(1))*(q(i,j,indvars(5))/qst(i,j,indvarsst(2)))**2.0_wp ) 
+                    param_float(17 + 5)*(q(i,j,indvars(5))/1.0_wp)**2.0_wp)))*q(i,j,indvars(1))*(q(i,j,indvars(5))/qst(i,j,indvarsst(2)))**2.0_wp ) 
 
      enddo
    enddo
