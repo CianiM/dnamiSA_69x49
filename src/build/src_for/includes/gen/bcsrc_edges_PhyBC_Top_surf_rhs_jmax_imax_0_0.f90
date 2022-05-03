@@ -142,38 +142,38 @@ real(wp),intent(inout) :: qface_i(idarray(3):idarray(4),nvar_f(1)),&
             ,d2_rhs_rhov_dydy_6_0_nxp2p0nyp2p0m2k &
             ,d1_rhs_rhov_dy_6_nxp2p0nyp2p0p0k,d1_rhs_rhov_dy_6_nxp2p0nyp2p0m1k,d1_rhs_rhov_dy_6_nxp2p0nyp2p0m2k &
             ,d1_rhs_rhov_dy_6_nxp2p0nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p0nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p0nyp2p0k,d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k &
-            ,d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k &
-            ,d1_rhs_et_dx_0_nxp2p0p0nyp2p0k,d1_rhs_et_dx_0_nxp2p0m1nyp2p0k,d1_rhs_et_dx_0_nxp2p0m2nyp2p0k &
-            ,d1_rhs_et_dx_0_nxp2p0nyp2p0k &
-            ,d1_rhs_et_dy_9_nxp2p0nyp2p0p0k,d1_rhs_et_dy_9_nxp2p0nyp2p0m1k,d1_rhs_et_dy_9_nxp2p0nyp2p0m2k &
-            ,d1_rhs_et_dy_9_nxp2p0nyp2p0k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p0k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p0k,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k &
-            ,d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k &
-            ,d1_rhs_et_dy_10_nxp2p0nyp2p0p0k,d1_rhs_et_dy_10_nxp2p0nyp2p0m1k,d1_rhs_et_dy_10_nxp2p0nyp2p0m2k &
-            ,d1_rhs_et_dy_10_nxp2p0nyp2p0k &
-            ,d1_rhs_nut_dx_0_nxp2p0p0nyp2p0k,d1_rhs_nut_dx_0_nxp2p0m1nyp2p0k,d1_rhs_nut_dx_0_nxp2p0m2nyp2p0k &
-            ,d1_rhs_nut_dx_0_nxp2p0nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p0nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p0nyp2p0k,d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k &
-            ,d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k &
-            ,d1_rhs_nut_dx_2_nxp2p0p0nyp2p0k,d1_rhs_nut_dx_2_nxp2p0m1nyp2p0k,d1_rhs_nut_dx_2_nxp2p0m2nyp2p0k &
-            ,d1_rhs_nut_dx_2_nxp2p0nyp2p0k &
-            ,d1_rhs_nut_dx_3_nxp2p0p0nyp2p0k,d1_rhs_nut_dx_3_nxp2p0m1nyp2p0k,d1_rhs_nut_dx_3_nxp2p0m2nyp2p0k &
-            ,d1_rhs_nut_dx_3_nxp2p0nyp2p0k &
-            ,d1_rhs_nut_dx_1_nxp2p0p0nyp2p0k,d1_rhs_nut_dx_1_nxp2p0m1nyp2p0k,d1_rhs_nut_dx_1_nxp2p0m2nyp2p0k &
-            ,d1_rhs_nut_dx_1_nxp2p0nyp2p0k 
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k &
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k &
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p0nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k &
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k &
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p0nyp2p0k,d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k &
+            ,d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhoet_dx_0_nxp2p0p0nyp2p0k,d1_rhs_rhoet_dx_0_nxp2p0m1nyp2p0k,d1_rhs_rhoet_dx_0_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhoet_dx_0_nxp2p0nyp2p0k &
+            ,d1_rhs_rhoet_dy_9_nxp2p0nyp2p0p0k,d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m1k,d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m2k &
+            ,d1_rhs_rhoet_dy_9_nxp2p0nyp2p0k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p0k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p0k,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k &
+            ,d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k &
+            ,d1_rhs_rhoet_dy_10_nxp2p0nyp2p0p0k,d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m1k,d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m2k &
+            ,d1_rhs_rhoet_dy_10_nxp2p0nyp2p0k &
+            ,d1_rhs_rhonut_dx_0_nxp2p0p0nyp2p0k,d1_rhs_rhonut_dx_0_nxp2p0m1nyp2p0k,d1_rhs_rhonut_dx_0_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhonut_dx_0_nxp2p0nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p0nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p0nyp2p0k,d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k &
+            ,d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhonut_dx_2_nxp2p0p0nyp2p0k,d1_rhs_rhonut_dx_2_nxp2p0m1nyp2p0k,d1_rhs_rhonut_dx_2_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhonut_dx_2_nxp2p0nyp2p0k &
+            ,d1_rhs_rhonut_dx_3_nxp2p0p0nyp2p0k,d1_rhs_rhonut_dx_3_nxp2p0m1nyp2p0k,d1_rhs_rhonut_dx_3_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhonut_dx_3_nxp2p0nyp2p0k &
+            ,d1_rhs_rhonut_dx_1_nxp2p0p0nyp2p0k,d1_rhs_rhonut_dx_1_nxp2p0m1nyp2p0k,d1_rhs_rhonut_dx_1_nxp2p0m2nyp2p0k &
+            ,d1_rhs_rhonut_dx_1_nxp2p0nyp2p0k 
 
   integer :: indvars(neq),indvarsst(neqst)
 
@@ -872,53 +872,53 @@ rhs(nx+2+0,ny+2+0,indvars(3)) =   -  ( q(nx+2+0,ny+2+0,indvars(3))*(1.0_wp/(para
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k = ((q(nx+2+0+0+0,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k = ((q(nx+2+0+0+0,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0+0+0,ny+2+0,indvars(2))*q(nx+2+0+0+0,ny+2+0,indvars(2))+&
                     q(nx+2+0+0+0,ny+2+0,indvars(3))*q(nx+2+0+0+0,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k = ((q(nx+2+0+0-1,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k = ((q(nx+2+0+0-1,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0+0-1,ny+2+0,indvars(2))*q(nx+2+0+0-1,ny+2+0,indvars(2))+&
                     q(nx+2+0+0-1,ny+2+0,indvars(3))*q(nx+2+0+0-1,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k = ((q(nx+2+0+0-2,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k = ((q(nx+2+0+0-2,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0+0-2,ny+2+0,indvars(2))*q(nx+2+0+0-2,ny+2+0,indvars(2))+&
                     q(nx+2+0+0-2,ny+2+0,indvars(3))*q(nx+2+0+0-2,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k = 1.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k-&
-          2.0_wp*d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k+&
-          0.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k
+d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k = 1.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k-&
+          2.0_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k
 
-d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k = d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k*param_float(1)
+d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k = d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k*param_float(1)
 
-d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k = ((q(nx+2+0-1-1,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k = ((q(nx+2+0-1-1,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0-1-1,ny+2+0,indvars(2))*q(nx+2+0-1-1,ny+2+0,indvars(2))+&
                     q(nx+2+0-1-1,ny+2+0,indvars(3))*q(nx+2+0-1-1,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k = ((q(nx+2+0-1+1,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k = ((q(nx+2+0-1+1,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0-1+1,ny+2+0,indvars(2))*q(nx+2+0-1+1,ny+2+0,indvars(2))+&
                     q(nx+2+0-1+1,ny+2+0,indvars(3))*q(nx+2+0-1+1,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k = -&
-          0.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k+&
-          0.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k = -&
+          0.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k
 
-d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k = d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k*param_float(1)
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k = d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k*param_float(1)
 
-d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k = ((q(nx+2+0-2-1,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k = ((q(nx+2+0-2-1,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0-2-1,ny+2+0,indvars(2))*q(nx+2+0-2-1,ny+2+0,indvars(2))+&
                     q(nx+2+0-2-1,ny+2+0,indvars(3))*q(nx+2+0-2-1,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k = ((q(nx+2+0-2+1,ny+2+0,indvars(4))-&
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k = ((q(nx+2+0-2+1,ny+2+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0-2+1,ny+2+0,indvars(2))*q(nx+2+0-2+1,ny+2+0,indvars(2))+&
                     q(nx+2+0-2+1,ny+2+0,indvars(3))*q(nx+2+0-2+1,ny+2+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k = -&
-          0.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k+&
-          0.5_wp*d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k = -&
+          0.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k
 
-d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k = d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k*param_float(1)
+d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k = d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k*param_float(1)
 
-d1_rhs_et_dx_0_nxp2p0p0nyp2p0k = -param_float(2 + 5)*qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_et_dxdx_0_0_nxp2p0p0nyp2p0k)-&
+d1_rhs_rhoet_dx_0_nxp2p0p0nyp2p0k = -param_float(2 + 5)*qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_rhoet_dxdx_0_0_nxp2p0p0nyp2p0k)-&
                     q(nx+2+0+0,ny+2+0,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_rhou_dxdx_0_0_nxp2p0p0nyp2p0k)-&
@@ -929,7 +929,7 @@ d1_rhs_et_dx_0_nxp2p0p0nyp2p0k = -param_float(2 + 5)*qst(nx+2+0+0,ny+2+0,indvars
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0+0,ny+2+0,indvarsst(11))*(d2_rhs_rhov_dxdy_0_0_nxp2p0p0nyp2p0k)+&
                     qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_rhov_dxdx_0_0_nxp2p0p0nyp2p0k)))
 
-d1_rhs_et_dx_0_nxp2p0m1nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_et_dxdx_0_0_nxp2p0m1nyp2p0k)-&
+d1_rhs_rhoet_dx_0_nxp2p0m1nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_rhoet_dxdx_0_0_nxp2p0m1nyp2p0k)-&
                     q(nx+2+0-1,ny+2+0,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_rhou_dxdx_0_0_nxp2p0m1nyp2p0k)-&
@@ -940,7 +940,7 @@ d1_rhs_et_dx_0_nxp2p0m1nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-1,ny+2+0,indvars
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0-1,ny+2+0,indvarsst(11))*(d2_rhs_rhov_dxdy_0_0_nxp2p0m1nyp2p0k)+&
                     qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_rhov_dxdx_0_0_nxp2p0m1nyp2p0k)))
 
-d1_rhs_et_dx_0_nxp2p0m2nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_et_dxdx_0_0_nxp2p0m2nyp2p0k)-&
+d1_rhs_rhoet_dx_0_nxp2p0m2nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_rhoet_dxdx_0_0_nxp2p0m2nyp2p0k)-&
                     q(nx+2+0-2,ny+2+0,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(2.0_wp*qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_rhou_dxdx_0_0_nxp2p0m2nyp2p0k)-&
@@ -951,80 +951,80 @@ d1_rhs_et_dx_0_nxp2p0m2nyp2p0k = -param_float(2 + 5)*qst(nx+2+0-2,ny+2+0,indvars
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0-2,ny+2+0,indvarsst(11))*(d2_rhs_rhov_dxdy_0_0_nxp2p0m2nyp2p0k)+&
                     qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_rhov_dxdx_0_0_nxp2p0m2nyp2p0k)))
 
-d1_rhs_et_dx_0_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_et_dx_0_nxp2p0p0nyp2p0k-&
-          2.0_wp*d1_rhs_et_dx_0_nxp2p0m1nyp2p0k+&
-          0.5_wp*d1_rhs_et_dx_0_nxp2p0m2nyp2p0k
+d1_rhs_rhoet_dx_0_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhoet_dx_0_nxp2p0p0nyp2p0k-&
+          2.0_wp*d1_rhs_rhoet_dx_0_nxp2p0m1nyp2p0k+&
+          0.5_wp*d1_rhs_rhoet_dx_0_nxp2p0m2nyp2p0k
 
-d1_rhs_et_dx_0_nxp2p0nyp2p0k = d1_rhs_et_dx_0_nxp2p0nyp2p0k*param_float(1)
+d1_rhs_rhoet_dx_0_nxp2p0nyp2p0k = d1_rhs_rhoet_dx_0_nxp2p0nyp2p0k*param_float(1)
 
-d1_rhs_et_dy_9_nxp2p0nyp2p0p0k = (q(nx+2+0,ny+2+0+0,indvars(1))*q(nx+2+0,ny+2+0+0,indvars(4))+&
+d1_rhs_rhoet_dy_9_nxp2p0nyp2p0p0k = (q(nx+2+0,ny+2+0+0,indvars(1))*q(nx+2+0,ny+2+0+0,indvars(4))+&
                     (param_float(3 + 5))*q(nx+2+0,ny+2+0+0,indvars(1))*((q(nx+2+0,ny+2+0+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0+0,indvars(2))*q(nx+2+0,ny+2+0+0,indvars(2))+&
                     q(nx+2+0,ny+2+0+0,indvars(3))*q(nx+2+0,ny+2+0+0,indvars(3))))))*q(nx+2+0,ny+2+0+0,indvars(3))
 
-d1_rhs_et_dy_9_nxp2p0nyp2p0m1k = (q(nx+2+0,ny+2+0-1,indvars(1))*q(nx+2+0,ny+2+0-1,indvars(4))+&
+d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m1k = (q(nx+2+0,ny+2+0-1,indvars(1))*q(nx+2+0,ny+2+0-1,indvars(4))+&
                     (param_float(3 + 5))*q(nx+2+0,ny+2+0-1,indvars(1))*((q(nx+2+0,ny+2+0-1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-1,indvars(2))*q(nx+2+0,ny+2+0-1,indvars(2))+&
                     q(nx+2+0,ny+2+0-1,indvars(3))*q(nx+2+0,ny+2+0-1,indvars(3))))))*q(nx+2+0,ny+2+0-1,indvars(3))
 
-d1_rhs_et_dy_9_nxp2p0nyp2p0m2k = (q(nx+2+0,ny+2+0-2,indvars(1))*q(nx+2+0,ny+2+0-2,indvars(4))+&
+d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m2k = (q(nx+2+0,ny+2+0-2,indvars(1))*q(nx+2+0,ny+2+0-2,indvars(4))+&
                     (param_float(3 + 5))*q(nx+2+0,ny+2+0-2,indvars(1))*((q(nx+2+0,ny+2+0-2,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-2,indvars(2))*q(nx+2+0,ny+2+0-2,indvars(2))+&
                     q(nx+2+0,ny+2+0-2,indvars(3))*q(nx+2+0,ny+2+0-2,indvars(3))))))*q(nx+2+0,ny+2+0-2,indvars(3))
 
-d1_rhs_et_dy_9_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_et_dy_9_nxp2p0nyp2p0p0k-&
-          2.0_wp*d1_rhs_et_dy_9_nxp2p0nyp2p0m1k+&
-          0.5_wp*d1_rhs_et_dy_9_nxp2p0nyp2p0m2k
+d1_rhs_rhoet_dy_9_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhoet_dy_9_nxp2p0nyp2p0p0k-&
+          2.0_wp*d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m1k+&
+          0.5_wp*d1_rhs_rhoet_dy_9_nxp2p0nyp2p0m2k
 
-d1_rhs_et_dy_9_nxp2p0nyp2p0k = d1_rhs_et_dy_9_nxp2p0nyp2p0k*param_float(2)
+d1_rhs_rhoet_dy_9_nxp2p0nyp2p0k = d1_rhs_rhoet_dy_9_nxp2p0nyp2p0k*param_float(2)
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k = ((q(nx+2+0,ny+2+0+0+0,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k = ((q(nx+2+0,ny+2+0+0+0,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0+0+0,indvars(2))*q(nx+2+0,ny+2+0+0+0,indvars(2))+&
                     q(nx+2+0,ny+2+0+0+0,indvars(3))*q(nx+2+0,ny+2+0+0+0,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k = ((q(nx+2+0,ny+2+0+0-1,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k = ((q(nx+2+0,ny+2+0+0-1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0+0-1,indvars(2))*q(nx+2+0,ny+2+0+0-1,indvars(2))+&
                     q(nx+2+0,ny+2+0+0-1,indvars(3))*q(nx+2+0,ny+2+0+0-1,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k = ((q(nx+2+0,ny+2+0+0-2,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k = ((q(nx+2+0,ny+2+0+0-2,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0+0-2,indvars(2))*q(nx+2+0,ny+2+0+0-2,indvars(2))+&
                     q(nx+2+0,ny+2+0+0-2,indvars(3))*q(nx+2+0,ny+2+0+0-2,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k = 1.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k-&
-          2.0_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k+&
-          0.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k = 1.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0p0k-&
+          2.0_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m1k+&
+          0.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k_nxp2p0nyp2p0p0m2k
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k = d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k*param_float(2)
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k = d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k*param_float(2)
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k = ((q(nx+2+0,ny+2+0-1-1,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k = ((q(nx+2+0,ny+2+0-1-1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-1-1,indvars(2))*q(nx+2+0,ny+2+0-1-1,indvars(2))+&
                     q(nx+2+0,ny+2+0-1-1,indvars(3))*q(nx+2+0,ny+2+0-1-1,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k = ((q(nx+2+0,ny+2+0-1+1,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k = ((q(nx+2+0,ny+2+0-1+1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-1+1,indvars(2))*q(nx+2+0,ny+2+0-1+1,indvars(2))+&
                     q(nx+2+0,ny+2+0-1+1,indvars(3))*q(nx+2+0,ny+2+0-1+1,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k = -&
-          0.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k+&
-          0.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k = -&
+          0.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1m1k+&
+          0.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k_nxp2p0nyp2p0m1p1k
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k = d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k*param_float(2)
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k = d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k*param_float(2)
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k = ((q(nx+2+0,ny+2+0-2-1,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k = ((q(nx+2+0,ny+2+0-2-1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-2-1,indvars(2))*q(nx+2+0,ny+2+0-2-1,indvars(2))+&
                     q(nx+2+0,ny+2+0-2-1,indvars(3))*q(nx+2+0,ny+2+0-2-1,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k = ((q(nx+2+0,ny+2+0-2+1,indvars(4))-&
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k = ((q(nx+2+0,ny+2+0-2+1,indvars(4))-&
                     0.5_wp*(q(nx+2+0,ny+2+0-2+1,indvars(2))*q(nx+2+0,ny+2+0-2+1,indvars(2))+&
                     q(nx+2+0,ny+2+0-2+1,indvars(3))*q(nx+2+0,ny+2+0-2+1,indvars(3)))))/(param_float(4 + 5))
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k = -&
-          0.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k+&
-          0.5_wp*d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k = -&
+          0.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2m1k+&
+          0.5_wp*d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k_nxp2p0nyp2p0m2p1k
 
-d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k = d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k*param_float(2)
+d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k = d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k*param_float(2)
 
-d1_rhs_et_dy_10_nxp2p0nyp2p0p0k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0+0,indvarsst(11))*(d2_rhs_et_dydy_10_0_nxp2p0nyp2p0p0k)-&
+d1_rhs_rhoet_dy_10_nxp2p0nyp2p0p0k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0+0,indvarsst(11))*(d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0p0k)-&
                     q(nx+2+0,ny+2+0+0,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0,ny+2+0+0,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,ny+2+0+0,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0,ny+2+0+0,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0,ny+2+0+0,indvarsst(11))*(d2_rhs_rhou_dydy_7_0_nxp2p0nyp2p0p0k)+&
@@ -1035,7 +1035,7 @@ d1_rhs_et_dy_10_nxp2p0nyp2p0p0k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0+0,indvar
                     2.0_wp/3.0_wp*(qst(nx+2+0,ny+2+0+0,indvarsst(10))*(d2_rhs_rhov_dydx_6_0_nxp2p0nyp2p0p0k)+&
                     qst(nx+2+0,ny+2+0+0,indvarsst(11))*(d2_rhs_rhov_dydy_6_0_nxp2p0nyp2p0p0k))))
 
-d1_rhs_et_dy_10_nxp2p0nyp2p0m1k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-1,indvarsst(11))*(d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m1k)-&
+d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m1k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-1,indvarsst(11))*(d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m1k)-&
                     q(nx+2+0,ny+2+0-1,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0,ny+2+0-1,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,ny+2+0-1,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0,ny+2+0-1,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0,ny+2+0-1,indvarsst(11))*(d2_rhs_rhou_dydy_7_0_nxp2p0nyp2p0m1k)+&
@@ -1046,7 +1046,7 @@ d1_rhs_et_dy_10_nxp2p0nyp2p0m1k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-1,indvar
                     2.0_wp/3.0_wp*(qst(nx+2+0,ny+2+0-1,indvarsst(10))*(d2_rhs_rhov_dydx_6_0_nxp2p0nyp2p0m1k)+&
                     qst(nx+2+0,ny+2+0-1,indvarsst(11))*(d2_rhs_rhov_dydy_6_0_nxp2p0nyp2p0m1k))))
 
-d1_rhs_et_dy_10_nxp2p0nyp2p0m2k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-2,indvarsst(11))*(d2_rhs_et_dydy_10_0_nxp2p0nyp2p0m2k)-&
+d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m2k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-2,indvarsst(11))*(d2_rhs_rhoet_dydy_10_0_nxp2p0nyp2p0m2k)-&
                     q(nx+2+0,ny+2+0-2,indvars(2))*((1.0_wp)*(1.0_wp+&
                     ((q(nx+2+0,ny+2+0-2,indvars(5))/1.0_wp)**3.0_wp/((q(nx+2+0,ny+2+0-2,indvars(5))/1.0_wp)**3.0_wp+&
                     param_float(13 + 5)**3.0_wp))*(q(nx+2+0,ny+2+0-2,indvars(5))/1.0_wp))*param_float(1 + 5)*(qst(nx+2+0,ny+2+0-2,indvarsst(11))*(d2_rhs_rhou_dydy_7_0_nxp2p0nyp2p0m2k)+&
@@ -1057,11 +1057,11 @@ d1_rhs_et_dy_10_nxp2p0nyp2p0m2k = -param_float(2 + 5)*qst(nx+2+0,ny+2+0-2,indvar
                     2.0_wp/3.0_wp*(qst(nx+2+0,ny+2+0-2,indvarsst(10))*(d2_rhs_rhov_dydx_6_0_nxp2p0nyp2p0m2k)+&
                     qst(nx+2+0,ny+2+0-2,indvarsst(11))*(d2_rhs_rhov_dydy_6_0_nxp2p0nyp2p0m2k))))
 
-d1_rhs_et_dy_10_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_et_dy_10_nxp2p0nyp2p0p0k-&
-          2.0_wp*d1_rhs_et_dy_10_nxp2p0nyp2p0m1k+&
-          0.5_wp*d1_rhs_et_dy_10_nxp2p0nyp2p0m2k
+d1_rhs_rhoet_dy_10_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhoet_dy_10_nxp2p0nyp2p0p0k-&
+          2.0_wp*d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m1k+&
+          0.5_wp*d1_rhs_rhoet_dy_10_nxp2p0nyp2p0m2k
 
-d1_rhs_et_dy_10_nxp2p0nyp2p0k = d1_rhs_et_dy_10_nxp2p0nyp2p0k*param_float(2)
+d1_rhs_rhoet_dy_10_nxp2p0nyp2p0k = d1_rhs_rhoet_dy_10_nxp2p0nyp2p0k*param_float(2)
 
 
 
@@ -1125,9 +1125,9 @@ rhs(nx+2+0,ny+2+0,indvars(4)) =   -  ( 0.5_wp*(q(nx+2+0,ny+2+0,indvars(2))**2+&
                     q(nx+2+0,ny+2+0,indvars(3))*q(nx+2+0,ny+2+0,indvars(3)))))-&
                     param_float(26 + 5))))+&
                     q(nx+2+0,ny+2+0,indvars(1))*q(nx+2+0,ny+2+0,indvars(3))*((1.0_wp*q(nx+2+0,ny+2+0,indvars(3))*d1_rhs_rhov_dy_4_nxp2p0nyp2p0k)*qst(nx+2+0,ny+2+0,indvarsst(11)))+&
-                    d1_rhs_et_dy_9_nxp2p0nyp2p0k+&
-                    qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_et_dx_0_nxp2p0nyp2p0k)+&
-                    qst(nx+2+0,ny+2+0,indvarsst(11))*(d1_rhs_et_dy_10_nxp2p0nyp2p0k) ) 
+                    d1_rhs_rhoet_dy_9_nxp2p0nyp2p0k+&
+                    qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_rhoet_dx_0_nxp2p0nyp2p0k)+&
+                    qst(nx+2+0,ny+2+0,indvarsst(11))*(d1_rhs_rhoet_dy_10_nxp2p0nyp2p0k) ) 
 
 
 
@@ -1144,88 +1144,88 @@ rhs(nx+2+0,ny+2+0,indvars(4)) =   -  ( 0.5_wp*(q(nx+2+0,ny+2+0,indvars(2))**2+&
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-d1_rhs_nut_dx_0_nxp2p0p0nyp2p0k = (q(nx+2+0+0,ny+2+0,indvars(1))*q(nx+2+0+0,ny+2+0,indvars(2))*q(nx+2+0+0,ny+2+0,indvars(5)))
+d1_rhs_rhonut_dx_0_nxp2p0p0nyp2p0k = (q(nx+2+0+0,ny+2+0,indvars(1))*q(nx+2+0+0,ny+2+0,indvars(2))*q(nx+2+0+0,ny+2+0,indvars(5)))
 
-d1_rhs_nut_dx_0_nxp2p0m1nyp2p0k = (q(nx+2+0-1,ny+2+0,indvars(1))*q(nx+2+0-1,ny+2+0,indvars(2))*q(nx+2+0-1,ny+2+0,indvars(5)))
+d1_rhs_rhonut_dx_0_nxp2p0m1nyp2p0k = (q(nx+2+0-1,ny+2+0,indvars(1))*q(nx+2+0-1,ny+2+0,indvars(2))*q(nx+2+0-1,ny+2+0,indvars(5)))
 
-d1_rhs_nut_dx_0_nxp2p0m2nyp2p0k = (q(nx+2+0-2,ny+2+0,indvars(1))*q(nx+2+0-2,ny+2+0,indvars(2))*q(nx+2+0-2,ny+2+0,indvars(5)))
+d1_rhs_rhonut_dx_0_nxp2p0m2nyp2p0k = (q(nx+2+0-2,ny+2+0,indvars(1))*q(nx+2+0-2,ny+2+0,indvars(2))*q(nx+2+0-2,ny+2+0,indvars(5)))
 
-d1_rhs_nut_dx_0_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_nut_dx_0_nxp2p0p0nyp2p0k-&
-          2.0_wp*d1_rhs_nut_dx_0_nxp2p0m1nyp2p0k+&
-          0.5_wp*d1_rhs_nut_dx_0_nxp2p0m2nyp2p0k
+d1_rhs_rhonut_dx_0_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhonut_dx_0_nxp2p0p0nyp2p0k-&
+          2.0_wp*d1_rhs_rhonut_dx_0_nxp2p0m1nyp2p0k+&
+          0.5_wp*d1_rhs_rhonut_dx_0_nxp2p0m2nyp2p0k
 
-d1_rhs_nut_dx_0_nxp2p0nyp2p0k = d1_rhs_nut_dx_0_nxp2p0nyp2p0k*param_float(1)
+d1_rhs_rhonut_dx_0_nxp2p0nyp2p0k = d1_rhs_rhonut_dx_0_nxp2p0nyp2p0k*param_float(1)
 
-d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k = q(nx+2+0+0+0,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k = q(nx+2+0+0+0,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k = q(nx+2+0+0-1,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k = q(nx+2+0+0-1,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k = q(nx+2+0+0-2,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k = q(nx+2+0+0-2,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k = 1.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k-&
-          2.0_wp*d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k+&
-          0.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k
+d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k = 1.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0p0nyp2p0k-&
+          2.0_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k_nxp2p0p0m2nyp2p0k
 
-d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k = d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k*param_float(1)
+d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k = d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k*param_float(1)
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k = q(nx+2+0-1-1,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k = q(nx+2+0-1-1,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k = q(nx+2+0-1+1,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k = q(nx+2+0-1+1,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k = -&
-          0.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k+&
-          0.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k = -&
+          0.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k_nxp2p0m1p1nyp2p0k
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k = d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k*param_float(1)
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k = d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k*param_float(1)
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k = q(nx+2+0-2-1,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k = q(nx+2+0-2-1,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k = q(nx+2+0-2+1,ny+2+0,indvars(5))
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k = q(nx+2+0-2+1,ny+2+0,indvars(5))
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k = -&
-          0.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k+&
-          0.5_wp*d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k = -&
+          0.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2m1nyp2p0k+&
+          0.5_wp*d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k_nxp2p0m2p1nyp2p0k
 
-d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k = d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k*param_float(1)
+d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k = d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k*param_float(1)
 
-d1_rhs_nut_dx_2_nxp2p0p0nyp2p0k = q(nx+2+0+0,ny+2+0,indvars(1))*q(nx+2+0+0,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_2_nxp2p0p0nyp2p0k = q(nx+2+0+0,ny+2+0,indvars(1))*q(nx+2+0+0,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_2_nxp2p0m1nyp2p0k = q(nx+2+0-1,ny+2+0,indvars(1))*q(nx+2+0-1,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_2_nxp2p0m1nyp2p0k = q(nx+2+0-1,ny+2+0,indvars(1))*q(nx+2+0-1,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_2_nxp2p0m2nyp2p0k = q(nx+2+0-2,ny+2+0,indvars(1))*q(nx+2+0-2,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_2_nxp2p0m2nyp2p0k = q(nx+2+0-2,ny+2+0,indvars(1))*q(nx+2+0-2,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_2_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_nut_dx_2_nxp2p0p0nyp2p0k-&
-          2.0_wp*d1_rhs_nut_dx_2_nxp2p0m1nyp2p0k+&
-          0.5_wp*d1_rhs_nut_dx_2_nxp2p0m2nyp2p0k
+d1_rhs_rhonut_dx_2_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhonut_dx_2_nxp2p0p0nyp2p0k-&
+          2.0_wp*d1_rhs_rhonut_dx_2_nxp2p0m1nyp2p0k+&
+          0.5_wp*d1_rhs_rhonut_dx_2_nxp2p0m2nyp2p0k
 
-d1_rhs_nut_dx_2_nxp2p0nyp2p0k = d1_rhs_nut_dx_2_nxp2p0nyp2p0k*param_float(1)
+d1_rhs_rhonut_dx_2_nxp2p0nyp2p0k = d1_rhs_rhonut_dx_2_nxp2p0nyp2p0k*param_float(1)
 
-d1_rhs_nut_dx_3_nxp2p0p0nyp2p0k = q(nx+2+0+0,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_3_nxp2p0p0nyp2p0k = q(nx+2+0+0,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_3_nxp2p0m1nyp2p0k = q(nx+2+0-1,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_3_nxp2p0m1nyp2p0k = q(nx+2+0-1,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_3_nxp2p0m2nyp2p0k = q(nx+2+0-2,ny+2+0,indvars(5))
+d1_rhs_rhonut_dx_3_nxp2p0m2nyp2p0k = q(nx+2+0-2,ny+2+0,indvars(5))
 
-d1_rhs_nut_dx_3_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_nut_dx_3_nxp2p0p0nyp2p0k-&
-          2.0_wp*d1_rhs_nut_dx_3_nxp2p0m1nyp2p0k+&
-          0.5_wp*d1_rhs_nut_dx_3_nxp2p0m2nyp2p0k
+d1_rhs_rhonut_dx_3_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhonut_dx_3_nxp2p0p0nyp2p0k-&
+          2.0_wp*d1_rhs_rhonut_dx_3_nxp2p0m1nyp2p0k+&
+          0.5_wp*d1_rhs_rhonut_dx_3_nxp2p0m2nyp2p0k
 
-d1_rhs_nut_dx_3_nxp2p0nyp2p0k = d1_rhs_nut_dx_3_nxp2p0nyp2p0k*param_float(1)
+d1_rhs_rhonut_dx_3_nxp2p0nyp2p0k = d1_rhs_rhonut_dx_3_nxp2p0nyp2p0k*param_float(1)
 
-d1_rhs_nut_dx_1_nxp2p0p0nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
-                    (q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_nut_dxdx_1_0_nxp2p0p0nyp2p0k))
+d1_rhs_rhonut_dx_1_nxp2p0p0nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
+                    (q(nx+2+0+0,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0+0,ny+2+0,indvarsst(10))*(d2_rhs_rhonut_dxdx_1_0_nxp2p0p0nyp2p0k))
 
-d1_rhs_nut_dx_1_nxp2p0m1nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
-                    (q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_nut_dxdx_1_0_nxp2p0m1nyp2p0k))
+d1_rhs_rhonut_dx_1_nxp2p0m1nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
+                    (q(nx+2+0-1,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0-1,ny+2+0,indvarsst(10))*(d2_rhs_rhonut_dxdx_1_0_nxp2p0m1nyp2p0k))
 
-d1_rhs_nut_dx_1_nxp2p0m2nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
-                    (q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_nut_dxdx_1_0_nxp2p0m2nyp2p0k))
+d1_rhs_rhonut_dx_1_nxp2p0m2nyp2p0k = (param_float(1 + 5)*(1.0_wp+&
+                    (q(nx+2+0-2,ny+2+0,indvars(5))/1.0_wp))*param_float(18 + 5)*qst(nx+2+0-2,ny+2+0,indvarsst(10))*(d2_rhs_rhonut_dxdx_1_0_nxp2p0m2nyp2p0k))
 
-d1_rhs_nut_dx_1_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_nut_dx_1_nxp2p0p0nyp2p0k-&
-          2.0_wp*d1_rhs_nut_dx_1_nxp2p0m1nyp2p0k+&
-          0.5_wp*d1_rhs_nut_dx_1_nxp2p0m2nyp2p0k
+d1_rhs_rhonut_dx_1_nxp2p0nyp2p0k = 1.5_wp*d1_rhs_rhonut_dx_1_nxp2p0p0nyp2p0k-&
+          2.0_wp*d1_rhs_rhonut_dx_1_nxp2p0m1nyp2p0k+&
+          0.5_wp*d1_rhs_rhonut_dx_1_nxp2p0m2nyp2p0k
 
-d1_rhs_nut_dx_1_nxp2p0nyp2p0k = d1_rhs_nut_dx_1_nxp2p0nyp2p0k*param_float(1)
+d1_rhs_rhonut_dx_1_nxp2p0nyp2p0k = d1_rhs_rhonut_dx_1_nxp2p0nyp2p0k*param_float(1)
 
 
 
@@ -1236,10 +1236,10 @@ d1_rhs_nut_dx_1_nxp2p0nyp2p0k = d1_rhs_nut_dx_1_nxp2p0nyp2p0k*param_float(1)
 !***********************************************************
 
 
-rhs(nx+2+0,ny+2+0,indvars(5)) =   -  ( qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_nut_dx_0_nxp2p0nyp2p0k)+&
+rhs(nx+2+0,ny+2+0,indvars(5)) =   -  ( qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_rhonut_dx_0_nxp2p0nyp2p0k)+&
                     -&
-                    qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_nut_dx_1_nxp2p0nyp2p0k)-&
-                    param_float(1 + 5)*param_float(7 + 5)*param_float(18 + 5)*((qst(nx+2+0,ny+2+0,indvarsst(10)))**2*(d1_rhs_nut_dx_2_nxp2p0nyp2p0k)*(d1_rhs_nut_dx_3_nxp2p0nyp2p0k))-&
+                    qst(nx+2+0,ny+2+0,indvarsst(10))*(d1_rhs_rhonut_dx_1_nxp2p0nyp2p0k)-&
+                    param_float(1 + 5)*param_float(7 + 5)*param_float(18 + 5)*((qst(nx+2+0,ny+2+0,indvarsst(10)))**2*(d1_rhs_rhonut_dx_2_nxp2p0nyp2p0k)*(d1_rhs_rhonut_dx_3_nxp2p0nyp2p0k))-&
                     param_float(6 + 5)*(1-&
                     (param_float(16 + 5)*exp(-&
                     param_float(17 + 5)*(q(nx+2+0,ny+2+0,indvars(5))/1.0_wp)**2.0_wp)))*qst(nx+2+0,ny+2+0,indvarsst(13))*q(nx+2+0,ny+2+0,indvars(1))*q(nx+2+0,ny+2+0,indvars(5))+&

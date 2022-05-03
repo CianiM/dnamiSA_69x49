@@ -416,7 +416,7 @@ rhs(i,1-2+0,indvars(4)) =   -  ( (qst(i,1-2+0,indvarsst(10))*(d1_rhs_et_dx_0_i1m
 
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !
-! (deltaxI*([-ReI*(1.0_wp+chi)*sigmaI*deltaxI*({nut}_1x)]_1x)-ReI*Cb2*sigmaI*((deltaxI)**2*([rho*nut]_1x)*([nut]_1x))-Cb1*(1-ft2)*SS*rho*nut+ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*(nut/eta)**2+deltaxI*([rho*u*nut]_1x))*symm
+! (deltaxI*([-ReI*(1.0_wp+chi)*sigmaI*deltaxI*({nut}_1x)]_1x)-ReI*Cb2*sigmaI*((deltaxI)**2*([rho*nut]_1x)*([nut]_1x))-Cb1*(1-ft2)*SS*rho*nut+ReI*(Cw1*fw-Cb1/k**2*ft2)*rho*(nut/eta)**2+deltaxI*([(rho*nut)*u]_1x))*symm
 !
 !~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -460,9 +460,9 @@ d1_rhs_nut_dx_2_i1m2p0k = -&
 
 d1_rhs_nut_dx_2_i1m2p0k = d1_rhs_nut_dx_2_i1m2p0k*param_float(1)
 
-d1_rhs_nut_dx_3_im11m2p0k = q(i-1,1-2+0,indvars(1))*q(i-1,1-2+0,indvars(2))*q(i-1,1-2+0,indvars(5))
+d1_rhs_nut_dx_3_im11m2p0k = (q(i-1,1-2+0,indvars(1))*q(i-1,1-2+0,indvars(5)))*q(i-1,1-2+0,indvars(2))
 
-d1_rhs_nut_dx_3_ip11m2p0k = q(i+1,1-2+0,indvars(1))*q(i+1,1-2+0,indvars(2))*q(i+1,1-2+0,indvars(5))
+d1_rhs_nut_dx_3_ip11m2p0k = (q(i+1,1-2+0,indvars(1))*q(i+1,1-2+0,indvars(5)))*q(i+1,1-2+0,indvars(2))
 
 d1_rhs_nut_dx_3_i1m2p0k = -&
           0.5_wp*d1_rhs_nut_dx_3_im11m2p0k+&
